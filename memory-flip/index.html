@@ -46,7 +46,7 @@ nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 20px;positi
 .nav-back:hover{color:var(--purple)}
 
 /* LAYOUT */
-#app{max-width:700px;margin:0 auto;padding:16px 14px 32px}
+#app{max-width:700px;margin:0 auto;padding:16px 14px 12px}
 
 /* TOP BAR */
 .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
@@ -83,6 +83,10 @@ nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 20px;positi
 .pdot{width:10px;height:10px;border-radius:50%;background:#E8E0F0;transition:all 0.3s cubic-bezier(.34,1.56,.64,1)}
 .pdot.matched{background:var(--teal);transform:scale(1.2);box-shadow:0 0 6px rgba(20,184,166,0.4)}
 
+/* FULLSCREEN BTN */
+.btn-icon{background:var(--card);border:2px solid #EDE5F5;color:var(--purple);font-size:18px;border-radius:10px;padding:4px 9px;cursor:pointer;transition:all 0.2s;line-height:1;font-family:sans-serif;display:flex;align-items:center}
+.btn-icon:hover{background:var(--purple);color:#fff;border-color:var(--purple)}
+
 /* CARD GRID */
 .card-grid{display:grid;gap:10px;justify-content:center}
 .card-grid.easy{grid-template-columns:repeat(4,1fr)}
@@ -90,7 +94,7 @@ nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 20px;positi
 .card-grid.hard{grid-template-columns:repeat(8,1fr)}
 
 /* CARD */
-.card-wrap{aspect-ratio:3/4;cursor:pointer;perspective:600px;min-width:0}
+.card-wrap{cursor:pointer;perspective:600px;min-width:0}
 .card-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.45s cubic-bezier(.4,0,.2,1)}
 .card-wrap.flipped .card-inner{transform:rotateY(180deg)}
 .card-wrap.matched .card-inner{transform:rotateY(180deg)}
@@ -148,6 +152,7 @@ canvas#ptx{position:fixed;inset:0;pointer-events:none;z-index:99}
 <div id="app">
   <div class="topbar">
     <div class="game-title">记忆<span>翻牌</span> 🃏</div>
+    <button class="btn-icon" id="fsBtn" onclick="toggleFS()" title="全屏">⛶</button>
   </div>
 
   <div class="stat-row">
@@ -281,6 +286,8 @@ function startGame() {
     G.timer++;
     document.getElementById('sTime').textContent = fmt(G.timer);
   }, 1000);
+
+  requestAnimationFrame(fitGrid);
 }
 
 function wordSize(w) {
@@ -399,6 +406,55 @@ function animateConf() {
   CX.globalAlpha = 1;
   if (particles.length) requestAnimationFrame(animateConf);
 }
+
+// ── 全屏 ──
+function toggleFS() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
+document.addEventListener('fullscreenchange', () => {
+  const btn = document.getElementById('fsBtn');
+  if (btn) btn.textContent = document.fullscreenElement ? '⊡' : '⛶';
+  fitGrid();
+});
+
+// ── 自适应卡片 ──
+function fitGrid() {
+  const grid = document.getElementById('grid');
+  if (!grid || !grid.children.length) return;
+  const rows = 4;
+  const cols = G.diff === 'easy' ? 4 : G.diff === 'medium' ? 6 : 8;
+  const gap = 10;
+
+  const appPad = 28; // 14px × 2 horizontal padding on #app
+  const usableW = Math.min(window.innerWidth, 700) - appPad;
+  const maxCardByWidth = (usableW - (cols - 1) * gap) / cols;
+
+  const gridTop = grid.getBoundingClientRect().top;
+  const availH = window.innerHeight - gridTop - 12;
+  const maxCardByHeight = (availH - (rows - 1) * gap) / rows;
+
+  const cardH = Math.max(60, Math.floor(Math.min(maxCardByWidth / 0.75, maxCardByHeight)));
+  const cardW = Math.floor(cardH * 0.75);
+
+  grid.querySelectorAll('.card-wrap').forEach(w => {
+    w.style.width = cardW + 'px';
+    w.style.height = cardH + 'px';
+  });
+
+  grid.querySelectorAll('.word-en, .word-zh').forEach(el => {
+    const len = el.textContent.length;
+    const ratio = len <= 3 ? 0.26 : len <= 6 ? 0.22 : 0.18;
+    el.style.fontSize = Math.max(9, Math.floor(cardW * ratio)) + 'px';
+  });
+  grid.querySelectorAll('.word-icon').forEach(el => {
+    el.style.fontSize = Math.max(9, Math.floor(cardW * 0.2)) + 'px';
+  });
+}
+window.addEventListener('resize', fitGrid);
 </script>
 </body>
 </html>
