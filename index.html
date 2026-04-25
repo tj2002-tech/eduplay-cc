@@ -2,1257 +2,244 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>EduPlay 单词消消乐 — 免费在线小学英语单词游戏</title>
-<meta name="description" content="EduPlay 单词消消乐，趣味英中配对游戏，覆盖小学3年级至初一人教版词库，支持自定义词组。每日打卡、成就系统、错词复习，让孩子爱上背单词！">
-<meta name="keywords" content="单词消消乐,小学英语单词,英语游戏,人教版词汇,单词配对,免费英语学习,EduPlay">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduPlay — 免费在线小学课间游戏大全</title>
+<meta name="description" content="EduPlay 提供免费在线小学教育游戏，包括英语单词消消乐、记忆翻牌、数学口算等课间小游戏，覆盖小学3年级至初中，让学习变得有趣！">
+<meta name="keywords" content="小学课间游戏,免费教育游戏,英语单词游戏,数学口算游戏,记忆力游戏,在线学习游戏,EduPlay">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://eduplay.cc/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://eduplay.cc/">
-<meta property="og:title" content="EduPlay 单词消消乐 — 免费在线小学英语单词游戏">
-<meta property="og:description" content="趣味英中配对消除，覆盖小学3年级至初一词库，支持自定义词组。每日打卡+成就系统，让孩子爱上背单词！">
+<meta property="og:title" content="EduPlay — 免费在线小学课间游戏大全">
+<meta property="og:description" content="英语单词、数学口算、记忆力……多款免费教育小游戏，让课间10分钟更有趣！">
 <meta property="og:image" content="https://eduplay.cc/og-cover.png">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="EduPlay">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="EduPlay 单词消消乐 — 免费在线小学英语单词游戏">
-<meta name="twitter:description" content="趣味英中配对消除，覆盖小学3年级至初一词库，支持自定义词组。每日打卡+成就系统！">
+<meta name="twitter:title" content="EduPlay — 免费在线小学课间游戏大全">
+<meta name="twitter:description" content="多款免费教育小游戏，让课间10分钟更有趣！">
 <meta name="twitter:image" content="https://eduplay.cc/og-cover.png">
 
 <!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "EduPlay 单词消消乐",
+  "@type": "WebSite",
+  "name": "EduPlay",
   "url": "https://eduplay.cc/",
-  "description": "趣味英中配对消除游戏，覆盖小学3年级至初一人教版词库，支持自定义词组，每日打卡，成就系统。",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Any",
-  "inLanguage": "zh-CN",
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "student"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "CNY"
-  }
+  "description": "免费在线小学教育游戏合集，覆盖英语、数学、记忆力等多个学科",
+  "inLanguage": "zh-CN"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "EduPlay 游戏列表",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"单词消消乐","url":"https://eduplay.cc/word-match/"},
+    {"@type":"ListItem","position":2,"name":"记忆翻牌","url":"https://eduplay.cc/memory-flip/"},
+    {"@type":"ListItem","position":3,"name":"数学口算抢答","url":"https://eduplay.cc/math-blitz/"}
+  ]
+}
+</script>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;700;800;900&family=Ma+Shan+Zheng&display=swap');
-:root{
-  --pink:#E85D8C;--blue:#4A9EF5;--purple:#8B5CF6;--orange:#F59E0B;--teal:#14B8A6;
-  --bg:#FFF9F3;--card:#FFFFFF;--text:#3D3D4E;--muted:#A0A0B8;
-  --shadow-sm:0 2px 8px rgba(0,0,0,0.06);--shadow-md:0 8px 24px rgba(0,0,0,0.08);--shadow-lg:0 16px 48px rgba(0,0,0,0.12);
-}
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap');
+:root{--pink:#E85D8C;--blue:#4A9EF5;--purple:#8B5CF6;--orange:#F59E0B;--teal:#14B8A6;--bg:#FFF9F3;--card:#FFFFFF;--text:#3D3D4E;--muted:#A0A0B8}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);font-family:'Nunito',sans-serif;min-height:100vh;overflow-x:hidden;-webkit-tap-highlight-color:transparent;color:var(--text)}
-canvas#ptx{position:fixed;inset:0;pointer-events:none;z-index:99}
-#app{max-width:680px;margin:0 auto;padding:16px 14px 24px;position:relative}
+html,body{background:var(--bg);font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh}
 
-/* TOP BAR */
-.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.logo{font-family:'Fredoka',cursive;font-size:26px;font-weight:700;color:var(--pink);letter-spacing:-0.5px;line-height:1;margin:0}
+nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 24px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:'Fredoka',cursive;font-size:26px;font-weight:700;color:var(--pink);text-decoration:none}
 .logo span{color:var(--blue)}
-.logo .dot{display:inline-block;width:8px;height:8px;background:var(--orange);border-radius:50%;margin-left:2px;vertical-align:super;animation:logoPulse 2s ease-in-out infinite}
-@keyframes logoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
-.top-icons{display:flex;gap:6px;align-items:center}
-.stat-row{display:flex;gap:8px}
-.stat{background:var(--card);border-radius:14px;padding:6px 14px;text-align:center;box-shadow:var(--shadow-sm);border:1.5px solid rgba(0,0,0,0.04);min-width:52px}
-.stat-v{font-family:'Fredoka',cursive;font-size:20px;font-weight:700;color:var(--pink);line-height:1.1;transition:transform 0.2s cubic-bezier(.34,1.56,.64,1)}
-.stat-v.pop-anim{transform:scale(1.25)}
-.stat-v.blue{color:var(--blue)}
-.stat-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px;font-weight:800}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:700;font-size:14px;transition:color 0.2s}
+.nav-links a:hover{color:var(--purple)}
 
-/* XP BAR */
-.xp-bar-wrap{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding:0 2px}
-.xp-level-badge{font-family:'Fredoka',cursive;font-size:13px;font-weight:700;color:#fff;background:var(--purple);border-radius:20px;padding:2px 10px;white-space:nowrap;min-width:46px;text-align:center;cursor:pointer;transition:transform 0.15s}
-.xp-level-badge:hover{transform:scale(1.05)}
-.xp-bar-bg{flex:1;height:8px;background:#F0E8F8;border-radius:4px;overflow:hidden}
-.xp-bar-fill{height:100%;background:linear-gradient(90deg,var(--purple),var(--blue));border-radius:4px;transition:width 0.6s cubic-bezier(.34,1.56,.64,1)}
-.xp-title{font-size:11px;font-weight:800;color:var(--muted);white-space:nowrap}
-.xp-gain-toast{position:fixed;z-index:210;font-family:'Fredoka',cursive;font-size:16px;font-weight:700;color:var(--purple);pointer-events:none;animation:popUp 1.2s ease-out forwards}
+.hero{text-align:center;padding:64px 24px 48px;max-width:700px;margin:0 auto}
+.hero-badge{display:inline-block;background:linear-gradient(135deg,#FEF3C7,#FDE68A);color:var(--orange);font-size:13px;font-weight:800;border-radius:20px;padding:4px 16px;margin-bottom:20px}
+.hero h1{font-family:'Fredoka',cursive;font-size:clamp(32px,6vw,52px);font-weight:700;line-height:1.15;margin-bottom:16px}
+.hero h1 .highlight{color:var(--pink)}
+.hero p{font-size:17px;color:var(--muted);line-height:1.7;font-weight:700}
 
-/* LEVEL UP OVERLAY */
-.lvlup-overlay{position:fixed;inset:0;background:rgba(139,92,246,0.18);backdrop-filter:blur(6px);z-index:350;display:flex;align-items:center;justify-content:center;animation:fadeIn 0.3s ease}
-.lvlup-card{background:linear-gradient(135deg,#8B5CF6,#4A9EF5);border-radius:28px;padding:36px 28px;text-align:center;color:#fff;box-shadow:0 20px 60px rgba(139,92,246,0.4);animation:modalIn 0.5s cubic-bezier(.34,1.56,.64,1)}
-.lvlup-card .lv-icon{font-size:64px;margin-bottom:8px;animation:achBounce 0.6s cubic-bezier(.34,1.56,.64,1)}
-.lvlup-card h2{font-family:'Fredoka',cursive;font-size:32px;font-weight:700;margin-bottom:4px}
-.lvlup-card .lv-sub{font-size:14px;opacity:0.85;margin-bottom:16px}
-.lvlup-card .lv-title{font-family:'Fredoka',cursive;font-size:20px;font-weight:700;background:rgba(255,255,255,0.25);border-radius:20px;padding:6px 20px;display:inline-block;margin-bottom:20px}
-.lvlup-card button{background:#fff;color:var(--purple);border:none;border-radius:16px;padding:10px 32px;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer}
+.stats-bar{background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;padding:20px 24px;margin-bottom:48px}
+.stats-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.stat-item{text-align:center}
+.stat-num{font-family:'Fredoka',cursive;font-size:28px;font-weight:700;display:block}
+.stat-label{font-size:12px;opacity:0.85;font-weight:700}
 
-/* STREAK BANNER */
-.streak-banner{background:linear-gradient(135deg,#FFF7ED,#FEF3C7);border:1.5px solid #FDE68A;border-radius:14px;padding:8px 16px;margin-bottom:12px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow-sm)}
-.streak-fire{font-size:24px;animation:fireWiggle 1s ease-in-out infinite}
-@keyframes fireWiggle{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
-.streak-info{flex:1}
-.streak-days{font-family:'Fredoka',cursive;font-size:18px;font-weight:700;color:var(--orange)}
-.streak-sub{font-size:11px;color:var(--muted);font-weight:700}
-.streak-cal{display:flex;gap:4px}
-.streak-dot{width:16px;height:16px;border-radius:4px;background:#F0E8F8;font-size:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--muted)}
-.streak-dot.done{background:var(--teal);color:#fff}
-.streak-dot.today{border:2px solid var(--orange)}
+.section{max-width:1100px;margin:0 auto;padding:0 24px 64px}
+.section-title{font-family:'Fredoka',cursive;font-size:26px;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:10px}
 
-/* GRADE BUTTONS */
-.grade-wrap{margin-bottom:12px}
-.grade-label{font-size:11px;color:var(--muted);font-weight:800;margin-bottom:6px;letter-spacing:0.5px}
-.grade-btns{display:flex;gap:6px;flex-wrap:wrap}
-.gbtn{background:var(--card);border:2px solid #EDE5F5;color:var(--purple);font-size:12px;font-weight:800;border-radius:24px;padding:6px 16px;cursor:pointer;transition:all 0.2s cubic-bezier(.34,1.56,.64,1);font-family:'Nunito',sans-serif;white-space:nowrap}
-.gbtn:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
-.gbtn.active{background:var(--purple);color:#fff;border-color:var(--purple);box-shadow:0 4px 16px rgba(139,92,246,0.3)}
-.gbtn.custom{border-color:#FDE68A;color:var(--orange)}
-.gbtn.custom.active{background:var(--orange);color:#fff;border-color:var(--orange)}
-.gbtn.wrong-btn{border-color:#FCA5A5;color:#EF4444}
-.gbtn.wrong-btn.active{background:#EF4444;color:#fff;border-color:#EF4444}
-.wrong-badge{display:inline-block;background:#EF4444;color:#fff;border-radius:10px;padding:0 6px;font-size:10px;font-weight:800;margin-left:4px;line-height:1.5}
+.game-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.game-card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);text-decoration:none;color:var(--text);transition:transform 0.2s cubic-bezier(.34,1.56,.64,1),box-shadow 0.2s;display:block}
+.game-card:not(.coming-soon):hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.12)}
+.game-card.coming-soon{opacity:0.7;pointer-events:none}
+.card-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative}
+.card-thumb.pink-bg{background:linear-gradient(135deg,#FFE4EF,#FFB3D1)}
+.card-thumb.blue-bg{background:linear-gradient(135deg,#E0F0FF,#B3D9FF)}
+.card-thumb.orange-bg{background:linear-gradient(135deg,#FFF3E0,#FFD9A0)}
+.card-thumb.teal-bg{background:linear-gradient(135deg,#E0FAF5,#A7F3E4)}
+.card-thumb.purple-bg{background:linear-gradient(135deg,#F0E8FF,#D6B8FF)}
+.card-tag{position:absolute;top:12px;right:12px;font-size:11px;font-weight:800;border-radius:20px;padding:3px 10px}
+.tag-hot{background:#FEE2E2;color:#EF4444}
+.tag-new{background:#DCFCE7;color:#16A34A}
+.tag-soon{background:#F3F4F6;color:#9CA3AF}
+.card-body{padding:18px 20px 20px}
+.card-title{font-family:'Fredoka',cursive;font-size:20px;font-weight:700;margin-bottom:6px}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.6;font-weight:700;margin-bottom:14px}
+.card-meta{display:flex;gap:8px;flex-wrap:wrap}
+.meta-chip{font-size:11px;font-weight:800;background:#F5F3FF;color:var(--purple);border-radius:20px;padding:3px 10px}
+.card-btn{display:block;margin-top:14px;background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;border:none;border-radius:12px;padding:10px;font-size:14px;font-weight:800;font-family:'Nunito',sans-serif;text-align:center;cursor:pointer;transition:opacity 0.15s}
+.card-btn:hover{opacity:0.9}
+.card-btn.btn-blue{background:linear-gradient(135deg,var(--blue),var(--teal))}
+.card-btn.btn-orange{background:linear-gradient(135deg,var(--orange),#F97316)}
+.card-btn.btn-disabled{background:#F3F4F6;color:var(--muted);cursor:default}
 
-/* CONTROLS */
-.ctrl-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
-select{font-family:'Nunito',sans-serif;background:var(--card);border:2px solid #EDE5F5;color:var(--text);border-radius:12px;padding:7px 12px;font-size:13px;font-weight:700;cursor:pointer;outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23A0A0B8' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
-select:hover,select:focus{border-color:var(--purple)}
-.btn-go{background:linear-gradient(135deg,#E85D8C 0%,#F59E0B 100%);color:#fff;border:none;border-radius:14px;padding:9px 24px;font-size:14px;font-weight:900;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:0 4px 16px rgba(232,93,140,0.3);transition:all 0.15s;letter-spacing:0.3px}
-.btn-go:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,93,140,0.4)}
-.btn-go:active{transform:scale(0.96)}
-.btn-icon{background:var(--card);border:2px solid #EDE5F5;color:var(--muted);font-size:16px;width:38px;height:38px;border-radius:12px;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.15s;display:flex;align-items:center;justify-content:center}
-.btn-icon:hover{border-color:var(--purple);color:var(--purple)}
-.btn-icon.on{border-color:var(--orange);color:var(--orange)}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.blog-card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,0.06);text-decoration:none;color:var(--text);transition:transform 0.2s,box-shadow 0.2s;display:block;border-left:4px solid var(--purple)}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,0.1)}
+.blog-date{font-size:12px;color:var(--muted);font-weight:700;margin-bottom:8px}
+.blog-title{font-family:'Fredoka',cursive;font-size:18px;font-weight:700;line-height:1.4;margin-bottom:8px}
+.blog-excerpt{font-size:13px;color:var(--muted);line-height:1.6;font-weight:700}
+.blog-more{display:inline-block;margin-top:10px;font-size:13px;font-weight:800;color:var(--purple)}
 
-/* TIMER */
-.timer-strip{height:7px;background:#F0E8F8;border-radius:4px;margin-bottom:12px;overflow:hidden}
-.timer-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--teal),var(--blue));transition:width 1s linear}
-.timer-fill.warn{background:linear-gradient(90deg,#EF4444,var(--pink));animation:timerPulse 0.5s ease-in-out infinite}
-@keyframes timerPulse{0%,100%{opacity:1}50%{opacity:0.7}}
+footer{background:#fff;border-top:1px solid #F0EAF8;padding:32px 24px;text-align:center;color:var(--muted);font-size:13px;font-weight:700}
+footer a{color:var(--purple);text-decoration:none}
 
-/* HINT */
-.hint-box{background:var(--card);border-radius:14px;padding:10px 16px;font-size:13px;color:var(--muted);margin-bottom:14px;text-align:center;box-shadow:var(--shadow-sm);border:1.5px solid rgba(0,0,0,0.04);line-height:1.5}
-.hint-box b{color:var(--purple)}
-
-/* PROGRESS */
-.progress-row{display:flex;justify-content:center;gap:6px;margin-bottom:14px;flex-wrap:wrap}
-.pdot{width:10px;height:10px;border-radius:50%;background:#E8E0F0;transition:all 0.35s cubic-bezier(.34,1.56,.64,1)}
-.pdot.done{background:var(--teal);transform:scale(1.15);box-shadow:0 0 8px rgba(20,184,166,0.4)}
-
-/* GRID */
-.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding:4px 0}
-
-/* BUBBLES */
-.bubble{border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;position:relative;overflow:hidden;transition:transform 0.18s cubic-bezier(.34,1.56,.64,1),box-shadow 0.18s,opacity 0.35s;user-select:none;-webkit-user-select:none;flex-shrink:0;will-change:transform}
-.bubble::before{content:'';position:absolute;top:10%;left:15%;width:35%;height:28%;background:radial-gradient(ellipse at 45% 40%,rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 72%);border-radius:50%;pointer-events:none;z-index:1}
-.bubble.gone::before{display:none}
-.bubble.en{background:radial-gradient(circle at 35% 30%,#A8D4FF,#5B9EF5 50%,#3070C8);box-shadow:0 6px 20px rgba(91,158,245,0.4),inset 0 -5px 10px rgba(0,0,0,0.18),inset 0 4px 8px rgba(255,255,255,0.45)}
-.bubble.zh{background:radial-gradient(circle at 35% 30%,#FFB3CC,#E0527A 50%,#B03060);box-shadow:0 6px 20px rgba(224,82,122,0.4),inset 0 -5px 10px rgba(0,0,0,0.18),inset 0 4px 8px rgba(255,255,255,0.45)}
-.btext{display:block;white-space:nowrap;text-align:center;line-height:1.15;pointer-events:none;max-width:82%;position:relative;z-index:2;text-shadow:0 1px 3px rgba(0,0,0,0.18)}
-.bubble.en .btext{font-family:'Fredoka',cursive;font-weight:600;letter-spacing:0.2px}
-.bubble.zh .btext{font-family:'Ma Shan Zheng','Nunito',sans-serif;font-weight:700}
-.bubble:hover:not(.selected):not(.gone):not(.wrong){transform:scale(1.08) translateY(-3px)}
-.bubble.selected.en{background:radial-gradient(circle at 35% 30%,#BFFFF8,#4ECDC4 50%,#2AADA0);box-shadow:0 0 0 4px rgba(78,205,196,0.4),0 8px 24px rgba(78,205,196,0.45),inset 0 -4px 8px rgba(0,0,0,0.12),inset 0 3px 6px rgba(255,255,255,0.4);transform:scale(1.13) translateY(-5px);animation:selectPulse 1.2s ease-in-out infinite}
-.bubble.selected.zh{background:radial-gradient(circle at 35% 30%,#FFF5B0,#FFB800 50%,#D49200);box-shadow:0 0 0 4px rgba(255,184,0,0.4),0 8px 24px rgba(255,184,0,0.45),inset 0 -4px 8px rgba(0,0,0,0.12),inset 0 3px 6px rgba(255,255,255,0.4);transform:scale(1.13) translateY(-5px);animation:selectPulse 1.2s ease-in-out infinite}
-@keyframes selectPulse{0%,100%{box-shadow:0 0 0 4px rgba(78,205,196,0.35),0 8px 28px rgba(78,205,196,0.4),inset 0 -4px 8px rgba(0,0,0,0.1),inset 0 3px 6px rgba(255,255,255,0.35)}50%{box-shadow:0 0 0 8px rgba(78,205,196,0.15),0 8px 28px rgba(78,205,196,0.5),inset 0 -4px 8px rgba(0,0,0,0.1),inset 0 3px 6px rgba(255,255,255,0.35)}}
-.bubble.wrong{animation:shake 0.45s ease;filter:brightness(0.7) saturate(0.5)}
-@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px) rotate(-2deg)}40%{transform:translateX(8px) rotate(2deg)}60%{transform:translateX(-5px) rotate(-1deg)}80%{transform:translateX(5px) rotate(1deg)}}
-.bubble.gone{opacity:0;transform:scale(0.15)!important;pointer-events:none;transition:all 0.4s cubic-bezier(.55,0,.1,1)}
-.bubble.entering{opacity:0;transform:scale(0.3) translateY(20px)}
-.bubble.entered{opacity:1;transform:scale(1) translateY(0)}
-
-/* FLOATING SCORE */
-.pop{position:fixed;pointer-events:none;z-index:200;font-family:'Fredoka',cursive;font-size:22px;font-weight:700;animation:popUp 0.9s ease-out forwards;text-shadow:0 2px 6px rgba(0,0,0,0.12)}
-@keyframes popUp{0%{opacity:1;transform:translateY(0) scale(1.15)}100%{opacity:0;transform:translateY(-70px) scale(0.75)}}
-
-/* COMBO */
-#comboFlash{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:180;pointer-events:none;opacity:0;transition:opacity 0.15s;text-align:center}
-#comboFlash.show{opacity:1}
-#comboText{font-family:'Fredoka',cursive;font-size:52px;font-weight:700;text-shadow:0 4px 20px rgba(0,0,0,0.1);animation:comboZoom 0.5s cubic-bezier(.34,1.56,.64,1)}
-@keyframes comboZoom{0%{transform:scale(2.5) rotate(-5deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
-#comboSub{font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;color:var(--muted);margin-top:-2px}
-
-/* OVERLAY & MODAL */
-.overlay{position:fixed;inset:0;background:rgba(255,249,243,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:300;display:flex;align-items:center;justify-content:center;animation:fadeIn 0.3s ease}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal{background:var(--card);border-radius:28px;padding:28px 24px;text-align:center;max-width:380px;width:92%;box-shadow:var(--shadow-lg);animation:modalIn 0.45s cubic-bezier(.34,1.56,.64,1);max-height:90vh;overflow-y:auto}
-@keyframes modalIn{0%{opacity:0;transform:scale(0.8) translateY(20px)}100%{opacity:1;transform:scale(1) translateY(0)}}
-.modal .em{font-size:52px;margin-bottom:6px}
-.modal h2{font-family:'Fredoka',cursive;font-size:24px;font-weight:700;color:var(--pink);margin-bottom:6px}
-.modal .sub{color:var(--muted);font-size:13px;margin-bottom:14px;font-weight:700}
-.modal .big{font-family:'Fredoka',cursive;font-size:48px;font-weight:700;color:var(--blue);display:block;margin-bottom:2px}
-.modal .big-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:14px}
-.modal .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
-.modal .chip{background:#F7F0FF;color:var(--purple);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:800}
-.modal .stars{font-size:32px;letter-spacing:6px;margin-bottom:10px;animation:starsIn 0.6s cubic-bezier(.34,1.56,.64,1) 0.2s both}
-@keyframes starsIn{0%{transform:scale(0)}100%{transform:scale(1)}}
-.modal .btn-go{width:100%;font-size:15px;padding:12px;margin-bottom:10px;border-radius:16px}
-.modal .btn-link{background:none;border:none;color:var(--muted);font-size:13px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;padding:6px;transition:color 0.15s}
-.modal .btn-link:hover{color:var(--purple)}
-.modal .btn-share{width:100%;background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;border:none;border-radius:16px;padding:11px;font-size:14px;font-weight:900;font-family:'Nunito',sans-serif;cursor:pointer;margin-bottom:10px;box-shadow:0 4px 16px rgba(139,92,246,0.3)}
-
-/* WORD LIST */
-.word-list-wrap{margin-top:10px;text-align:left}
-.word-pair{display:flex;align-items:center;padding:6px 0;border-bottom:1px solid #F0E8F8;font-size:14px;font-weight:700}
-.word-pair:last-child{border-bottom:none}
-.word-pair .en-w{color:var(--blue);flex:1;font-family:'Fredoka',cursive;font-weight:600}
-.word-pair .zh-w{color:var(--pink);flex:1;text-align:right;font-family:'Ma Shan Zheng',sans-serif;font-size:16px}
-.word-pair .check{width:24px;text-align:center}
-
-/* SCREEN SHAKE */
-.screen-shake{animation:screenShake 0.3s ease}
-@keyframes screenShake{0%,100%{transform:translate(0,0)}25%{transform:translate(-3px,2px)}50%{transform:translate(3px,-2px)}75%{transform:translate(-2px,1px)}}
-
-/* ===== CUSTOM VOCAB MODAL ===== */
-.cv-overlay{position:fixed;inset:0;background:rgba(255,249,243,0.92);backdrop-filter:blur(8px);z-index:400;display:flex;align-items:center;justify-content:center;animation:fadeIn 0.3s ease}
-.cv-modal{background:var(--card);border-radius:24px;padding:24px;max-width:480px;width:94%;box-shadow:var(--shadow-lg);animation:modalIn 0.4s cubic-bezier(.34,1.56,.64,1);max-height:88vh;overflow-y:auto}
-.cv-modal h3{font-family:'Fredoka',cursive;font-size:20px;font-weight:700;color:var(--text);margin-bottom:4px}
-.cv-modal .cv-sub{font-size:12px;color:var(--muted);margin-bottom:14px;font-weight:700}
-.cv-modal label{font-size:12px;font-weight:800;color:var(--text);display:block;margin-bottom:4px}
-.cv-modal input[type=text]{width:100%;border:2px solid #EDE5F5;border-radius:12px;padding:8px 12px;font-size:14px;font-family:'Nunito',sans-serif;font-weight:700;outline:none;transition:border-color 0.2s;margin-bottom:12px}
-.cv-modal input[type=text]:focus{border-color:var(--purple)}
-.cv-modal textarea{width:100%;border:2px solid #EDE5F5;border-radius:12px;padding:10px 12px;font-size:13px;font-family:'Nunito',sans-serif;font-weight:600;outline:none;resize:vertical;min-height:140px;line-height:1.7;transition:border-color 0.2s;margin-bottom:4px}
-.cv-modal textarea:focus{border-color:var(--purple)}
-.cv-hint{font-size:11px;color:var(--muted);margin-bottom:14px}
-.cv-error{font-size:12px;color:#EF4444;font-weight:700;margin-bottom:10px;display:none}
-.cv-btns{display:flex;gap:8px}
-.cv-btns button{flex:1;padding:10px;border-radius:14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;border:none;transition:all 0.15s}
-.cv-btns .cv-cancel{background:#F0E8F8;color:var(--purple)}
-.cv-btns .cv-save{background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;box-shadow:0 4px 16px rgba(139,92,246,0.3)}
-.cv-btns .cv-save:active,.cv-btns .cv-cancel:active{transform:scale(0.96)}
-
-/* SAVED VOCAB LIST */
-.cv-saved{margin-top:16px;border-top:1.5px solid #F0E8F8;padding-top:12px}
-.cv-saved-title{font-size:12px;font-weight:800;color:var(--muted);margin-bottom:8px}
-.cv-item{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#FAFAFE;border-radius:10px;margin-bottom:6px}
-.cv-item-name{font-weight:800;font-size:13px;color:var(--text)}
-.cv-item-count{font-size:11px;color:var(--muted);font-weight:700}
-.cv-item-actions{display:flex;gap:4px}
-.cv-item-actions button{background:none;border:none;font-size:16px;cursor:pointer;padding:2px 4px;border-radius:6px;transition:background 0.15s}
-.cv-item-actions button:hover{background:#F0E8F8}
-
-/* ===== ACHIEVEMENTS PANEL ===== */
-.ach-overlay{position:fixed;inset:0;background:rgba(255,249,243,0.92);backdrop-filter:blur(8px);z-index:400;display:flex;align-items:center;justify-content:center;animation:fadeIn 0.3s ease}
-.ach-modal{background:var(--card);border-radius:24px;padding:24px;max-width:420px;width:94%;box-shadow:var(--shadow-lg);animation:modalIn 0.4s cubic-bezier(.34,1.56,.64,1);max-height:88vh;overflow-y:auto}
-.ach-modal h3{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--text);margin-bottom:4px}
-.ach-progress{font-size:12px;color:var(--muted);font-weight:700;margin-bottom:16px}
-.ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.ach-card{background:#FAFAFE;border-radius:14px;padding:14px 12px;text-align:center;transition:all 0.2s;border:1.5px solid transparent}
-.ach-card.unlocked{background:#FFFBEB;border-color:#FDE68A}
-.ach-card .ach-icon{font-size:32px;margin-bottom:4px;filter:grayscale(1) opacity(0.3)}
-.ach-card.unlocked .ach-icon{filter:none;animation:achBounce 0.5s cubic-bezier(.34,1.56,.64,1)}
-@keyframes achBounce{0%{transform:scale(0.5)}100%{transform:scale(1)}}
-.ach-card .ach-name{font-size:12px;font-weight:800;color:var(--text);margin-bottom:2px}
-.ach-card .ach-desc{font-size:10px;color:var(--muted);font-weight:600;line-height:1.3}
-.ach-card.locked .ach-name{color:var(--muted)}
-.ach-close{display:block;margin:16px auto 0;background:#F0E8F8;color:var(--purple);border:none;border-radius:14px;padding:10px 32px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer}
-
-/* ACHIEVEMENT UNLOCK TOAST */
-.ach-toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:500;background:linear-gradient(135deg,#FFFBEB,#FEF3C7);border:2px solid #FDE68A;border-radius:16px;padding:12px 20px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(245,158,11,0.25);animation:toastIn 0.5s cubic-bezier(.34,1.56,.64,1),toastOut 0.4s ease 2.6s forwards;pointer-events:none}
-@keyframes toastIn{0%{opacity:0;transform:translateX(-50%) translateY(-30px) scale(0.8)}100%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
-@keyframes toastOut{0%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(-20px)}}
-.ach-toast .ach-toast-icon{font-size:28px}
-.ach-toast .ach-toast-text{font-size:13px;font-weight:800;color:var(--text)}
-.ach-toast .ach-toast-name{color:var(--orange);font-family:'Fredoka',cursive;font-size:15px;display:block}
-
-/* ===== LEADERBOARD ===== */
-.lb-overlay{position:fixed;inset:0;background:rgba(255,249,243,0.92);backdrop-filter:blur(8px);z-index:400;display:flex;align-items:center;justify-content:center;animation:fadeIn 0.3s ease}
-.lb-modal{background:var(--card);border-radius:24px;padding:24px;max-width:420px;width:94%;box-shadow:var(--shadow-lg);animation:modalIn 0.4s cubic-bezier(.34,1.56,.64,1);max-height:88vh;overflow-y:auto}
-.lb-modal h3{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--text);margin-bottom:4px}
-.lb-sub{font-size:12px;color:var(--muted);font-weight:700;margin-bottom:16px}
-.lb-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
-.lb-tab{background:#F0E8F8;color:var(--purple);border:none;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.15s}
-.lb-tab.active{background:var(--purple);color:#fff}
-.lb-list{display:flex;flex-direction:column;gap:8px;min-height:120px}
-.lb-row{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#FAFAFE;border-radius:12px;border:1.5px solid #F0E8F8}
-.lb-rank{font-family:'Fredoka',cursive;font-size:18px;font-weight:700;width:28px;text-align:center}
-.lb-rank.gold{color:#F59E0B}
-.lb-rank.silver{color:#94A3B8}
-.lb-rank.bronze{color:#CD7C5F}
-.lb-info{flex:1}
-.lb-val{font-family:'Fredoka',cursive;font-size:20px;font-weight:700;color:var(--blue);line-height:1}
-.lb-date{font-size:10px;color:var(--muted);font-weight:700;margin-top:1px}
-.lb-empty{text-align:center;color:var(--muted);font-size:13px;font-weight:700;padding:24px 0}
-.lb-close{display:block;margin:16px auto 0;background:#F0E8F8;color:var(--purple);border:none;border-radius:14px;padding:10px 32px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer}
-.lb-clear{display:block;margin:8px auto 0;background:none;color:#EF4444;border:none;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;padding:4px}
-
-/* ===== WRONG WORD BOOK ===== */
-.ww-overlay{position:fixed;inset:0;background:rgba(255,249,243,0.92);backdrop-filter:blur(8px);z-index:400;display:flex;align-items:center;justify-content:center;animation:fadeIn 0.3s ease}
-.ww-modal{background:var(--card);border-radius:24px;padding:24px;max-width:420px;width:94%;box-shadow:var(--shadow-lg);animation:modalIn 0.4s cubic-bezier(.34,1.56,.64,1);max-height:88vh;overflow-y:auto}
-.ww-modal h3{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--text);margin-bottom:4px}
-.ww-sub{font-size:12px;color:var(--muted);font-weight:700;margin-bottom:16px}
-.ww-list{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
-.ww-row{display:flex;align-items:center;gap:10px;padding:8px 12px;background:#FFF5F5;border-radius:10px;border:1.5px solid #FCA5A5}
-.ww-en{font-family:'Fredoka',cursive;font-size:15px;font-weight:600;color:#EF4444;flex:1}
-.ww-zh{font-family:'Ma Shan Zheng',sans-serif;font-size:15px;color:var(--text);flex:1}
-.ww-cnt{font-size:11px;font-weight:800;color:#EF4444;background:#FEE2E2;border-radius:8px;padding:2px 8px}
-.ww-del{background:none;border:none;font-size:16px;cursor:pointer;color:var(--muted);padding:2px 4px;border-radius:6px}
-.ww-del:hover{background:#FEE2E2}
-.ww-btns{display:flex;gap:8px}
-.ww-btns button{flex:1;padding:10px;border-radius:14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;border:none}
-.ww-start{background:linear-gradient(135deg,#EF4444,#F59E0B);color:#fff;box-shadow:0 4px 16px rgba(239,68,68,0.3)}
-.ww-close{background:#F0E8F8;color:var(--purple)}
-.ww-empty{text-align:center;color:var(--muted);font-size:13px;font-weight:700;padding:24px 0}
-
-/* SHARE CARD */
-.share-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:450;display:flex;align-items:center;justify-content:center;animation:fadeIn 0.3s ease}
-.share-wrap{text-align:center}
-.share-wrap canvas{border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.4);display:block;max-width:92vw}
-.share-btns{display:flex;gap:10px;justify-content:center;margin-top:16px}
-.share-btns button{padding:10px 24px;border-radius:14px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;border:none}
-.share-dl{background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;box-shadow:0 4px 16px rgba(139,92,246,0.4)}
-.share-cancel{background:rgba(255,255,255,0.2);color:#fff}
-
-/* RESPONSIVE */
-@media(max-width:400px){
-  #app{padding:10px 8px 20px}.logo{font-size:22px}.stat{padding:4px 10px;min-width:44px}.stat-v{font-size:17px}
-  .gbtn{padding:5px 12px;font-size:11px}.ctrl-row{gap:6px}select{padding:6px 8px;font-size:12px}.btn-go{padding:8px 18px;font-size:13px}
-  .ach-grid{grid-template-columns:1fr}
-}
+@media(max-width:600px){.nav-links{display:none}.stats-inner{gap:24px}.stat-num{font-size:22px}}
 </style>
 </head>
 <body>
 
-<canvas id="ptx"></canvas>
-<div id="comboFlash"><div id="comboText"></div><div id="comboSub"></div></div>
-
-<div id="app">
-  <div class="topbar">
-    <h1 class="logo">Edu<span>Play</span><span class="dot"></span></h1>
-    <div class="top-icons">
-      <div class="stat"><div class="stat-v" id="sScore">0</div><div class="stat-l">得分</div></div>
-      <div class="stat"><div class="stat-v blue" id="sCombo">×1</div><div class="stat-l">连击</div></div>
-      <div class="stat"><div class="stat-v" id="sTimer">–</div><div class="stat-l">秒</div></div>
-      <button class="btn-icon" id="lbBtn" title="排行榜">📊</button>
-      <button class="btn-icon" id="achBtn" title="成就">🏆</button>
-    </div>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Edu<span>Play</span></a>
+    <ul class="nav-links">
+      <li><a href="/">游戏大厅</a></li>
+      <li><a href="/blog/">学习博客</a></li>
+    </ul>
   </div>
+</nav>
 
-  <!-- XP Bar -->
-  <div class="xp-bar-wrap">
-    <div class="xp-level-badge" id="xpLvl" title="点击查看等级详情">Lv.1</div>
-    <div class="xp-bar-bg"><div class="xp-bar-fill" id="xpFill" style="width:0%"></div></div>
-    <div class="xp-title" id="xpTitle">单词新手</div>
+<section class="hero">
+  <div class="hero-badge">🎮 免费 · 无需下载 · 开箱即玩</div>
+  <h1>让课间10分钟<br><span class="highlight">更有趣更有用</span></h1>
+  <p>精选小学教育游戏，边玩边学英语、数学、记忆力<br>覆盖小学3年级至初中，完全免费</p>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="stat-num">3+</span><span class="stat-label">精选游戏</span></div>
+    <div class="stat-item"><span class="stat-num">1000+</span><span class="stat-label">词汇覆盖</span></div>
+    <div class="stat-item"><span class="stat-num">3~9</span><span class="stat-label">适合年级</span></div>
+    <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">完全免费</span></div>
   </div>
-
-  <!-- Streak Banner -->
-  <div class="streak-banner" id="streakBanner">
-    <div class="streak-fire">🔥</div>
-    <div class="streak-info">
-      <div class="streak-days" id="streakText">连续打卡 0 天</div>
-      <div class="streak-sub" id="streakSub">完成一局即可打卡</div>
-    </div>
-    <div class="streak-cal" id="streakCal"></div>
-  </div>
-
-  <div class="grade-wrap">
-    <div class="grade-label">📚 选择词库</div>
-    <div class="grade-btns" id="gradeContainer">
-      <button class="gbtn active" data-book="pep3">三年级</button>
-      <button class="gbtn" data-book="pep4">四年级</button>
-      <button class="gbtn" data-book="pep5">五年级</button>
-      <button class="gbtn" data-book="pep6">六年级</button>
-      <button class="gbtn" data-book="jr1">初一</button>
-      <button class="gbtn wrong-btn" id="wrongWordBtn">📝 错词本 <span class="wrong-badge" id="wrongCount" style="display:none">0</span></button>
-      <button class="gbtn custom" id="addVocabBtn">＋ 自定义</button>
-    </div>
-  </div>
-
-  <div class="ctrl-row">
-    <select id="pairSel"><option value="6">6 对</option><option value="8" selected>8 对</option><option value="10">10 对</option><option value="12">12 对</option></select>
-    <select id="timeSel"><option value="60" selected>60 秒</option><option value="90">90 秒</option><option value="120">120 秒</option><option value="0">无限制</option></select>
-    <button class="btn-go" id="startBtn">▶ 开始游戏</button>
-    <button class="btn-icon on" id="sndBtn">🔊</button>
-    <button class="btn-icon" id="fsBtn">⛶</button>
-  </div>
-
-  <div class="timer-strip"><div class="timer-fill" id="tFill" style="width:100%"></div></div>
-  <div class="hint-box" id="hint">点击 <b>开始游戏</b>，然后把 <b style="color:var(--blue)">蓝色英文气泡</b> 和对应的 <b style="color:var(--pink)">粉色中文气泡</b> 配对消除 🎯</div>
-  <div class="progress-row" id="progress"></div>
-  <div class="grid" id="grid"></div>
 </div>
 
-<script>
-// ==================== VOCAB DATA ====================
-const VOCAB={
-  pep3:[['apple','苹果'],['book','书本'],['cat','猫'],['dog','狗'],['egg','鸡蛋'],['fish','鱼'],['goat','山羊'],['hat','帽子'],['ice','冰'],['juice','果汁'],['kite','风筝'],['leg','腿'],['map','地图'],['nose','鼻子'],['pen','钢笔'],['red','红色'],['sun','太阳'],['tree','树'],['van','货车'],['yellow','黄色']],
-  pep4:[['ball','球'],['cloud','云'],['desk','桌子'],['flower','花'],['horse','马'],['jacket','夹克'],['key','钥匙'],['lamp','灯'],['moon','月亮'],['orange','橙子'],['panda','熊猫'],['queen','女王'],['rain','雨'],['sheep','绵羊'],['tiger','老虎'],['umbrella','雨伞'],['window','窗户'],['fox','狐狸'],['bear','熊'],['frog','青蛙']],
-  pep5:[['airport','机场'],['birthday','生日'],['calendar','日历'],['delicious','美味'],['elephant','大象'],['festival','节日'],['garden','花园'],['holiday','假期'],['journey','旅程'],['kitchen','厨房'],['library','图书馆'],['mountain','山'],['October','十月'],['postcard','明信片'],['question','问题'],['rainbow','彩虹'],['strawberry','草莓'],['Tuesday','星期二'],['weather','天气'],['zipper','拉链']],
-  pep6:[['adventure','冒险'],['beautiful','美丽'],['century','世纪'],['difficult','困难'],['excellent','优秀'],['fantastic','极好'],['geography','地理'],['heritage','遗产'],['interesting','有趣'],['knowledge','知识'],['language','语言'],['national','国家'],['opposite','对立'],['popular','流行'],['relative','亲戚'],['scientific','科学'],['traditional','传统'],['volunteer','志愿者'],['wonderful','精彩'],['jealous','嫉妒']],
-  jr1:[['absent','缺席'],['believe','相信'],['careful','小心'],['eager','渴望'],['famous','著名'],['grateful','感激'],['honest','诚实'],['improve','提高'],['kindness','善良'],['listen','聆听'],['manage','管理'],['nervous','紧张'],['observe','观察'],['protect','保护'],['quality','质量'],['realize','意识'],['support','支持'],['unique','独特'],['wisdom','智慧'],['youth','青春']]
-};
+<div class="section">
+  <h2 class="section-title">🎮 全部游戏</h2>
+  <div class="game-grid">
 
-// ==================== LEVEL SYSTEM ====================
-const LEVELS=[
-  {lv:1, xp:0,     title:'单词新手', icon:'🌱'},
-  {lv:2, xp:100,   title:'单词新手', icon:'🌱'},
-  {lv:3, xp:250,   title:'单词新手', icon:'🌱'},
-  {lv:4, xp:450,   title:'词汇学徒', icon:'📗'},
-  {lv:5, xp:700,   title:'词汇学徒', icon:'📗'},
-  {lv:6, xp:1000,  title:'词汇学徒', icon:'📗'},
-  {lv:7, xp:1350,  title:'词汇达人', icon:'📚'},
-  {lv:8, xp:1750,  title:'词汇达人', icon:'📚'},
-  {lv:9, xp:2200,  title:'词汇达人', icon:'📚'},
-  {lv:10,xp:2700,  title:'词汇达人', icon:'📚'},
-  {lv:11,xp:3300,  title:'词汇大师', icon:'🎓'},
-  {lv:12,xp:4000,  title:'词汇大师', icon:'🎓'},
-  {lv:13,xp:4800,  title:'词汇大师', icon:'🎓'},
-  {lv:14,xp:5700,  title:'词汇大师', icon:'🎓'},
-  {lv:15,xp:6700,  title:'词汇大师', icon:'🎓'},
-  {lv:16,xp:7800,  title:'词汇传说', icon:'👑'},
-  {lv:17,xp:9000,  title:'词汇传说', icon:'👑'},
-  {lv:18,xp:10300, title:'词汇传说', icon:'👑'},
-  {lv:19,xp:11700, title:'词汇传说', icon:'👑'},
-  {lv:20,xp:13200, title:'词汇传说', icon:'👑'},
-];
-
-function getLevelInfo(xp){
-  let cur=LEVELS[0];
-  for(let i=LEVELS.length-1;i>=0;i--){if(xp>=LEVELS[i].xp){cur=LEVELS[i];break}}
-  const nextIdx=LEVELS.findIndex(l=>l.lv===cur.lv);
-  const next=LEVELS[nextIdx+1]||null;
-  const pct=next?Math.round(((xp-cur.xp)/(next.xp-cur.xp))*100):100;
-  return{lv:cur.lv,title:cur.title,icon:cur.icon,pct,cur,next,xp};
-}
-
-function renderXPBar(){
-  const info=getLevelInfo(userData.xp||0);
-  document.getElementById('xpLvl').textContent='Lv.'+info.lv;
-  document.getElementById('xpFill').style.width=info.pct+'%';
-  document.getElementById('xpTitle').textContent=info.title;
-}
-
-function gainXP(amount,label,x,y){
-  userData.xp=(userData.xp||0)+amount;
-  const prevLv=getLevelInfo(userData.xp-amount).lv;
-  saveData();
-  renderXPBar();
-  // XP float toast
-  if(x!=null){
-    const d=document.createElement('div');
-    d.className='xp-gain-toast';
-    d.textContent='+'+amount+' XP';
-    d.style.cssText=`left:${x}px;top:${y-30}px`;
-    document.body.appendChild(d);
-    setTimeout(()=>d.remove(),1200);
-  }
-  // Check level up
-  const newLv=getLevelInfo(userData.xp).lv;
-  if(newLv>prevLv){
-    userData.level=newLv;
-    saveData();
-    setTimeout(()=>showLevelUp(getLevelInfo(userData.xp)),400);
-  }
-}
-
-function showLevelUp(info){
-  const ov=document.createElement('div');
-  ov.className='lvlup-overlay';
-  ov.innerHTML=`<div class="lvlup-card">
-    <div class="lv-icon">${info.icon}</div>
-    <h2>升级啦！Lv.${info.lv}</h2>
-    <div class="lv-sub">继续努力，词汇量与日俱增！</div>
-    <div class="lv-title">${info.title}</div>
-    <button id="lvlupClose">太棒了！</button>
-  </div>`;
-  document.body.appendChild(ov);
-  burst(innerWidth/2,innerHeight/2,60);
-  document.getElementById('lvlupClose').onclick=()=>ov.remove();
-  ov.onclick=e=>{if(e.target===ov)ov.remove()};
-}
-
-// ==================== ACHIEVEMENTS DEF ====================
-const ACH_DEFS=[
-  {id:'first_game',cat:'新手',name:'初次冒险',desc:'完成第 1 局游戏',icon:'⭐'},
-  {id:'perfect',cat:'新手',name:'十全十美',desc:'单局全部消除',icon:'🎯'},
-  {id:'combo5',cat:'连击',name:'连击达人',desc:'单局连击达到 5',icon:'🔥'},
-  {id:'combo8',cat:'连击',name:'连击传说',desc:'单局连击达到 8',icon:'💥'},
-  {id:'words100',cat:'积累',name:'百词斩',desc:'累计消除 100 对',icon:'📚'},
-  {id:'words500',cat:'积累',name:'五百强',desc:'累计消除 500 对',icon:'📖'},
-  {id:'words1000',cat:'积累',name:'千词王',desc:'累计消除 1000 对',icon:'👑'},
-  {id:'streak3',cat:'打卡',name:'坚持三天',desc:'连续打卡 3 天',icon:'💪'},
-  {id:'streak7',cat:'打卡',name:'七天勇士',desc:'连续打卡 7 天',icon:'🎖'},
-  {id:'streak30',cat:'打卡',name:'月度之星',desc:'连续打卡 30 天',icon:'🌟'},
-  {id:'speed12',cat:'挑战',name:'闪电手速',desc:'60秒内消除12对',icon:'⚡'},
-  {id:'zero_error',cat:'挑战',name:'零失误',desc:'单局 0 次错误配对',icon:'💎'},
-  {id:'custom3',cat:'词库',name:'定制达人',desc:'创建 3 个自定义词组',icon:'🎨'},
-  {id:'lv5',cat:'等级',name:'初入江湖',desc:'达到 5 级',icon:'📗'},
-  {id:'lv10',cat:'等级',name:'词汇达人',desc:'达到 10 级',icon:'📚'},
-  {id:'lv20',cat:'等级',name:'传说宗师',desc:'达到 20 级',icon:'👑'},
-];
-
-// ==================== STORAGE ====================
-const STORE_KEY='eduplay_data';
-function defaultData(){
-  return{totalGames:0,totalScore:0,bestScore:0,maxCombo:0,totalPairs:0,
-    dailyStreak:0,lastPlayDate:'',checkinDates:[],
-    achievements:[],wrongWords:{},customVocabs:{},
-    todayPlayed:false,xp:0,level:1,
-    leaderboard:{scores:[],combos:[],pairs:[],streaks:[]}}
-}
-function loadData(){
-  try{const d=localStorage.getItem(STORE_KEY);if(!d)return defaultData();
-    const loaded={...defaultData(),...JSON.parse(d)};
-    if(!loaded.leaderboard)loaded.leaderboard={scores:[],combos:[],pairs:[],streaks:[]};
-    return loaded;
-  }catch(e){return defaultData()}
-}
-function saveData(){
-  try{localStorage.setItem(STORE_KEY,JSON.stringify(userData))}catch(e){}
-}
-let userData=loadData();
-
-// ==================== GAME STATE ====================
-let G={score:0,combo:1,maxCombo:1,matched:0,total:0,errors:0,
-  timer:60,tMax:60,iv:null,running:false,
-  selEn:null,selZh:null,snd:true,book:'pep3',
-  matchedPairs:[],currentVocab:[],startTime:0,
-  isReviewMode:false,reviewMatches:{}};
-
-// ==================== PARTICLE CANVAS ====================
-const cv=document.getElementById('ptx'),cx=cv.getContext('2d');
-let PX=[];
-function rsz(){cv.width=innerWidth;cv.height=innerHeight}rsz();addEventListener('resize',rsz);
-function burst(x,y,n){
-  n=n||22;
-  const cols=['#E85D8C','#4A9EF5','#F59E0B','#14B8A6','#8B5CF6','#FB923C','#34D399','#F472B6'];
-  for(let i=0;i<n;i++){const a=Math.random()*6.28,s=2.5+Math.random()*9;PX.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-2.5,r:2+Math.random()*6,l:1,c:cols[~~(Math.random()*cols.length)],shape:Math.random()>0.5?'circle':'star'})}
-}
-function drawStar(ctx,x,y,r){ctx.beginPath();for(let i=0;i<5;i++){const a=(i*4*Math.PI)/5-Math.PI/2;const px=x+Math.cos(a)*r,py=y+Math.sin(a)*r;i===0?ctx.moveTo(px,py):ctx.lineTo(px,py)}ctx.closePath();ctx.fill()}
-function drawPX(){
-  cx.clearRect(0,0,cv.width,cv.height);
-  PX=PX.filter(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=0.32;p.vx*=0.99;p.l-=0.02;p.r*=0.975;cx.globalAlpha=Math.max(0,p.l);cx.fillStyle=p.c;
-    if(p.shape==='star')drawStar(cx,p.x,p.y,p.r);else{cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.28);cx.fill()}return p.l>0});
-  cx.globalAlpha=1;requestAnimationFrame(drawPX)
-}drawPX();
-
-// ==================== AUDIO ====================
-const measureCanvas=document.createElement('canvas').getContext('2d');
-function speak(w){if(!G.snd||!speechSynthesis)return;const u=new SpeechSynthesisUtterance(w);u.lang='en-US';u.rate=0.82;speechSynthesis.cancel();speechSynthesis.speak(u)}
-function playTone(freq,dur){if(!G.snd)return;try{const ac=new(window.AudioContext||window.webkitAudioContext)();const osc=ac.createOscillator(),gain=ac.createGain();osc.connect(gain);gain.connect(ac.destination);osc.frequency.value=freq;osc.type='sine';gain.gain.setValueAtTime(0.08,ac.currentTime);gain.gain.exponentialRampToValueAtTime(0.001,ac.currentTime+dur);osc.start(ac.currentTime);osc.stop(ac.currentTime+dur)}catch(e){}}
-
-// ==================== UTILS ====================
-function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=~~(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
-function pop(txt,x,y,c){const d=document.createElement('div');d.className='pop';d.textContent=txt;d.style.cssText=`left:${x-22}px;top:${y-12}px;color:${c}`;document.body.appendChild(d);setTimeout(()=>d.remove(),950)}
-let cTO;
-function showCombo(n){const msgs=['不错！','太棒了！','连击达人！','无敌！','逆天！'];const cols=['#F59E0B','#FB923C','#E85D8C','#8B5CF6','#14B8A6'];const idx=Math.min(n-2,4);const el=document.getElementById('comboText'),sub=document.getElementById('comboSub');el.textContent='×'+n;el.style.color=cols[idx];sub.textContent=msgs[idx]||'传说！';document.getElementById('comboFlash').classList.add('show');clearTimeout(cTO);cTO=setTimeout(()=>document.getElementById('comboFlash').classList.remove('show'),700)}
-function todayStr(){return new Date().toISOString().slice(0,10)}
-function getWeekDays(){const d=[];const now=new Date();const day=now.getDay()||7;for(let i=1;i<=7;i++){const dt=new Date(now);dt.setDate(now.getDate()-day+i);d.push(dt.toISOString().slice(0,10))}return d}
-
-// ==================== DAILY STREAK ====================
-function updateStreak(){
-  const today=todayStr();
-  if(userData.lastPlayDate){
-    const last=new Date(userData.lastPlayDate);
-    const diff=Math.floor((new Date(today)-last)/(86400000));
-    if(diff>1)userData.dailyStreak=0;
-  }
-  userData.todayPlayed=userData.lastPlayDate===today;
-}
-
-function doCheckin(){
-  const today=todayStr();
-  if(userData.lastPlayDate===today)return;
-  const last=userData.lastPlayDate?new Date(userData.lastPlayDate):null;
-  const diff=last?Math.floor((new Date(today)-last)/86400000):999;
-  if(diff===1)userData.dailyStreak++;
-  else if(diff>1)userData.dailyStreak=1;
-  else userData.dailyStreak=1;
-  userData.lastPlayDate=today;
-  userData.todayPlayed=true;
-  if(!userData.checkinDates)userData.checkinDates=[];
-  if(!userData.checkinDates.includes(today))userData.checkinDates.push(today);
-  if(userData.checkinDates.length>90)userData.checkinDates=userData.checkinDates.slice(-90);
-  saveData();
-  renderStreak();
-  checkStreakAchievements();
-  gainXP(30,'打卡',innerWidth/2,80);
-}
-
-function renderStreak(){
-  updateStreak();
-  document.getElementById('streakText').textContent='连续打卡 '+userData.dailyStreak+' 天';
-  document.getElementById('streakSub').textContent=userData.todayPlayed?'✅ 今日已打卡':'完成一局即可打卡';
-  const cal=document.getElementById('streakCal');
-  cal.innerHTML='';
-  const week=getWeekDays();
-  const dayNames=['一','二','三','四','五','六','日'];
-  const today=todayStr();
-  week.forEach((d,i)=>{
-    const dot=document.createElement('div');
-    dot.className='streak-dot';
-    if(userData.checkinDates&&userData.checkinDates.includes(d))dot.classList.add('done');
-    if(d===today)dot.classList.add('today');
-    dot.textContent=dayNames[i];
-    cal.appendChild(dot);
-  });
-}
-
-// ==================== ACHIEVEMENTS ====================
-function unlockAch(id){
-  if(userData.achievements.includes(id))return;
-  userData.achievements.push(id);
-  saveData();
-  const def=ACH_DEFS.find(a=>a.id===id);
-  if(def){showAchToast(def);gainXP(40,'成就',innerWidth/2,100)}
-}
-
-function showAchToast(def){
-  const t=document.createElement('div');
-  t.className='ach-toast';
-  t.innerHTML=`<div class="ach-toast-icon">${def.icon}</div><div class="ach-toast-text">成就解锁！<span class="ach-toast-name">${def.name}</span></div>`;
-  document.body.appendChild(t);
-  setTimeout(()=>t.remove(),3200);
-}
-
-function checkGameAchievements(){
-  if(userData.totalGames>=1)unlockAch('first_game');
-  if(G.matched===G.total&&G.total>0)unlockAch('perfect');
-  if(G.maxCombo>=5)unlockAch('combo5');
-  if(G.maxCombo>=8)unlockAch('combo8');
-  if(userData.totalPairs>=100)unlockAch('words100');
-  if(userData.totalPairs>=500)unlockAch('words500');
-  if(userData.totalPairs>=1000)unlockAch('words1000');
-  if(G.tMax<=60&&G.matched>=12)unlockAch('speed12');
-  if(G.errors===0&&G.matched===G.total&&G.total>0)unlockAch('zero_error');
-  const lv=getLevelInfo(userData.xp).lv;
-  if(lv>=5)unlockAch('lv5');
-  if(lv>=10)unlockAch('lv10');
-  if(lv>=20)unlockAch('lv20');
-}
-
-function checkStreakAchievements(){
-  if(userData.dailyStreak>=3)unlockAch('streak3');
-  if(userData.dailyStreak>=7)unlockAch('streak7');
-  if(userData.dailyStreak>=30)unlockAch('streak30');
-}
-
-function checkCustomVocabAchievements(){
-  const count=Object.keys(userData.customVocabs).length;
-  if(count>=3)unlockAch('custom3');
-}
-
-function showAchievements(){
-  const unlocked=userData.achievements||[];
-  const total=ACH_DEFS.length;
-  const ov=document.createElement('div');
-  ov.className='ach-overlay';
-  ov.innerHTML=`<div class="ach-modal">
-    <h3>🏆 成就墙</h3>
-    <div class="ach-progress">已解锁 ${unlocked.length} / ${total}</div>
-    <div class="ach-grid" id="achGrid"></div>
-    <button class="ach-close" id="achClose">关闭</button>
-  </div>`;
-  document.body.appendChild(ov);
-  const grid=document.getElementById('achGrid');
-  ACH_DEFS.forEach(a=>{
-    const isUnlocked=unlocked.includes(a.id);
-    const card=document.createElement('div');
-    card.className='ach-card '+(isUnlocked?'unlocked':'locked');
-    card.innerHTML=`<div class="ach-icon">${a.icon}</div><div class="ach-name">${a.name}</div><div class="ach-desc">${a.desc}</div>`;
-    grid.appendChild(card);
-  });
-  document.getElementById('achClose').onclick=()=>ov.remove();
-  ov.onclick=e=>{if(e.target===ov)ov.remove()};
-}
-
-// ==================== LEADERBOARD ====================
-function addToLeaderboard(entry){
-  if(!userData.leaderboard)userData.leaderboard={scores:[],combos:[],pairs:[],streaks:[]};
-  const lb=userData.leaderboard;
-  lb.scores.push({v:entry.score,date:todayStr()});
-  lb.combos.push({v:entry.combo,date:todayStr()});
-  lb.pairs.push({v:entry.pairs,date:todayStr()});
-  // streaks already tracked via dailyStreak
-  // sort descending, keep top 10
-  ['scores','combos','pairs'].forEach(k=>{
-    lb[k].sort((a,b)=>b.v-a.v);
-    if(lb[k].length>10)lb[k]=lb[k].slice(0,10);
-  });
-  // streak history
-  lb.streaks.push({v:userData.dailyStreak,date:todayStr()});
-  lb.streaks.sort((a,b)=>b.v-a.v);
-  if(lb.streaks.length>10)lb.streaks=lb.streaks.slice(0,10);
-  saveData();
-}
-
-function showLeaderboard(){
-  const lb=userData.leaderboard||{scores:[],combos:[],pairs:[],streaks:[]};
-  const tabs=[
-    {key:'scores',label:'🏅 最高分',unit:'分'},
-    {key:'combos',label:'🔥 最高连击',unit:'连击'},
-    {key:'pairs',label:'📚 消除对数',unit:'对'},
-    {key:'streaks',label:'📅 打卡天数',unit:'天'},
-  ];
-  let activeTab=0;
-  const ov=document.createElement('div');
-  ov.className='lb-overlay';
-  ov.innerHTML=`<div class="lb-modal">
-    <h3>📊 排行榜</h3>
-    <div class="lb-sub">你的个人历史最佳记录（本地）</div>
-    <div class="lb-tabs" id="lbTabs"></div>
-    <div class="lb-list" id="lbList"></div>
-    <button class="lb-close" id="lbClose">关闭</button>
-    <button class="lb-clear" id="lbClear">清除排行数据</button>
-  </div>`;
-  document.body.appendChild(ov);
-
-  function renderTab(idx){
-    activeTab=idx;
-    const tabsEl=document.getElementById('lbTabs');
-    tabsEl.innerHTML='';
-    tabs.forEach((t,i)=>{
-      const btn=document.createElement('button');
-      btn.className='lb-tab'+(i===idx?' active':'');
-      btn.textContent=t.label;
-      btn.onclick=()=>renderTab(i);
-      tabsEl.appendChild(btn);
-    });
-    const {key,unit}=tabs[idx];
-    const data=lb[key]||[];
-    const list=document.getElementById('lbList');
-    if(data.length===0){list.innerHTML=`<div class="lb-empty">暂无记录，快去玩一局吧！</div>`;return}
-    const rankClass=['gold','silver','bronze'];
-    list.innerHTML=data.map((item,i)=>`
-      <div class="lb-row">
-        <div class="lb-rank ${rankClass[i]||''}">${i===0?'🥇':i===1?'🥈':i===2?'🥉':`#${i+1}`}</div>
-        <div class="lb-info"><div class="lb-val">${item.v} ${unit}</div><div class="lb-date">${item.date}</div></div>
-      </div>`).join('');
-  }
-
-  renderTab(0);
-  document.getElementById('lbClose').onclick=()=>ov.remove();
-  document.getElementById('lbClear').onclick=()=>{
-    if(confirm('确定清除所有排行榜数据？'))
-    {userData.leaderboard={scores:[],combos:[],pairs:[],streaks:[]};saveData();renderTab(activeTab)}
-  };
-  ov.onclick=e=>{if(e.target===ov)ov.remove()};
-}
-
-// ==================== WRONG WORD BOOK ====================
-function renderWrongWordCount(){
-  const count=Object.keys(userData.wrongWords||{}).length;
-  const badge=document.getElementById('wrongCount');
-  if(count>0){badge.textContent=count;badge.style.display='inline-block'}
-  else badge.style.display='none';
-}
-
-function showWrongWordBook(){
-  const words=Object.entries(userData.wrongWords||{});
-  const ov=document.createElement('div');
-  ov.className='ww-overlay';
-  const listHTML=words.length===0
-    ?'<div class="ww-empty">🎉 错词本是空的，继续保持！</div>'
-    :words.sort((a,b)=>b[1].count-a[1].count).map(([en,{zh,count}])=>`
-      <div class="ww-row" id="wwr-${en.replace(/[^a-z]/gi,'_')}">
-        <div class="ww-en">${en}</div>
-        <div class="ww-zh">${zh}</div>
-        <div class="ww-cnt">×${count}</div>
-        <button class="ww-del" onclick="deleteWrongWord('${en.replace(/'/g,"\\'")}')">✕</button>
-      </div>`).join('');
-  ov.innerHTML=`<div class="ww-modal">
-    <h3>📝 错词本</h3>
-    <div class="ww-sub">共 ${words.length} 个错词，专项复习强化记忆</div>
-    <div class="ww-list">${listHTML}</div>
-    <div class="ww-btns">
-      ${words.length>0?'<button class="ww-start" id="wwStart">🎯 错词复习模式</button>':''}
-      <button class="ww-close" id="wwClose">关闭</button>
-    </div>
-  </div>`;
-  document.body.appendChild(ov);
-  if(words.length>0){
-    document.getElementById('wwStart').onclick=()=>{
-      ov.remove();
-      // select wrong word mode
-      document.querySelectorAll('.gbtn').forEach(x=>x.classList.remove('active'));
-      document.getElementById('wrongWordBtn').classList.add('active');
-      G.book='wrongwords';
-      startGame();
-    };
-  }
-  document.getElementById('wwClose').onclick=()=>ov.remove();
-  ov.onclick=e=>{if(e.target===ov)ov.remove()};
-}
-
-window.deleteWrongWord=function(en){
-  delete userData.wrongWords[en];
-  saveData();
-  renderWrongWordCount();
-  const row=document.getElementById('wwr-'+en.replace(/[^a-z]/gi,'_'));
-  if(row)row.remove();
-};
-
-// ==================== SHARE CARD ====================
-function generateShareCard(data){
-  const W=400,H=520;
-  const c=document.createElement('canvas');
-  c.width=W;c.height=H;
-  const ctx=c.getContext('2d');
-
-  // Background gradient
-  const grad=ctx.createLinearGradient(0,0,W,H);
-  grad.addColorStop(0,'#8B5CF6');grad.addColorStop(0.5,'#4A9EF5');grad.addColorStop(1,'#14B8A6');
-  ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
-
-  // Decorative circles
-  ctx.globalAlpha=0.12;
-  ctx.fillStyle='#fff';
-  ctx.beginPath();ctx.arc(340,60,120,0,6.28);ctx.fill();
-  ctx.beginPath();ctx.arc(50,440,90,0,6.28);ctx.fill();
-  ctx.globalAlpha=1;
-
-  // Card body
-  ctx.fillStyle='rgba(255,255,255,0.95)';
-  roundRect(ctx,24,90,W-48,H-120,20);
-  ctx.fill();
-
-  // Logo
-  ctx.font='bold 28px Fredoka One, sans-serif';
-  ctx.fillStyle='#E85D8C';
-  ctx.textAlign='center';
-  ctx.fillText('EduPlay',W/2,48);
-  ctx.font='bold 14px Nunito, sans-serif';
-  ctx.fillStyle='rgba(255,255,255,0.85)';
-  ctx.fillText('单词消消乐',W/2,70);
-
-  const info=getLevelInfo(data.xp);
-  // Level badge
-  ctx.fillStyle='#8B5CF6';
-  roundRect(ctx,W/2-55,102,110,30,15);ctx.fill();
-  ctx.font='bold 14px Nunito, sans-serif';
-  ctx.fillStyle='#fff';
-  ctx.textAlign='center';
-  ctx.fillText(`${info.icon} Lv.${info.lv} ${info.title}`,W/2,122);
-
-  // Score
-  ctx.fillStyle='#3D3D4E';
-  ctx.font='bold 18px Nunito, sans-serif';
-  ctx.fillText('本局得分',W/2,165);
-  ctx.font='bold 72px Fredoka One, sans-serif';
-  ctx.fillStyle='#4A9EF5';
-  ctx.fillText(data.score,W/2,240);
-
-  // Stars
-  ctx.font='28px serif';
-  ctx.fillText(data.stars,W/2,275);
-
-  // Stats chips
-  const chips=[
-    ['🔥 最高连击',`×${data.combo}`],
-    ['🎯 正确率',`${data.acc}%`],
-    ['📊 累计消除',`${data.totalPairs}对`],
-    ['📅 打卡天数',`${data.streak}天`],
-  ];
-  const chipW=156,chipH=60,chipGap=10;
-  const startX=24+12,startY=292;
-  chips.forEach(([label,val],i)=>{
-    const col=i%2,row=Math.floor(i/2);
-    const x=startX+col*(chipW+chipGap),y=startY+row*(chipH+chipGap);
-    ctx.fillStyle='#F7F0FF';
-    roundRect(ctx,x,y,chipW,chipH,12);ctx.fill();
-    ctx.fillStyle='#A0A0B8';
-    ctx.font='bold 11px Nunito, sans-serif';
-    ctx.textAlign='center';
-    ctx.fillText(label,x+chipW/2,y+20);
-    ctx.fillStyle='#8B5CF6';
-    ctx.font='bold 20px Fredoka One, sans-serif';
-    ctx.fillText(val,x+chipW/2,y+44);
-  });
-
-  // Footer
-  ctx.fillStyle='rgba(255,255,255,0.7)';
-  ctx.font='bold 12px Nunito, sans-serif';
-  ctx.fillText('来 PK 我！→ eduplay.cc',W/2,H-16);
-
-  return c;
-}
-
-function roundRect(ctx,x,y,w,h,r){
-  ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.arcTo(x+w,y,x+w,y+r,r);
-  ctx.lineTo(x+w,y+h-r);ctx.arcTo(x+w,y+h,x+w-r,y+h,r);ctx.lineTo(x+r,y+h);
-  ctx.arcTo(x,y+h,x,y+h-r,r);ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y,r);ctx.closePath();
-}
-
-function showShareCard(data){
-  const cardCanvas=generateShareCard(data);
-  const ov=document.createElement('div');
-  ov.className='share-overlay';
-  ov.innerHTML=`<div class="share-wrap"><div id="shareCanvasHolder"></div><div class="share-btns"><button class="share-dl" id="shareDl">💾 保存图片</button><button class="share-cancel" id="shareCancel">关闭</button></div></div>`;
-  document.body.appendChild(ov);
-  document.getElementById('shareCanvasHolder').appendChild(cardCanvas);
-  document.getElementById('shareDl').onclick=()=>{
-    const a=document.createElement('a');
-    a.download='eduplay_'+todayStr()+'.png';
-    a.href=cardCanvas.toDataURL('image/png');
-    a.click();
-  };
-  document.getElementById('shareCancel').onclick=()=>ov.remove();
-  ov.onclick=e=>{if(e.target===ov)ov.remove()};
-}
-
-// ==================== CUSTOM VOCAB MODAL ====================
-function showCustomVocabEditor(editKey){
-  const existing=editKey?userData.customVocabs[editKey]:null;
-  const ov=document.createElement('div');
-  ov.className='cv-overlay';
-  ov.innerHTML=`<div class="cv-modal">
-    <h3>${existing?'✏️ 编辑词组':'＋ 创建自定义词组'}</h3>
-    <div class="cv-sub">输入英中单词对，每行一对，用空格或Tab分隔</div>
-    <label>词组名称</label>
-    <input type="text" id="cvName" placeholder="例如：Unit 3 单词" value="${existing?editKey:''}">
-    <label>单词对（每行一对）</label>
-    <textarea id="cvText" placeholder="apple 苹果&#10;book 书本&#10;cat 猫">${existing?existing.map(p=>p[0]+' '+p[1]).join('\n'):''}</textarea>
-    <div class="cv-hint">支持空格或Tab分隔，也可从Excel直接粘贴。上限50对。</div>
-    <div class="cv-error" id="cvError"></div>
-    <div class="cv-btns">
-      <button class="cv-cancel" id="cvCancel">取消</button>
-      <button class="cv-save" id="cvSave">保存</button>
-    </div>
-    <div class="cv-saved" id="cvSaved"></div>
-  </div>`;
-  document.body.appendChild(ov);
-  renderSavedVocabs();
-  document.getElementById('cvCancel').onclick=()=>ov.remove();
-  ov.onclick=e=>{if(e.target===ov)ov.remove()};
-  document.getElementById('cvSave').onclick=()=>{
-    const name=document.getElementById('cvName').value.trim();
-    const text=document.getElementById('cvText').value.trim();
-    const errEl=document.getElementById('cvError');
-    errEl.style.display='none';
-    if(!name){errEl.textContent='请输入词组名称';errEl.style.display='block';return}
-    if(!text){errEl.textContent='请输入至少一对单词';errEl.style.display='block';return}
-    const lines=text.split('\n').map(l=>l.trim()).filter(l=>l);
-    const pairs=[];const errors=[];const seen=new Set();
-    lines.forEach((line,i)=>{
-      const parts=line.split(/[\t ]+/);
-      if(parts.length<2){errors.push(`第 ${i+1} 行格式错误：「${line}」`);return}
-      const en=parts[0].trim(),zh=parts.slice(1).join(' ').trim();
-      if(!en||!zh){errors.push(`第 ${i+1} 行内容不完整`);return}
-      if(seen.has(en.toLowerCase())){return}
-      seen.add(en.toLowerCase());
-      pairs.push([en,zh]);
-    });
-    if(errors.length>0){errEl.innerHTML=errors.slice(0,3).join('<br>');errEl.style.display='block';return}
-    if(pairs.length===0){errEl.textContent='没有解析到有效的单词对';errEl.style.display='block';return}
-    if(pairs.length>50){errEl.textContent='单词对数量超过上限（50对），已截取前50对';pairs.length=50;errEl.style.display='block'}
-    if(existing&&editKey!==name)delete userData.customVocabs[editKey];
-    userData.customVocabs[name]=pairs;
-    saveData();renderGradeButtons();renderSavedVocabs();checkCustomVocabAchievements();
-    document.getElementById('cvName').value='';document.getElementById('cvText').value='';
-    errEl.style.display='none';
-    const saveBtn=document.getElementById('cvSave');
-    saveBtn.textContent='✓ 已保存';setTimeout(()=>saveBtn.textContent='保存',1500);
-  };
-}
-
-function renderSavedVocabs(){
-  const container=document.getElementById('cvSaved');
-  if(!container)return;
-  const keys=Object.keys(userData.customVocabs);
-  if(keys.length===0){container.innerHTML='';return}
-  let html='<div class="cv-saved-title">已保存的词组</div>';
-  keys.forEach(k=>{
-    const count=userData.customVocabs[k].length;
-    html+=`<div class="cv-item">
-      <div><span class="cv-item-name">${k}</span> <span class="cv-item-count">${count}对</span></div>
-      <div class="cv-item-actions">
-        <button onclick="editCustomVocab('${k.replace(/'/g,"\\'")}')" title="编辑">✏️</button>
-        <button onclick="deleteCustomVocab('${k.replace(/'/g,"\\'")}')" title="删除">🗑️</button>
+    <a href="/word-match/" class="game-card">
+      <div class="card-thumb pink-bg">🫧<span class="card-tag tag-hot">🔥 最热门</span></div>
+      <div class="card-body">
+        <div class="card-title">单词消消乐</div>
+        <div class="card-desc">把英文气泡和中文气泡配对消除，覆盖人教版3年级至初一词库，支持自定义词组。</div>
+        <div class="card-meta">
+          <span class="meta-chip">英语</span>
+          <span class="meta-chip">3年级~初一</span>
+          <span class="meta-chip">每日打卡</span>
+        </div>
+        <div class="card-btn">立即游玩 →</div>
       </div>
-    </div>`;
-  });
-  container.innerHTML=html;
-}
+    </a>
 
-window.editCustomVocab=function(key){document.querySelector('.cv-overlay')?.remove();showCustomVocabEditor(key)};
-window.deleteCustomVocab=function(key){
-  if(!confirm('确定删除词组「'+key+'」？'))return;
-  delete userData.customVocabs[key];saveData();renderGradeButtons();renderSavedVocabs();
-};
+    <a href="/memory-flip/" class="game-card">
+      <div class="card-thumb blue-bg">🃏<span class="card-tag tag-new">✨ 新上线</span></div>
+      <div class="card-body">
+        <div class="card-title">记忆翻牌</div>
+        <div class="card-desc">翻开卡片找到匹配的英中单词对，训练记忆力与单词认知，多种难度可选。</div>
+        <div class="card-meta">
+          <span class="meta-chip">英语</span>
+          <span class="meta-chip">记忆力</span>
+          <span class="meta-chip">全年级</span>
+        </div>
+        <div class="card-btn btn-blue">立即游玩 →</div>
+      </div>
+    </a>
 
-// ==================== GRADE BUTTONS ====================
-function renderGradeButtons(){
-  const container=document.getElementById('gradeContainer');
-  const existing=container.querySelectorAll('.gbtn.custom[data-book]');
-  existing.forEach(b=>b.remove());
-  const addBtn=document.getElementById('addVocabBtn');
-  Object.keys(userData.customVocabs).forEach(k=>{
-    const btn=document.createElement('button');
-    btn.className='gbtn custom';
-    btn.dataset.book='custom:'+k;
-    btn.textContent=k;
-    container.insertBefore(btn,addBtn);
-    btn.onclick=()=>{
-      container.querySelectorAll('.gbtn').forEach(x=>x.classList.remove('active'));
-      btn.classList.add('active');G.book='custom:'+k;
-    };
-  });
-}
+    <a href="/math-blitz/" class="game-card">
+      <div class="card-thumb orange-bg">🔢<span class="card-tag tag-new">✨ 新上线</span></div>
+      <div class="card-body">
+        <div class="card-title">数学口算抢答</div>
+        <div class="card-desc">限时抢答加减乘除口算题，分阶段难度，练出小学数学计算速度与准确率。</div>
+        <div class="card-meta">
+          <span class="meta-chip">数学</span>
+          <span class="meta-chip">1~6年级</span>
+          <span class="meta-chip">限时挑战</span>
+        </div>
+        <div class="card-btn btn-orange">立即游玩 →</div>
+      </div>
+    </a>
 
-document.querySelectorAll('.gbtn[data-book]').forEach(b=>{
-  b.onclick=()=>{
-    document.querySelectorAll('.gbtn').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');G.book=b.dataset.book;
-  };
-});
-
-document.getElementById('addVocabBtn').onclick=()=>showCustomVocabEditor();
-document.getElementById('wrongWordBtn').onclick=()=>{showWrongWordBook()};
-
-// ==================== LAYOUT ====================
-function calcLayout(count){
-  const maxW=document.getElementById('grid').offsetWidth||640;
-  const gap=10;const options=[3,4,5,6];
-  let bestCols=4,bestRem=999;
-  for(const c of options){const rem=count%c;if(rem<bestRem){bestRem=rem;bestCols=c}}
-  const sz=Math.max(72,Math.min(130,Math.floor((maxW-gap*(bestCols-1))/bestCols)));
-  return{cols:bestCols,sz}
-}
-
-function fitTextToCircle(span,bubbleSz,isZh){
-  const maxW=bubbleSz*0.74;
-  let fs=Math.round(bubbleSz*(isZh?0.34:0.28));
-  const fontFamily=isZh?"'Ma Shan Zheng',sans-serif":"'Fredoka',cursive";
-  const fontWeight=isZh?'700':'600';
-  measureCanvas.font=`${fontWeight} ${fs}px ${fontFamily}`;
-  let tw=measureCanvas.measureText(span.textContent).width;
-  while(tw>maxW&&fs>10){fs--;measureCanvas.font=`${fontWeight} ${fs}px ${fontFamily}`;tw=measureCanvas.measureText(span.textContent).width}
-  span.style.fontSize=fs+'px';span.style.whiteSpace='nowrap';
-}
-
-function renderProgress(){
-  const wrap=document.getElementById('progress');wrap.innerHTML='';
-  for(let i=0;i<G.total;i++){const dot=document.createElement('div');dot.className='pdot'+(i<G.matched?' done':'');wrap.appendChild(dot)}
-}
-
-// ==================== GET VOCAB ====================
-function getVocab(){
-  if(G.book==='wrongwords'){
-    return Object.entries(userData.wrongWords||{}).map(([en,{zh}])=>[en,zh]);
-  }
-  if(G.book.startsWith('custom:')){
-    const key=G.book.slice(7);
-    return userData.customVocabs[key]||[];
-  }
-  return VOCAB[G.book]||VOCAB.pep3;
-}
-
-// ==================== START GAME ====================
-function startGame(){
-  clearInterval(G.iv);
-  document.querySelectorAll('.overlay').forEach(o=>o.remove());
-  G.isReviewMode=G.book==='wrongwords';
-  G.reviewMatches={};
-  Object.assign(G,{score:0,combo:1,maxCombo:1,matched:0,errors:0,selEn:null,selZh:null,running:true,matchedPairs:[],startTime:Date.now()});
-
-  const n=parseInt(document.getElementById('pairSel').value);
-  const ts=document.getElementById('timeSel').value;
-  G.tMax=parseInt(ts)||9999;G.timer=G.tMax;
-
-  const allVocab=getVocab();
-  if(allVocab.length===0){
-    document.getElementById('hint').innerHTML=G.isReviewMode
-      ?'<b style="color:#EF4444">错词本是空的！先去玩几局攒错词吧 😊</b>'
-      :'<b style="color:#EF4444">该词组为空，请选择其他词库或添加单词</b>';
-    G.running=false;return;
-  }
-  const vocab=shuffle(allVocab).slice(0,Math.min(n,allVocab.length));
-  G.total=vocab.length;G.currentVocab=vocab;
-
-  let tiles=shuffle([...vocab.map(p=>({word:p[0],type:'en',pair:p[1]})),...vocab.map(p=>({word:p[1],type:'zh',pair:p[0]}))]);
-  const count=tiles.length;const{cols,sz}=calcLayout(count);
-  const rem=count%cols;
-  if(rem>0)for(let i=0;i<cols-rem;i++)tiles.push({type:'empty'});
-
-  const grid=document.getElementById('grid');grid.innerHTML='';
-  tiles.forEach((t,idx)=>{
-    const b=document.createElement('div');
-    b.className='bubble entering '+(t.type==='empty'?'empty':t.type);
-    b.style.width=sz+'px';b.style.height=sz+'px';
-    if(t.type!=='empty'){
-      b.dataset.word=t.word;b.dataset.type=t.type;b.dataset.pair=t.pair;
-      const span=document.createElement('span');span.className='btext';span.textContent=t.word;
-      fitTextToCircle(span,sz,t.type==='zh');
-      b.appendChild(span);b.onclick=()=>onBubble(b);
-    }else{b.style.visibility='hidden'}
-    grid.appendChild(b);
-    setTimeout(()=>{b.classList.remove('entering');b.classList.add('entered');b.style.transition='transform 0.18s cubic-bezier(.34,1.56,.64,1),box-shadow 0.18s,opacity 0.35s'},40+idx*35);
-  });
-
-  const modeHint=G.isReviewMode?'📝 <b style="color:#EF4444">错词复习模式</b> — 配对成功 3 次自动从错词本移除':
-    '点击 <b style="color:var(--blue)">蓝色气泡</b>（英文）→ 再点 <b style="color:var(--pink)">粉色气泡</b>（中文）配对消除 ✨';
-  document.getElementById('hint').innerHTML=modeHint;
-  renderProgress();updateHUD();updateTimer();
-  if(G.tMax<9999){G.iv=setInterval(()=>{if(!G.running)return;G.timer--;updateTimer();if(G.timer<=0)endGame('time')},1000)}
-}
-
-// ==================== BUBBLE CLICK ====================
-function onBubble(el){
-  if(!G.running||el.classList.contains('gone'))return;
-  const type=el.dataset.type;
-  playTone(type==='en'?520:660,0.12);
-  if(type==='en'){
-    if(G.selEn)G.selEn.classList.remove('selected');
-    if(G.selEn===el){G.selEn=null;return}
-    G.selEn=el;el.classList.add('selected');
-    if(G.selZh)checkMatch();
-  }else{
-    if(G.selZh)G.selZh.classList.remove('selected');
-    if(G.selZh===el){G.selZh=null;return}
-    G.selZh=el;el.classList.add('selected');
-    if(G.selEn)checkMatch();
-  }
-}
-
-// ==================== CHECK MATCH ====================
-function checkMatch(){
-  const en=G.selEn,zh=G.selZh;
-  if(en.dataset.pair===zh.dataset.word){
-    speak(en.dataset.word);playTone(880,0.15);setTimeout(()=>playTone(1100,0.15),100);
-    const pts=100*G.combo;G.score+=pts;G.matched++;
-    G.matchedPairs.push([en.dataset.word,zh.dataset.word]);
-    if(G.combo>G.maxCombo)G.maxCombo=G.combo;
-    const pc=G.combo++;
-    const er=en.getBoundingClientRect(),zr=zh.getBoundingClientRect();
-    burst((er.left+er.right)/2,(er.top+er.bottom)/2,28);
-    burst((zr.left+zr.right)/2,(zr.top+zr.bottom)/2,28);
-    pop('+'+pts,(er.left+er.right)/2,(er.top+er.bottom)/2-10,'#F59E0B');
-    if(pc>=2)showCombo(pc);
-
-    // Review mode: track matches per word, remove after 3
-    if(G.isReviewMode){
-      const enWord=en.dataset.word;
-      G.reviewMatches[enWord]=(G.reviewMatches[enWord]||0)+1;
-      if(G.reviewMatches[enWord]>=3&&userData.wrongWords[enWord]){
-        delete userData.wrongWords[enWord];
-        saveData();
-        renderWrongWordCount();
-        const removeEl=document.createElement('div');
-        removeEl.className='pop';removeEl.textContent='✓ 已掌握！';
-        removeEl.style.cssText=`left:${(er.left+er.right)/2-40}px;top:${(er.top+er.bottom)/2-40}px;color:#14B8A6;font-size:16px`;
-        document.body.appendChild(removeEl);setTimeout(()=>removeEl.remove(),950);
-      }
-    }
-
-    en.classList.remove('selected');zh.classList.remove('selected');
-    en.classList.add('gone');zh.classList.add('gone');
-    setTimeout(()=>{en.style.visibility='hidden';zh.style.visibility='hidden'},450);
-    G.selEn=null;G.selZh=null;
-    const scoreEl=document.getElementById('sScore');scoreEl.classList.add('pop-anim');setTimeout(()=>scoreEl.classList.remove('pop-anim'),250);
-    updateHUD();renderProgress();
-    if(G.matched===G.total)setTimeout(()=>endGame('win'),500);
-  }else{
-    G.combo=1;G.errors++;
-    playTone(220,0.25);
-    const enWord=en.dataset.word;
-    if(!userData.wrongWords[enWord])userData.wrongWords[enWord]={zh:en.dataset.pair,count:0};
-    userData.wrongWords[enWord].count++;
-    saveData();
-    renderWrongWordCount();
-    en.classList.add('wrong');zh.classList.add('wrong');
-    document.getElementById('app').classList.add('screen-shake');
-    setTimeout(()=>document.getElementById('app').classList.remove('screen-shake'),300);
-    setTimeout(()=>{en.classList.remove('wrong','selected');zh.classList.remove('wrong','selected');G.selEn=null;G.selZh=null},480);
-    updateHUD();
-  }
-}
-
-function updateHUD(){document.getElementById('sScore').textContent=G.score;document.getElementById('sCombo').textContent='×'+G.combo}
-function updateTimer(){
-  const el=document.getElementById('sTimer'),bar=document.getElementById('tFill');
-  if(G.tMax>=9999){el.textContent='∞';bar.style.width='100%';return}
-  const pct=Math.max(0,(G.timer/G.tMax)*100);
-  el.textContent=G.timer;bar.style.width=pct+'%';bar.className='timer-fill'+(G.timer<=10?' warn':'');
-}
-function confetti(){for(let i=0;i<80;i++)setTimeout(()=>burst(Math.random()*innerWidth,-10,8),i*20)}
-
-// ==================== END GAME ====================
-function endGame(reason){
-  clearInterval(G.iv);G.running=false;
-  if(reason==='win')confetti();
-
-  userData.totalGames++;
-  userData.totalScore+=G.score;
-  userData.totalPairs+=G.matched;
-  if(G.score>userData.bestScore)userData.bestScore=G.score;
-  if(G.maxCombo>userData.maxCombo)userData.maxCombo=G.maxCombo;
-  doCheckin();
-  saveData();
-  checkGameAchievements();
-
-  // XP for game
-  let xpEarned=20;
-  if(G.matched===G.total&&G.total>0)xpEarned+=50;
-  if(G.maxCombo>=3)xpEarned+=10;
-  gainXP(xpEarned,null,null,null);
-
-  // Leaderboard
-  addToLeaderboard({score:G.score,combo:G.maxCombo,pairs:G.matched});
-
-  const win=reason==='win',acc=G.total>0?Math.round((G.matched/G.total)*100):0;
-  const stars=G.matched===G.total?'⭐⭐⭐':G.matched/G.total>=0.6?'⭐⭐☆':'⭐☆☆';
-  const lvInfo=getLevelInfo(userData.xp);
-
-  let wordListHTML='';
-  if(G.currentVocab.length>0){
-    wordListHTML='<div class="word-list-wrap">';
-    G.currentVocab.forEach(pair=>{
-      const matched=G.matchedPairs.some(m=>m[0]===pair[0]);
-      wordListHTML+=`<div class="word-pair"><span class="check">${matched?'✅':'❌'}</span><span class="en-w">${pair[0]}</span><span class="zh-w">${pair[1]}</span></div>`;
-    });
-    wordListHTML+='</div>';
-  }
-
-  const shareData={score:G.score,combo:G.maxCombo,acc,stars,streak:userData.dailyStreak,totalPairs:userData.totalPairs,xp:userData.xp};
-
-  const ov=document.createElement('div');ov.className='overlay';
-  ov.innerHTML=`<div class="modal">
-    <div class="em">${win?'🎉':'⏰'}</div>
-    <div class="stars">${stars}</div>
-    <h2>${win?'全部消除！':'时间到了！'}</h2>
-    <p class="sub">${win?'太棒了！所有单词配对成功':'已消除 '+G.matched+' / '+G.total+' 对'}</p>
-    <span class="big">${G.score}</span>
-    <div class="big-label">总分</div>
-    <div class="chips">
-      <span class="chip">🔥 最高连击 ×${G.maxCombo}</span>
-      <span class="chip">🎯 正确率 ${acc}%</span>
-      <span class="chip">📊 累计 ${userData.totalPairs} 对</span>
-      <span class="chip">${lvInfo.icon} Lv.${lvInfo.lv} ${lvInfo.title}</span>
+    <div class="game-card coming-soon">
+      <div class="card-thumb teal-bg">🀄<span class="card-tag tag-soon">即将上线</span></div>
+      <div class="card-body">
+        <div class="card-title">成语接龙</div>
+        <div class="card-desc">用上一个成语的最后一字开头，接出下一个成语，积累语文词汇。</div>
+        <div class="card-meta"><span class="meta-chip">语文</span><span class="meta-chip">4~6年级</span></div>
+        <div class="card-btn btn-disabled">敬请期待</div>
+      </div>
     </div>
-    <button class="btn-go" onclick="document.querySelector('.overlay').remove();startGame()">🔄 再来一局</button>
-    <button class="btn-share" id="shareBtn">📸 生成分享卡片</button>
-    <button class="btn-link" id="toggleWordList">查看本局单词 ▾</button>
-    <div id="wordListContainer" style="display:none;max-height:200px;overflow-y:auto">${wordListHTML}</div>
-  </div>`;
-  document.body.appendChild(ov);
 
-  document.getElementById('shareBtn').onclick=()=>showShareCard(shareData);
-  document.getElementById('toggleWordList').onclick=()=>{
-    const c=document.getElementById('wordListContainer');
-    const shown=c.style.display!=='none';
-    c.style.display=shown?'none':'block';
-    document.getElementById('toggleWordList').textContent=shown?'查看本局单词 ▾':'收起单词 ▴';
-  };
-}
+    <div class="game-card coming-soon">
+      <div class="card-thumb purple-bg">🔤<span class="card-tag tag-soon">即将上线</span></div>
+      <div class="card-body">
+        <div class="card-title">英语打字练习</div>
+        <div class="card-desc">看中文打英文，练习键盘盲打与单词拼写，适合中高年级同学。</div>
+        <div class="card-meta"><span class="meta-chip">英语</span><span class="meta-chip">打字</span><span class="meta-chip">4年级+</span></div>
+        <div class="card-btn btn-disabled">敬请期待</div>
+      </div>
+    </div>
 
-// ==================== INIT ====================
-document.getElementById('startBtn').onclick=startGame;
-document.getElementById('sndBtn').onclick=function(){G.snd=!G.snd;this.textContent=G.snd?'🔊':'🔇';this.className='btn-icon'+(G.snd?' on':'')};
-document.getElementById('fsBtn').onclick=()=>{!document.fullscreenElement?document.documentElement.requestFullscreen?.():document.exitFullscreen?.()};
-document.getElementById('achBtn').onclick=showAchievements;
-document.getElementById('lbBtn').onclick=showLeaderboard;
-document.getElementById('xpLvl').onclick=()=>{
-  const info=getLevelInfo(userData.xp);
-  const next=info.next;
-  alert(`${info.icon} Lv.${info.lv} ${info.title}\n当前经验：${userData.xp} XP\n${next?`距离 Lv.${next.lv} 还需：${next.xp-userData.xp} XP`:'已达最高等级！'}`);
-};
+  </div>
+</div>
 
-renderStreak();
-renderGradeButtons();
-renderXPBar();
-renderWrongWordCount();
-</script>
+<div class="section">
+  <h2 class="section-title">📖 学习博客</h2>
+  <div class="blog-grid">
+    <a href="/blog/word-learning-tips/" class="blog-card">
+      <div class="blog-date">2026-04-25</div>
+      <div class="blog-title">怎么让孩子爱上背单词？5个游戏化学习方法</div>
+      <div class="blog-excerpt">死记硬背效果差，游戏化学习才是让孩子主动记单词的关键。这5个方法经过验证，家长和老师都在用……</div>
+      <span class="blog-more">阅读全文 →</span>
+    </a>
+    <a href="/blog/top-recess-games/" class="blog-card">
+      <div class="blog-date">2026-04-25</div>
+      <div class="blog-title">10个适合课间的免费在线小游戏推荐（2026）</div>
+      <div class="blog-excerpt">课间10分钟怎么利用？不刷短视频、不玩手机，这些免费教育游戏既放松大脑，又能顺带学知识……</div>
+      <span class="blog-more">阅读全文 →</span>
+    </a>
+    <a href="/blog/grade3-vocab/" class="blog-card">
+      <div class="blog-date">2026-04-25</div>
+      <div class="blog-title">人教版小学英语3-6年级单词表大全（可打印）</div>
+      <div class="blog-excerpt">整理了人教版PEP小学英语三年级至六年级全部核心词汇，附音标和例句，可直接打印使用……</div>
+      <span class="blog-more">阅读全文 →</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 EduPlay · <a href="/blog/">学习博客</a> · <a href="/sitemap.xml">网站地图</a></p>
+  <p style="margin-top:8px">免费在线教育游戏，让学习更有趣 🎮</p>
+</footer>
+
 </body>
 </html>
