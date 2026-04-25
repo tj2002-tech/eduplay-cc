@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>EduPlay 记忆翻牌 — 免费在线英语单词记忆游戏</title>
+<meta name="description" content="EduPlay 记忆翻牌，翻开卡片配对英中单词，训练记忆力与词汇量。三种难度，覆盖小学常用词汇，免费在线游玩无需下载。">
+<meta name="keywords" content="记忆翻牌,英语单词记忆游戏,小学英语游戏,记忆力训练,免费在线游戏,EduPlay">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eduplay.cc/memory-flip/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eduplay.cc/memory-flip/">
+<meta property="og:title" content="EduPlay 记忆翻牌 — 免费在线英语单词记忆游戏">
+<meta property="og:description" content="翻开卡片配对英中单词，训练记忆力与词汇量，三种难度，完全免费。">
+<meta property="og:image" content="https://eduplay.cc/og-cover.png">
+<meta property="og:site_name" content="EduPlay">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "EduPlay 记忆翻牌",
+  "url": "https://eduplay.cc/memory-flip/",
+  "description": "翻开卡片配对英中单词，训练记忆力与词汇量，三种难度，完全免费。",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "zh-CN",
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"CNY"}
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap');
+:root{
+  --pink:#E85D8C;--blue:#4A9EF5;--purple:#8B5CF6;--orange:#F59E0B;--teal:#14B8A6;
+  --bg:#FFF9F3;--card:#FFFFFF;--text:#3D3D4E;--muted:#A0A0B8;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.06);--shadow-md:0 8px 24px rgba(0,0,0,0.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh;-webkit-tap-highlight-color:transparent}
+
+/* NAV */
+nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:700px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--pink);text-decoration:none}
+.logo span{color:var(--blue)}
+.nav-back{font-size:13px;font-weight:800;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color 0.2s}
+.nav-back:hover{color:var(--purple)}
+
+/* LAYOUT */
+#app{max-width:700px;margin:0 auto;padding:16px 14px 32px}
+
+/* TOP BAR */
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.game-title{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--text)}
+.game-title span{color:var(--blue)}
+
+/* STATS */
+.stat-row{display:flex;gap:8px;margin-bottom:14px}
+.stat{background:var(--card);border-radius:14px;padding:7px 16px;text-align:center;box-shadow:var(--shadow-sm);border:1.5px solid rgba(0,0,0,0.04);flex:1}
+.stat-v{font-family:'Fredoka',cursive;font-size:20px;font-weight:700;color:var(--pink);line-height:1.1}
+.stat-v.blue{color:var(--blue)}
+.stat-v.purple{color:var(--purple)}
+.stat-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:800}
+
+/* DIFFICULTY */
+.diff-wrap{margin-bottom:14px}
+.diff-label{font-size:11px;color:var(--muted);font-weight:800;margin-bottom:6px;letter-spacing:0.5px}
+.diff-btns{display:flex;gap:8px}
+.dbtn{background:var(--card);border:2px solid #EDE5F5;color:var(--purple);font-size:13px;font-weight:800;border-radius:24px;padding:7px 20px;cursor:pointer;transition:all 0.2s;font-family:'Nunito',sans-serif;flex:1;text-align:center}
+.dbtn:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+.dbtn.active{background:var(--purple);color:#fff;border-color:var(--purple);box-shadow:0 4px 14px rgba(139,92,246,0.3)}
+
+/* HINT */
+.hint{background:var(--card);border-radius:12px;padding:9px 16px;font-size:13px;color:var(--muted);text-align:center;box-shadow:var(--shadow-sm);margin-bottom:14px;font-weight:700;line-height:1.5}
+.hint b{color:var(--purple)}
+
+/* START BTN */
+.btn-start{width:100%;background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;border:none;border-radius:14px;padding:12px;font-size:15px;font-weight:900;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:0 4px 16px rgba(74,158,245,0.3);transition:all 0.15s;margin-bottom:18px;letter-spacing:0.3px}
+.btn-start:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(74,158,245,0.4)}
+.btn-start:active{transform:scale(0.97)}
+
+/* PROGRESS */
+.progress-row{display:flex;justify-content:center;gap:5px;margin-bottom:16px;flex-wrap:wrap}
+.pdot{width:10px;height:10px;border-radius:50%;background:#E8E0F0;transition:all 0.3s cubic-bezier(.34,1.56,.64,1)}
+.pdot.matched{background:var(--teal);transform:scale(1.2);box-shadow:0 0 6px rgba(20,184,166,0.4)}
+
+/* CARD GRID */
+.card-grid{display:grid;gap:10px;justify-content:center}
+.card-grid.easy{grid-template-columns:repeat(4,1fr)}
+.card-grid.medium{grid-template-columns:repeat(6,1fr)}
+.card-grid.hard{grid-template-columns:repeat(8,1fr)}
+
+/* CARD */
+.card-wrap{aspect-ratio:3/4;cursor:pointer;perspective:600px;min-width:0}
+.card-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.45s cubic-bezier(.4,0,.2,1)}
+.card-wrap.flipped .card-inner{transform:rotateY(180deg)}
+.card-wrap.matched .card-inner{transform:rotateY(180deg)}
+
+.card-face{position:absolute;inset:0;border-radius:12px;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;user-select:none}
+
+/* BACK face (shown when face-down) */
+.card-back{background:linear-gradient(135deg,var(--purple),var(--blue));box-shadow:var(--shadow-sm)}
+.card-back-inner{width:60%;height:60%;border-radius:8px;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;font-family:'Fredoka',cursive;font-size:clamp(14px,3vw,20px);color:rgba(255,255,255,0.8);font-weight:700;letter-spacing:-0.5px}
+
+/* FRONT face (shown when flipped) */
+.card-front{transform:rotateY(180deg);flex-direction:column;gap:4px;padding:6px;text-align:center}
+.card-front.en{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:2px solid #BFDBFE}
+.card-front.zh{background:linear-gradient(135deg,#FDF4FF,#F3E8FF);border:2px solid #E9D5FF}
+.card-wrap.matched .card-front.en{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border-color:#BBF7D0}
+.card-wrap.matched .card-front.zh{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border-color:#BBF7D0}
+.card-wrap.wrong .card-front{animation:wrongShake 0.4s ease}
+@keyframes wrongShake{0%,100%{transform:rotateY(180deg) translateX(0)}25%{transform:rotateY(180deg) translateX(-4px)}75%{transform:rotateY(180deg) translateX(4px)}}
+
+.word-en{font-family:'Nunito',sans-serif;font-weight:900;color:var(--blue);line-height:1.1}
+.word-zh{font-family:'Nunito',sans-serif;font-weight:800;color:var(--purple);line-height:1.1}
+.word-icon{font-size:clamp(14px,3vw,20px)}
+
+/* matched glow */
+.card-wrap.matched .card-face.card-front{box-shadow:0 0 0 2px var(--teal),0 4px 12px rgba(20,184,166,0.25)}
+
+/* OVERLAY */
+.overlay{position:fixed;inset:0;background:rgba(139,92,246,0.15);backdrop-filter:blur(6px);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal{background:#fff;border-radius:24px;padding:36px 28px;text-align:center;max-width:360px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.15);animation:modalIn 0.4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes modalIn{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}
+.modal .em{font-size:64px;margin-bottom:8px}
+.modal h2{font-family:'Fredoka',cursive;font-size:28px;font-weight:700;margin-bottom:6px}
+.modal .sub{font-size:14px;color:var(--muted);font-weight:700;margin-bottom:20px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
+.chip{background:#F5F3FF;color:var(--purple);font-size:13px;font-weight:800;border-radius:20px;padding:5px 14px}
+.chip.teal{background:#F0FFF4;color:var(--teal)}
+.chip.orange{background:#FFF7ED;color:var(--orange)}
+.modal .btn-go{width:100%;background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;border:none;border-radius:14px;padding:12px;font-size:15px;font-weight:900;font-family:'Nunito',sans-serif;cursor:pointer;margin-bottom:10px;box-shadow:0 4px 16px rgba(74,158,245,0.3)}
+.modal .btn-go:hover{opacity:0.9}
+
+/* CONFETTI canvas */
+canvas#ptx{position:fixed;inset:0;pointer-events:none;z-index:99}
+</style>
+</head>
+<body>
+<canvas id="ptx"></canvas>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Edu<span>Play</span></a>
+    <a href="/" class="nav-back">← 游戏大厅</a>
+  </div>
+</nav>
+
+<div id="app">
+  <div class="topbar">
+    <div class="game-title">记忆<span>翻牌</span> 🃏</div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><div class="stat-v blue" id="sTime">0</div><div class="stat-l">秒</div></div>
+    <div class="stat"><div class="stat-v" id="sFlips">0</div><div class="stat-l">翻牌数</div></div>
+    <div class="stat"><div class="stat-v purple" id="sMatched">0</div><div class="stat-l">已配对</div></div>
+  </div>
+
+  <div class="diff-wrap">
+    <div class="diff-label">📚 选择难度</div>
+    <div class="diff-btns">
+      <button class="dbtn active" data-diff="easy" onclick="setDiff('easy',this)">初级 8对</button>
+      <button class="dbtn" data-diff="medium" onclick="setDiff('medium',this)">进阶 12对</button>
+      <button class="dbtn" data-diff="hard" onclick="setDiff('hard',this)">挑战 16对</button>
+    </div>
+  </div>
+
+  <div class="hint" id="hint">点击 <b>开始游戏</b>，翻开两张卡片，把 <b>英文</b> 和对应的 <b>中文</b> 配对消除 🎯</div>
+
+  <button class="btn-start" id="startBtn" onclick="startGame()">🎮 开始游戏</button>
+
+  <div class="progress-row" id="progressRow"></div>
+  <div class="card-grid easy" id="grid"></div>
+</div>
+
+<script>
+// ── 词库 ──
+const VOCAB = [
+  ['apple','苹果'],['banana','香蕉'],['cat','猫'],['dog','狗'],['egg','鸡蛋'],
+  ['fish','鱼'],['grape','葡萄'],['hat','帽子'],['ice','冰'],['juice','果汁'],
+  ['key','钥匙'],['lion','狮子'],['milk','牛奶'],['nose','鼻子'],['orange','橙子'],
+  ['pen','钢笔'],['queen','女王'],['rice','米饭'],['sun','太阳'],['tree','树'],
+  ['umbrella','雨伞'],['van','面包车'],['water','水'],['box','盒子'],['year','年'],
+  ['book','书'],['chair','椅子'],['desk','桌子'],['ear','耳朵'],['face','脸'],
+  ['green','绿色'],['hand','手'],['jump','跳'],['kind','善良'],['lamp','灯'],
+  ['moon','月亮'],['night','夜晚'],['open','打开'],['play','玩'],['quiet','安静'],
+];
+
+// ── 游戏状态 ──
+const G = {
+  diff: 'easy',
+  pairs: 8,
+  cards: [],
+  flipped: [],
+  matched: 0,
+  flips: 0,
+  timer: 0,
+  iv: null,
+  running: false,
+  locked: false,
+};
+
+function setDiff(d, el) {
+  G.diff = d;
+  G.pairs = d === 'easy' ? 8 : d === 'medium' ? 12 : 16;
+  document.querySelectorAll('.dbtn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('grid').className = 'card-grid ' + d;
+  if (G.running) startGame();
+}
+
+// ── 工具 ──
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function fmt(s) {
+  const m = Math.floor(s / 60), sec = s % 60;
+  return m > 0 ? `${m}:${String(sec).padStart(2,'0')}` : `${sec}`;
+}
+
+// ── 开始游戏 ──
+function startGame() {
+  clearInterval(G.iv);
+  G.flipped = []; G.matched = 0; G.flips = 0; G.timer = 0; G.locked = false; G.running = true;
+  document.getElementById('sTime').textContent = '0';
+  document.getElementById('sFlips').textContent = '0';
+  document.getElementById('sMatched').textContent = '0';
+  document.getElementById('hint').innerHTML = '翻开两张卡片，把 <b>英文</b> 和对应的 <b>中文</b> 配对消除！';
+  document.getElementById('startBtn').textContent = '🔄 重新开始';
+
+  // pick pairs
+  const picked = shuffle(VOCAB).slice(0, G.pairs);
+  // build card list: each pair → one EN card + one ZH card
+  const cards = [];
+  picked.forEach((pair, i) => {
+    cards.push({ id: i, type: 'en', word: pair[0], display: pair[0], pairId: i });
+    cards.push({ id: i, type: 'zh', word: pair[1], display: pair[1], pairId: i });
+  });
+  G.cards = shuffle(cards);
+
+  // progress dots
+  const pr = document.getElementById('progressRow');
+  pr.innerHTML = '';
+  for (let i = 0; i < G.pairs; i++) {
+    const d = document.createElement('div');
+    d.className = 'pdot';
+    d.id = 'dot-' + i;
+    pr.appendChild(d);
+  }
+
+  // render grid
+  const grid = document.getElementById('grid');
+  grid.className = 'card-grid ' + G.diff;
+  grid.innerHTML = '';
+  G.cards.forEach((c, idx) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'card-wrap';
+    wrap.dataset.idx = idx;
+    wrap.onclick = () => flipCard(idx);
+    wrap.innerHTML = `
+      <div class="card-inner">
+        <div class="card-face card-back">
+          <div class="card-back-inner">EP</div>
+        </div>
+        <div class="card-face card-front ${c.type}">
+          <span class="word-icon">${c.type === 'en' ? '🔤' : '🀄'}</span>
+          <span class="${c.type === 'en' ? 'word-en' : 'word-zh'}" style="font-size:${wordSize(c.display)}">${c.display}</span>
+        </div>
+      </div>`;
+    grid.appendChild(wrap);
+  });
+
+  // timer
+  G.iv = setInterval(() => {
+    G.timer++;
+    document.getElementById('sTime').textContent = fmt(G.timer);
+  }, 1000);
+}
+
+function wordSize(w) {
+  if (w.length <= 3) return 'clamp(14px,3.5vw,22px)';
+  if (w.length <= 6) return 'clamp(12px,2.8vw,18px)';
+  return 'clamp(10px,2.2vw,14px)';
+}
+
+// ── 翻牌 ──
+function flipCard(idx) {
+  if (!G.running || G.locked) return;
+  const card = G.cards[idx];
+  const el = document.querySelector(`[data-idx="${idx}"]`);
+  if (!el || el.classList.contains('flipped') || el.classList.contains('matched')) return;
+  if (G.flipped.length === 1 && G.flipped[0].idx === idx) return;
+
+  el.classList.add('flipped');
+  G.flipped.push({ idx, card });
+  G.flips++;
+  document.getElementById('sFlips').textContent = G.flips;
+
+  if (G.flipped.length === 2) {
+    G.locked = true;
+    const [a, b] = G.flipped;
+    if (a.card.pairId === b.card.pairId && a.card.type !== b.card.type) {
+      // match!
+      setTimeout(() => {
+        [a, b].forEach(x => {
+          const e = document.querySelector(`[data-idx="${x.idx}"]`);
+          e.classList.remove('flipped');
+          e.classList.add('matched');
+        });
+        G.matched++;
+        document.getElementById('sMatched').textContent = G.matched;
+        document.getElementById('dot-' + a.card.pairId).classList.add('matched');
+        G.flipped = [];
+        G.locked = false;
+        if (G.matched === G.pairs) endGame();
+      }, 400);
+    } else {
+      // wrong
+      setTimeout(() => {
+        [a, b].forEach(x => {
+          const e = document.querySelector(`[data-idx="${x.idx}"]`);
+          e.querySelectorAll('.card-front').forEach(f => {
+            f.classList.add('wrong');
+            setTimeout(() => f.classList.remove('wrong'), 400);
+          });
+          setTimeout(() => e.classList.remove('flipped'), 600);
+        });
+        G.flipped = [];
+        G.locked = false;
+      }, 700);
+    }
+  }
+}
+
+// ── 结束 ──
+function endGame() {
+  clearInterval(G.iv);
+  G.running = false;
+  confetti();
+
+  const stars = G.flips <= G.pairs * 2.2 ? '⭐⭐⭐' : G.flips <= G.pairs * 3 ? '⭐⭐☆' : '⭐☆☆';
+  const score = Math.max(100, Math.round(G.pairs * 500 / G.flips) + Math.max(0, 300 - G.timer * 2));
+
+  const ov = document.createElement('div');
+  ov.className = 'overlay';
+  ov.innerHTML = `
+    <div class="modal">
+      <div class="em">🎉</div>
+      <div style="font-size:28px;margin-bottom:4px">${stars}</div>
+      <h2>全部配对！</h2>
+      <p class="sub">太棒了，你的记忆力真强！</p>
+      <div class="chips">
+        <span class="chip">⏱ ${fmt(G.timer)}</span>
+        <span class="chip teal">🃏 ${G.flips} 次翻牌</span>
+        <span class="chip orange">🏆 ${score} 分</span>
+      </div>
+      <button class="btn-go" onclick="document.querySelector('.overlay').remove();startGame()">🔄 再来一局</button>
+      <button class="btn-go" style="background:linear-gradient(135deg,var(--pink),var(--orange))" onclick="document.querySelector('.overlay').remove()">返回查看</button>
+    </div>`;
+  document.body.appendChild(ov);
+}
+
+// ── 彩屑 ──
+const C = document.getElementById('ptx');
+const CX = C.getContext('2d');
+let particles = [];
+function burst(x, y, r) {
+  const cols = ['#E85D8C','#4A9EF5','#8B5CF6','#F59E0B','#14B8A6'];
+  for (let i = 0; i < 8; i++) {
+    particles.push({
+      x, y, r, vx: (Math.random()-0.5)*6, vy: (Math.random()-2.5)*5,
+      col: cols[Math.floor(Math.random()*cols.length)], life: 1
+    });
+  }
+}
+function confetti() {
+  C.width = innerWidth; C.height = innerHeight;
+  particles = [];
+  for (let i = 0; i < 60; i++) {
+    setTimeout(() => burst(Math.random()*innerWidth, -10, 6+Math.random()*4), i*25);
+  }
+  requestAnimationFrame(animateConf);
+}
+function animateConf() {
+  CX.clearRect(0,0,C.width,C.height);
+  particles = particles.filter(p => p.life > 0);
+  particles.forEach(p => {
+    p.x += p.vx; p.y += p.vy; p.vy += 0.15; p.life -= 0.015;
+    CX.globalAlpha = p.life;
+    CX.fillStyle = p.col;
+    CX.beginPath(); CX.arc(p.x,p.y,p.r,0,Math.PI*2); CX.fill();
+  });
+  CX.globalAlpha = 1;
+  if (particles.length) requestAnimationFrame(animateConf);
+}
+</script>
+</body>
+</html>
