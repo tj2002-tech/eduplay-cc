@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>EduPlay 数学口算抢答 — 免费在线小学数学速算练习</title>
+<meta name="description" content="EduPlay 数学口算抢答，限时抢答加减乘除口算题，三种难度覆盖小学1-6年级，练出计算速度与准确率。免费在线玩无需下载。">
+<meta name="keywords" content="数学口算,小学数学游戏,口算练习,加减乘除,数学速算,免费在线游戏,EduPlay">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eduplay.cc/math-blitz/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eduplay.cc/math-blitz/">
+<meta property="og:title" content="EduPlay 数学口算抢答 — 免费在线小学数学速算练习">
+<meta property="og:description" content="限时抢答加减乘除口算题，三种难度覆盖小学1-6年级，练出计算速度与准确率，完全免费。">
+<meta property="og:image" content="https://eduplay.cc/og-cover.png">
+<meta property="og:site_name" content="EduPlay">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "EduPlay 数学口算抢答",
+  "url": "https://eduplay.cc/math-blitz/",
+  "description": "限时抢答加减乘除口算题，三种难度覆盖小学1-6年级，练出计算速度与准确率。",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "zh-CN",
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"CNY"}
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap');
+:root{
+  --pink:#E85D8C;--blue:#4A9EF5;--purple:#8B5CF6;
+  --orange:#F59E0B;--orange2:#F97316;
+  --teal:#14B8A6;--red:#EF4444;--green:#22C55E;
+  --bg:#FFF9F3;--card:#FFFFFF;--text:#3D3D4E;--muted:#A0A0B8;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.06);--shadow-md:0 8px 24px rgba(0,0,0,0.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);font-family:'Nunito',sans-serif;color:var(--text);-webkit-tap-highlight-color:transparent}
+
+/* NAV */
+nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:580px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--pink);text-decoration:none}
+.logo span{color:var(--blue)}
+.nav-back{font-size:13px;font-weight:800;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--orange)}
+
+/* LAYOUT */
+#app{max-width:580px;margin:0 auto;padding:12px 16px 24px}
+
+/* TOPBAR */
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.game-title{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--text)}
+.game-title span{color:var(--orange)}
+
+/* FULLSCREEN BTN */
+.btn-icon{background:var(--card);border:2px solid #FDE68A;color:var(--orange);font-size:18px;border-radius:10px;padding:4px 9px;cursor:pointer;transition:all 0.2s;line-height:1;font-family:sans-serif;display:flex;align-items:center}
+.btn-icon:hover{background:var(--orange);color:#fff;border-color:var(--orange)}
+
+/* STATS ROW */
+.stats-row{display:flex;gap:8px;margin-bottom:12px;align-items:stretch}
+.lives-box{background:var(--card);border-radius:14px;padding:7px 14px;box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:4px;flex:1}
+.heart{font-size:clamp(16px,4.5vmin,24px);transition:all 0.3s}
+.heart.dead{filter:grayscale(1);opacity:0.28;transform:scale(0.8)}
+.stat-box{background:var(--card);border-radius:14px;padding:7px 14px;box-shadow:var(--shadow-sm);text-align:center;flex:1}
+.stat-v{font-family:'Fredoka',cursive;font-size:clamp(18px,4.5vmin,26px);font-weight:700;line-height:1.1}
+.stat-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:800}
+.stat-v.orange{color:var(--orange)}
+.combo-box{background:var(--card);border-radius:14px;padding:7px 12px;box-shadow:var(--shadow-sm);text-align:center;min-width:68px;transition:background 0.25s,box-shadow 0.25s}
+.combo-box.hot{background:linear-gradient(135deg,var(--orange),var(--orange2));box-shadow:0 4px 16px rgba(249,115,22,0.35)}
+.combo-box .stat-v{color:var(--orange)}
+.combo-box.hot .stat-v{color:#fff}
+.combo-box.hot .stat-l{color:rgba(255,255,255,0.8)}
+
+/* DIFFICULTY */
+.diff-wrap{margin-bottom:12px}
+.diff-label{font-size:11px;color:var(--muted);font-weight:800;margin-bottom:6px;letter-spacing:0.5px}
+.diff-btns{display:flex;gap:8px}
+.dbtn{background:var(--card);border:2px solid #FDE68A;color:var(--orange);font-size:12px;font-weight:800;border-radius:24px;padding:7px 0;cursor:pointer;transition:all 0.2s;font-family:'Nunito',sans-serif;flex:1;text-align:center}
+.dbtn:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+.dbtn.active{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 14px rgba(245,158,11,0.35)}
+
+/* HINT */
+.hint{background:var(--card);border-radius:12px;padding:10px 16px;font-size:13px;color:var(--muted);text-align:center;box-shadow:var(--shadow-sm);margin-bottom:12px;font-weight:700;line-height:1.6}
+.hint b{color:var(--orange)}
+
+/* START BTN */
+.btn-start{width:100%;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;border:none;border-radius:14px;padding:12px;font-size:15px;font-weight:900;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:0 4px 16px rgba(245,158,11,0.35);transition:all 0.15s;margin-bottom:14px;letter-spacing:0.3px}
+.btn-start:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(245,158,11,0.45)}
+.btn-start:active{transform:scale(0.97)}
+
+/* PROGRESS DOTS */
+.progress-row{display:flex;justify-content:center;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.pdot{width:10px;height:10px;border-radius:50%;background:#EDE5F5;transition:all 0.3s cubic-bezier(.34,1.56,.64,1)}
+.pdot.correct{background:var(--teal);transform:scale(1.2)}
+.pdot.wrong{background:var(--red);transform:scale(1.1)}
+.pdot.timeout{background:var(--muted)}
+.pdot.current{background:var(--orange);animation:pulseDot 0.7s ease infinite alternate}
+@keyframes pulseDot{from{transform:scale(1)}to{transform:scale(1.4)}}
+
+/* GAME AREA */
+.game-area{display:flex;flex-direction:column;gap:14px}
+
+/* QUESTION SECTION */
+.question-section{display:flex;align-items:center;justify-content:center;gap:clamp(14px,4vw,32px)}
+
+/* TIMER RING */
+.timer-wrap{position:relative;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.timer-svg{width:clamp(76px,17vmin,140px);height:clamp(76px,17vmin,140px);transform:rotate(-90deg);overflow:visible}
+.t-bg{fill:none;stroke:#EDE5F5;stroke-width:7}
+.t-arc{fill:none;stroke:var(--orange);stroke-width:7;stroke-linecap:round;stroke-dasharray:276.46;stroke-dashoffset:0;transition:stroke-dashoffset 0.95s linear,stroke 0.3s}
+.timer-num{position:absolute;font-family:'Fredoka',cursive;font-weight:700;font-size:clamp(20px,5vmin,34px);color:var(--text);pointer-events:none;transition:color 0.3s}
+
+/* QUESTION */
+.question-box{flex:1;min-width:0;text-align:center}
+.q-label{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:0.5px;margin-bottom:4px}
+.q-eq{font-family:'Fredoka',cursive;font-size:clamp(38px,10vmin,88px);font-weight:700;color:var(--text);line-height:1.1;word-break:break-all;transition:transform 0.2s}
+
+/* OPTIONS GRID */
+.opts-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{background:var(--card);border:2.5px solid #FDE68A;border-radius:18px;font-family:'Fredoka',cursive;font-size:clamp(24px,6vmin,52px);font-weight:700;color:var(--text);cursor:pointer;padding:10px 8px;min-height:clamp(62px,14vmin,100px);width:100%;transition:all 0.15s;box-shadow:var(--shadow-sm)}
+.opt:hover:not([disabled]){transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--orange);color:var(--orange)}
+.opt:active:not([disabled]){transform:scale(0.95)}
+.opt[disabled]{cursor:default}
+.opt.correct{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border-color:var(--green);color:var(--green);animation:pop 0.35s cubic-bezier(.34,1.56,.64,1)}
+.opt.wrong{background:linear-gradient(135deg,#FFF1F2,#FFE4E6);border-color:var(--red);color:var(--red);animation:shake 0.38s ease}
+.opt.show-correct{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border-color:var(--green);color:var(--green)}
+.opt.skip{background:#F5F5F5;border-color:#DDD;color:var(--muted)}
+@keyframes pop{0%{transform:scale(0.88)}55%{transform:scale(1.1)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* KEY HINT */
+.key-hint{display:flex;gap:8px;justify-content:center}
+.kh{font-size:11px;color:var(--muted);font-weight:800;background:var(--card);border-radius:8px;padding:2px 7px;box-shadow:var(--shadow-sm)}
+
+/* SCORE FLOAT */
+.score-float{position:fixed;font-family:'Fredoka',cursive;font-size:clamp(16px,4vmin,24px);font-weight:700;pointer-events:none;z-index:300;animation:floatUp 0.85s ease forwards}
+@keyframes floatUp{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-64px) scale(0.75)}}
+
+/* OVERLAY */
+.overlay{position:fixed;inset:0;background:rgba(139,92,246,0.14);backdrop-filter:blur(6px);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal{background:#fff;border-radius:24px;padding:36px 28px;text-align:center;max-width:360px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.14);animation:modalIn 0.4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes modalIn{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}
+.modal .em{font-size:60px;margin-bottom:6px}
+.modal h2{font-family:'Fredoka',cursive;font-size:28px;font-weight:700;margin-bottom:6px}
+.modal .sub{font-size:14px;color:var(--muted);font-weight:700;margin-bottom:20px;line-height:1.5}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
+.chip{background:#FFF7ED;color:var(--orange);font-size:13px;font-weight:800;border-radius:20px;padding:5px 14px}
+.chip.teal{background:#F0FFF4;color:var(--teal)}
+.chip.purple{background:#F5F3FF;color:var(--purple)}
+.modal .btn-go{width:100%;border:none;border-radius:14px;padding:12px;font-size:15px;font-weight:900;font-family:'Nunito',sans-serif;cursor:pointer;margin-bottom:10px;color:#fff}
+.modal .btn-go.primary{background:linear-gradient(135deg,var(--orange),var(--orange2));box-shadow:0 4px 16px rgba(245,158,11,0.3)}
+.modal .btn-go.secondary{background:linear-gradient(135deg,var(--purple),var(--pink))}
+.modal .btn-go:hover{opacity:0.9}
+
+/* RESPONSIVE */
+@media(max-width:400px){
+  #app{padding:10px 12px 16px}
+  .diff-btns{gap:6px}
+  .dbtn{font-size:11px;padding:6px 0}
+}
+@media(min-width:800px){
+  .q-eq{font-size:clamp(70px,8vw,100px)}
+  .opt{font-size:clamp(38px,4.5vw,58px);min-height:110px}
+  .timer-svg{width:150px;height:150px}
+  .timer-num{font-size:36px}
+}
+@media(min-width:1200px){
+  .q-eq{font-size:100px}
+  .opt{font-size:58px;min-height:120px;border-radius:22px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Edu<span>Play</span></a>
+    <a href="/" class="nav-back">← 游戏大厅</a>
+  </div>
+</nav>
+
+<div id="app">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="game-title">数学<span>口算抢答</span> 🔢</div>
+    <button class="btn-icon" id="fsBtn" onclick="toggleFS()" title="全屏">⛶</button>
+  </div>
+
+  <!-- STATS (in-game only) -->
+  <div class="stats-row" id="statsRow" style="display:none">
+    <div class="lives-box">
+      <span class="heart" id="h0">❤️</span>
+      <span class="heart" id="h1">❤️</span>
+      <span class="heart" id="h2">❤️</span>
+    </div>
+    <div class="stat-box">
+      <div class="stat-v orange" id="scoreEl">0</div>
+      <div class="stat-l">分数</div>
+    </div>
+    <div class="combo-box" id="comboBox">
+      <div class="stat-v" id="comboEl">×1</div>
+      <div class="stat-l">连击</div>
+    </div>
+  </div>
+
+  <!-- DIFFICULTY -->
+  <div class="diff-wrap" id="diffWrap">
+    <div class="diff-label">📚 选择难度</div>
+    <div class="diff-btns">
+      <button class="dbtn active" onclick="setDiff('easy',this)">初级 加减法</button>
+      <button class="dbtn" onclick="setDiff('medium',this)">进阶 加减乘</button>
+      <button class="dbtn" onclick="setDiff('hard',this)">挑战 四则运算</button>
+    </div>
+  </div>
+
+  <!-- HINT -->
+  <div class="hint" id="hint">
+    点击 <b>开始游戏</b>，每题 <b>10秒</b> 限时<br>
+    答对得分 + 速度加成，连续答对有 <b>连击</b> 加成 🔥<br>
+    共 <b>10题 / 3条命</b>，支持键盘 <b>1 2 3 4</b> 快速作答
+  </div>
+
+  <!-- START BTN -->
+  <button class="btn-start" id="startBtn" onclick="startGame()">🎮 开始游戏</button>
+
+  <!-- PROGRESS (in-game only) -->
+  <div class="progress-row" id="progressRow" style="display:none"></div>
+
+  <!-- GAME AREA (in-game only) -->
+  <div class="game-area" id="gameArea" style="display:none">
+
+    <div class="question-section">
+      <!-- Timer Ring -->
+      <div class="timer-wrap">
+        <svg class="timer-svg" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="44" class="t-bg"/>
+          <circle cx="50" cy="50" r="44" class="t-arc" id="tArc"/>
+        </svg>
+        <span class="timer-num" id="tNum">10</span>
+      </div>
+      <!-- Question -->
+      <div class="question-box">
+        <div class="q-label" id="qLabel">题目 1 / 10</div>
+        <div class="q-eq" id="qEq">—</div>
+      </div>
+    </div>
+
+    <!-- Options 2×2 -->
+    <div class="opts-grid" id="optsGrid"></div>
+
+    <!-- Keyboard hint -->
+    <div class="key-hint">
+      <span class="kh">① 左上</span><span class="kh">② 右上</span>
+      <span class="kh">③ 左下</span><span class="kh">④ 右下</span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── 常量 ──
+const TOTAL  = 10;
+const TIME   = 10;
+const CIRC   = 276.46; // 2π × 44
+const MULTS  = [1, 1, 1.5, 2, 3]; // index = Math.min(combo, 4)
+
+// ── 状态 ──
+const G = {
+  diff: 'easy', q: null,
+  idx: 0, lives: 3, score: 0, combo: 0, maxCombo: 0,
+  timer: TIME, iv: null, answered: false, running: false,
+  dots: [],
+};
+
+// ── 工具 ──
+const rand = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = rand(0, i); [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ── 出题 ──
+function genQ() {
+  const d = G.diff;
+  if (d === 'easy') {
+    if (Math.random() < 0.5) {
+      const a = rand(1, 18), b = rand(1, 20 - a);
+      return { q: `${a} + ${b} = ?`, ans: a + b };
+    }
+    const a = rand(3, 20), b = rand(1, a - 1);
+    return { q: `${a} − ${b} = ?`, ans: a - b };
+  }
+  if (d === 'medium') {
+    const r = Math.random();
+    if (r < 0.4) { const a = rand(2,9), b = rand(2,9); return { q:`${a} × ${b} = ?`, ans:a*b }; }
+    if (r < 0.7) { const a = rand(10,80), b = rand(5,100-a); return { q:`${a} + ${b} = ?`, ans:a+b }; }
+    const a = rand(20,99), b = rand(5,a-5); return { q:`${a} − ${b} = ?`, ans:a-b };
+  }
+  // hard
+  const r = Math.random();
+  if (r < 0.25) { const b = rand(2,12), ans = rand(2,12); return { q:`${b*ans} ÷ ${b} = ?`, ans }; }
+  if (r < 0.5)  { const a = rand(12,25), b = rand(3,9); return { q:`${a} × ${b} = ?`, ans:a*b }; }
+  if (r < 0.75) { const a = rand(100,400), b = rand(50,500-a); return { q:`${a} + ${b} = ?`, ans:a+b }; }
+  const a = rand(200,500), b = rand(50,a-50); return { q:`${a} − ${b} = ?`, ans:a-b };
+}
+
+function genOpts(ans) {
+  const s = new Set([ans]);
+  for (const d of shuffle([-3,-2,-1,1,2,3,-5,5,-10,10,-15,15,-20,20,-8,8,-25,25])) {
+    if (s.size >= 4) break;
+    const w = ans + d;
+    if (w > 0 && !s.has(w)) s.add(w);
+  }
+  let n = 1;
+  while (s.size < 4) { if (!s.has(ans+n)) s.add(ans+n); n++; }
+  return shuffle([...s]);
+}
+
+// ── 难度 ──
+function setDiff(d, el) {
+  G.diff = d;
+  document.querySelectorAll('.dbtn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  if (G.running) startGame();
+}
+
+// ── 开始 ──
+function startGame() {
+  clearInterval(G.iv);
+  Object.assign(G, { idx:0, lives:3, score:0, combo:0, maxCombo:0, answered:false, running:true });
+  G.dots = Array(TOTAL).fill('pending');
+
+  // 切换 UI 到游戏模式
+  show('statsRow'); show('progressRow'); show('gameArea');
+  hide('hint'); hide('diffWrap');
+  document.getElementById('startBtn').textContent = '🔄 重新开始';
+
+  renderHearts(); updateStats(); renderDots();
+  loadQ();
+}
+
+function loadQ() {
+  G.answered = false;
+  G.q = genQ();
+  const opts = genOpts(G.q.ans);
+
+  document.getElementById('qLabel').textContent = `题目 ${G.idx + 1} / ${TOTAL}`;
+  const eq = document.getElementById('qEq');
+  eq.textContent = G.q.q;
+  eq.style.color = 'var(--text)';
+
+  G.dots[G.idx] = 'current';
+  renderDots();
+
+  const grid = document.getElementById('optsGrid');
+  grid.innerHTML = '';
+  opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'opt';
+    btn.textContent = opt;
+    btn.dataset.val = opt;
+    btn.onclick = () => pick(opt, btn);
+    grid.appendChild(btn);
+  });
+
+  startTimer();
+}
+
+// ── 倒计时 ──
+function startTimer() {
+  clearInterval(G.iv);
+  G.timer = TIME;
+  drawTimer();
+  G.iv = setInterval(() => {
+    G.timer--;
+    drawTimer();
+    if (G.timer <= 0) { clearInterval(G.iv); onTimeout(); }
+  }, 1000);
+}
+
+function drawTimer() {
+  const arc = document.getElementById('tArc');
+  const num = document.getElementById('tNum');
+  arc.style.strokeDashoffset = CIRC * (1 - G.timer / TIME);
+  const urgent = G.timer <= 3;
+  arc.style.stroke = urgent ? 'var(--red)' : 'var(--orange)';
+  num.textContent = G.timer;
+  num.style.color  = urgent ? 'var(--red)' : 'var(--text)';
+}
+
+// ── 作答 ──
+function pick(val, btn) {
+  if (G.answered) return;
+  G.answered = true;
+  clearInterval(G.iv);
+  lockOpts();
+
+  if (val === G.q.ans) {
+    G.combo++;
+    G.maxCombo = Math.max(G.maxCombo, G.combo);
+    const mult = MULTS[Math.min(G.combo, 4)];
+    const pts  = Math.round((100 + G.timer * 10) * mult);
+    G.score += pts;
+    G.dots[G.idx] = 'correct';
+    btn.classList.add('correct');
+    floatScore(btn, `+${pts}`, false);
+    updateStats(); renderDots();
+    G.idx++;
+    setTimeout(G.idx >= TOTAL ? endGame : loadQ, 700);
+  } else {
+    G.combo = 0;
+    G.lives--;
+    G.dots[G.idx] = 'wrong';
+    btn.classList.add('wrong');
+    markCorrect();
+    floatScore(btn, '✕', true);
+    renderHearts(); updateStats(); renderDots();
+    G.idx++;
+    const next = G.lives <= 0 || G.idx >= TOTAL ? endGame : loadQ;
+    setTimeout(next, 1100);
+  }
+}
+
+function onTimeout() {
+  if (G.answered) return;
+  G.answered = true;
+  G.combo = 0;
+  G.lives--;
+  G.dots[G.idx] = 'timeout';
+  lockOpts();
+  document.querySelectorAll('.opt').forEach(b => b.classList.add('skip'));
+  markCorrect();
+  renderHearts(); updateStats(); renderDots();
+  G.idx++;
+  const next = G.lives <= 0 || G.idx >= TOTAL ? endGame : loadQ;
+  setTimeout(next, 1100);
+}
+
+function lockOpts() { document.querySelectorAll('.opt').forEach(b => b.disabled = true); }
+function markCorrect() {
+  document.querySelectorAll('.opt').forEach(b => {
+    if (Number(b.dataset.val) === G.q.ans) b.classList.add('show-correct');
+  });
+}
+
+// ── 悬浮得分 ──
+function floatScore(ref, text, miss) {
+  const r = ref.getBoundingClientRect();
+  const el = document.createElement('div');
+  el.className = 'score-float';
+  el.style.cssText = `left:${r.left + r.width/2 - 24}px;top:${r.top + scrollY - 8}px;color:${miss ? 'var(--red)' : 'var(--teal)'}`;
+  el.textContent = text;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 900);
+}
+
+// ── UI ──
+function renderHearts() {
+  [0,1,2].forEach(i => document.getElementById('h'+i).classList.toggle('dead', i >= G.lives));
+}
+function updateStats() {
+  document.getElementById('scoreEl').textContent = G.score;
+  const mult = MULTS[Math.min(G.combo, 4)];
+  document.getElementById('comboEl').textContent = `×${mult % 1 ? mult : Math.floor(mult)}`;
+  document.getElementById('comboBox').classList.toggle('hot', G.combo >= 2);
+}
+function renderDots() {
+  const row = document.getElementById('progressRow');
+  row.innerHTML = '';
+  G.dots.forEach(s => {
+    const d = document.createElement('div');
+    d.className = 'pdot' + (s !== 'pending' ? ' ' + s : '');
+    row.appendChild(d);
+  });
+}
+
+// ── 结束 ──
+function endGame() {
+  clearInterval(G.iv);
+  G.running = false;
+  const correct  = G.dots.filter(s => s === 'correct').length;
+  const accuracy = Math.round(correct / TOTAL * 100);
+  const won      = G.lives > 0 && correct >= TOTAL * 0.7;
+  const stars    = accuracy >= 90 ? '⭐⭐⭐' : accuracy >= 70 ? '⭐⭐☆' : '⭐☆☆';
+
+  const ov = document.createElement('div');
+  ov.className = 'overlay';
+  ov.innerHTML = `
+    <div class="modal">
+      <div class="em">${won ? '🎉' : '💪'}</div>
+      <div style="font-size:26px;margin-bottom:6px">${stars}</div>
+      <h2>${won ? '太棒了！' : '继续加油！'}</h2>
+      <p class="sub">答对 ${correct}/${TOTAL} 题 · 准确率 ${accuracy}%</p>
+      <div class="chips">
+        <span class="chip">🏆 ${G.score} 分</span>
+        <span class="chip teal">✅ ${correct}/${TOTAL}</span>
+        <span class="chip purple">🔥 最高 ${G.maxCombo} 连击</span>
+      </div>
+      <button class="btn-go primary" onclick="this.closest('.overlay').remove();startGame()">🔄 再来一局</button>
+      <button class="btn-go secondary" onclick="this.closest('.overlay').remove();backMenu()">换个难度</button>
+    </div>`;
+  document.body.appendChild(ov);
+}
+
+function backMenu() {
+  hide('statsRow'); hide('progressRow'); hide('gameArea');
+  show('hint'); show('diffWrap');
+  document.getElementById('startBtn').textContent = '🎮 开始游戏';
+  G.running = false;
+}
+
+// ── 全屏 ──
+function toggleFS() {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+  else document.exitFullscreen();
+}
+document.addEventListener('fullscreenchange', () => {
+  const btn = document.getElementById('fsBtn');
+  if (btn) btn.textContent = document.fullscreenElement ? '⊡' : '⛶';
+});
+
+// ── 键盘 1234 ──
+document.addEventListener('keydown', e => {
+  if (!G.running || G.answered) return;
+  const i = {'1':0,'2':1,'3':2,'4':3}[e.key];
+  if (i === undefined) return;
+  const btns = document.querySelectorAll('.opt:not([disabled])');
+  if (btns[i]) btns[i].click();
+});
+
+// ── 工具 ──
+function show(id) { document.getElementById(id).style.display = ''; }
+function hide(id) { document.getElementById(id).style.display = 'none'; }
+</script>
+</body>
+</html>
