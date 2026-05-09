@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>词族点读卡 — 人教版3-6年级英语词族记忆 | EduPlay</title>
+<meta name="description" content="按语义家族学英语单词，点读发音，看词族关联图。人教版PEP 3-6年级13组词族，免费在线使用，无需下载。">
+<meta name="keywords" content="词族点读卡,人教版英语词族,小学英语单词记忆,英语词族记忆法,PEP英语游戏">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eduplay.cc/word-family/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eduplay.cc/word-family/">
+<meta property="og:title" content="词族点读卡 — 人教版3-6年级英语词族记忆 | EduPlay">
+<meta property="og:description" content="按语义家族学英语单词，点读发音，看词族关联图。人教版PEP 3-6年级13组词族，免费在线使用。">
+<meta property="og:image" content="https://eduplay.cc/og-cover.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="EduPlay">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="词族点读卡 — 人教版3-6年级英语词族记忆">
+<meta name="twitter:description" content="13组词族，点读发音，词族关联记忆图，人教版3-6年级免费使用。">
+<meta name="twitter:image" content="https://eduplay.cc/og-cover.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "词族点读卡",
+  "url": "https://eduplay.cc/word-family/",
+  "description": "按语义家族学英语单词，点读发音，看词族关联图。人教版PEP 3-6年级13组词族，免费在线使用。",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"CNY"},
+  "publisher": {"@type":"Organization","name":"EduPlay","url":"https://eduplay.cc"}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#E85D8C;--blue:#4A9EF5;--purple:#8B5CF6;--orange:#F59E0B;--teal:#14B8A6;--bg:#FFF9F3;--card:#FFFFFF;--text:#3D3D4E;--muted:#A0A0B8}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh}
+nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:0 24px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:'Fredoka',cursive;font-size:26px;font-weight:700;color:var(--pink);text-decoration:none}
+.logo span{color:var(--blue)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:700;font-size:14px;transition:color .2s}
+.nav-links a:hover{color:var(--purple)}
+.hero{text-align:center;padding:36px 24px 28px}
+.hero-badge{display:inline-block;background:linear-gradient(135deg,#FEF3C7,#FDE68A);color:var(--orange);font-size:13px;font-weight:800;border-radius:20px;padding:4px 16px;margin-bottom:14px}
+.hero h1{font-family:'Fredoka',cursive;font-size:clamp(26px,5vw,40px);font-weight:700;line-height:1.2;margin-bottom:8px}
+.hl{color:var(--pink)}
+.hero p{font-size:15px;color:var(--muted);font-weight:700}
+.grade-tabs{display:flex;justify-content:center;gap:8px;padding:0 24px 28px;flex-wrap:wrap}
+.gtab{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;padding:8px 22px;border-radius:24px;border:2px solid #EDE5F5;background:#fff;color:var(--muted);cursor:pointer;transition:all .2s}
+.gtab:hover{border-color:var(--purple);color:var(--purple)}
+.gtab.active{background:var(--purple);color:#fff;border-color:var(--purple);box-shadow:0 4px 16px rgba(139,92,246,.3)}
+.section{max-width:1100px;margin:0 auto;padding:0 24px 60px}
+.sec-title{font-family:'Fredoka',cursive;font-size:20px;font-weight:700;margin-bottom:16px;color:var(--text)}
+.family-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin-bottom:28px}
+.fcard{background:var(--card);border:2.5px solid #EDE5F5;border-radius:16px;padding:18px 12px;text-align:center;cursor:pointer;transition:all .2s cubic-bezier(.34,1.56,.64,1)}
+.fcard:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08);border-color:var(--purple)}
+.fcard.active{border-color:var(--pink);background:#FFF0F5;box-shadow:0 4px 20px rgba(232,93,140,.2)}
+.fcard-emoji{font-size:38px;display:block;margin-bottom:8px}
+.fcard-name{font-family:'Fredoka',cursive;font-size:15px;font-weight:700;color:var(--text)}
+.fcard-count{font-size:11px;color:var(--muted);font-weight:700;margin-top:3px}
+.detail{background:var(--card);border-radius:24px;box-shadow:0 6px 32px rgba(0,0,0,.08);padding:28px 28px 32px;margin-bottom:32px;display:none;animation:slideIn .3s ease}
+.detail.show{display:block}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.detail-header{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.d-emoji{font-size:42px}
+.d-title{font-family:'Fredoka',cursive;font-size:30px;font-weight:700}
+.d-grade{font-size:12px;font-weight:800;background:#F5F3FF;color:var(--purple);border-radius:20px;padding:3px 12px;white-space:nowrap}
+.sent-box{background:#F8F7FF;border-radius:16px;padding:20px 56px 18px 20px;margin-bottom:24px;position:relative}
+.sent-label{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px}
+.sent-en{font-size:17px;line-height:1.9;font-weight:700;margin-bottom:12px}
+.sent-cn{font-size:13px;color:var(--muted);line-height:1.6;font-weight:700}
+.w-tag{font-weight:800;border-radius:6px;padding:1px 7px;cursor:pointer;transition:opacity .15s;display:inline-block}
+.w-tag:hover{opacity:.75}
+.speak-all{position:absolute;top:16px;right:16px;background:var(--purple);color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.speak-all:hover{opacity:.85}
+.web-wrap{margin:0 auto 28px;max-width:440px}
+.web-wrap svg{width:100%;height:auto;overflow:visible}
+.word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-bottom:28px}
+.wcard{border-radius:14px;padding:14px 16px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.wcard:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.wcard:active{transform:scale(.97)}
+.wcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px}
+.wcard-en{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:#fff;line-height:1.2}
+.wcard-spk{background:rgba(255,255,255,.25);border:none;border-radius:50%;width:28px;height:28px;color:#fff;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wcard-spk:hover{background:rgba(255,255,255,.4)}
+.wcard-ipa{font-size:11px;color:rgba(255,255,255,.8);font-weight:700;margin-bottom:6px}
+.wcard-cn{font-size:15px;color:#fff;font-weight:800}
+.wcard-emoji{font-size:18px;margin-bottom:2px}
+.detail-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.nav-btn{background:#F5F3FF;color:var(--purple);border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;transition:all .2s}
+.nav-btn:hover{background:var(--purple);color:#fff}
+.nav-btn:disabled{opacity:.3;cursor:default}
+.play-btn{background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif}
+.play-btn:hover{opacity:.88}
+footer{background:#fff;border-top:1px solid #F0EAF8;padding:28px 24px;text-align:center;color:var(--muted);font-size:13px;font-weight:700}
+footer a{color:var(--purple);text-decoration:none}
+@media(max-width:600px){.nav-links{display:none}.family-grid{grid-template-columns:repeat(3,1fr)}.word-grid{grid-template-columns:repeat(2,1fr)}.detail{padding:20px 16px 24px}.d-title{font-size:24px}.detail-nav{gap:6px}.nav-btn,.play-btn{padding:9px 14px;font-size:13px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Edu<span>Play</span></a>
+    <ul class="nav-links">
+      <li><a href="/">游戏大厅</a></li>
+      <li><a href="/word-family/" style="color:var(--purple)">词族点读</a></li>
+      <li><a href="/blog/">学习博客</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-badge">🔊 点击即读 · 免费使用</div>
+  <h1>用<span class="hl">词族</span>记单词<br>关联记忆，事半功倍</h1>
+  <p>相关的词放在一起学，一次掌握一整族！人教版 3–6 年级</p>
+</section>
+<div class="grade-tabs" id="gradeTabs"></div>
+<div class="section">
+  <div class="sec-title" id="secTitle">🐣 选择一个词族开始</div>
+  <div class="detail" id="detail"></div>
+  <div class="family-grid" id="familyGrid"></div>
+</div>
+<footer>
+  <p>© 2026 EduPlay · <a href="/">游戏大厅</a> · <a href="/blog/">学习博客</a> · <a href="/sitemap.xml">网站地图</a></p>
+  <p style="margin-top:6px">免费在线教育游戏，让学习更有趣 🎮</p>
+</footer>
+<script>
+const FAMILIES=[
+ {id:"animals",family:"动物家族",grade:"pep3",emoji:"🐾",words:[{en:"cat",cn:"猫",ipa:"/kæt/",emoji:"🐱"},{en:"dog",cn:"狗",ipa:"/dɒɡ/",emoji:"🐶"},{en:"fish",cn:"鱼",ipa:"/fɪʃ/",emoji:"🐟"},{en:"bird",cn:"鸟",ipa:"/bɜːrd/",emoji:"🐦"},{en:"bear",cn:"熊",ipa:"/beər/",emoji:"🐻"},{en:"frog",cn:"青蛙",ipa:"/frɒɡ/",emoji:"🐸"},{en:"duck",cn:"鸭子",ipa:"/dʌk/",emoji:"🦆"},{en:"panda",cn:"熊猫",ipa:"/ˈpændə/",emoji:"🐼"}],sentence:"The cat and dog saw a fish jump near the bird, while the bear and frog watched by the pond with the duck and panda.",sentence_cn:"猫和狗看到一条鱼在鸟儿旁边跳起，而熊和青蛙在池塘边看着，旁边还有鸭子和熊猫。"},
+ {id:"fruits",family:"水果家族",grade:"pep3",emoji:"🍎",words:[{en:"apple",cn:"苹果",ipa:"/ˈæpəl/",emoji:"🍎"},{en:"orange",cn:"橙子",ipa:"/ˈɒrɪndʒ/",emoji:"🍊"},{en:"banana",cn:"香蕉",ipa:"/bəˈnɑːnə/",emoji:"🍌"},{en:"grape",cn:"葡萄",ipa:"/ɡreɪp/",emoji:"🍇"},{en:"pear",cn:"梨",ipa:"/peər/",emoji:"🍐"},{en:"strawberry",cn:"草莓",ipa:"/ˈstrɔːberi/",emoji:"🍓"},{en:"watermelon",cn:"西瓜",ipa:"/ˈwɔːtərmelən/",emoji:"🍉"},{en:"peach",cn:"桃子",ipa:"/piːtʃ/",emoji:"🍑"}],sentence:"I have an apple, an orange and a banana in my bag. I also want a grape, a pear, some strawberry, watermelon and peach.",sentence_cn:"我书包里有苹果、橙子和香蕉，我还想要葡萄、梨、草莓、西瓜和桃子。"},
+ {id:"colors",family:"颜色家族",grade:"pep3",emoji:"🎨",words:[{en:"red",cn:"红色",ipa:"/red/",emoji:"🔴"},{en:"blue",cn:"蓝色",ipa:"/bluː/",emoji:"🔵"},{en:"yellow",cn:"黄色",ipa:"/ˈjeləʊ/",emoji:"🟡"},{en:"green",cn:"绿色",ipa:"/ɡriːn/",emoji:"🟢"},{en:"white",cn:"白色",ipa:"/waɪt/",emoji:"⚪"},{en:"black",cn:"黑色",ipa:"/blæk/",emoji:"⚫"},{en:"pink",cn:"粉色",ipa:"/pɪŋk/",emoji:"🩷"},{en:"purple",cn:"紫色",ipa:"/ˈpɜːrpəl/",emoji:"🟣"}],sentence:"The red apple sat on a blue plate near the yellow sun. The green grass, white clouds, black cat, pink flower and purple kite made a beautiful scene.",sentence_cn:"红苹果放在蓝盘子上，旁边是黄色的太阳。绿草、白云、黑猫、粉花和紫色风筝构成了美丽的画面。"},
+ {id:"stationery",family:"文具家族",grade:"pep3",emoji:"✏️",words:[{en:"pen",cn:"钢笔",ipa:"/pen/",emoji:"🖊️"},{en:"pencil",cn:"铅笔",ipa:"/ˈpensəl/",emoji:"✏️"},{en:"book",cn:"书",ipa:"/bʊk/",emoji:"📚"},{en:"ruler",cn:"尺子",ipa:"/ˈruːlər/",emoji:"📏"},{en:"eraser",cn:"橡皮",ipa:"/ɪˈreɪzər/",emoji:"🧹"},{en:"bag",cn:"书包",ipa:"/bæɡ/",emoji:"🎒"},{en:"crayon",cn:"蜡笔",ipa:"/ˈkreɪən/",emoji:"🖍️"},{en:"notebook",cn:"笔记本",ipa:"/ˈnəʊtbʊk/",emoji:"📓"}],sentence:"Put your pen, pencil, book and ruler in your bag. Don't forget the eraser, crayon and notebook before leaving the classroom.",sentence_cn:"把钢笔、铅笔、书和尺子放进书包。离开教室前别忘了橡皮、蜡笔和笔记本。"},
+ {id:"food",family:"食物家族",grade:"pep4",emoji:"🍽️",words:[{en:"rice",cn:"米饭",ipa:"/raɪs/",emoji:"🍚"},{en:"bread",cn:"面包",ipa:"/bred/",emoji:"🍞"},{en:"noodle",cn:"面条",ipa:"/ˈnuːdəl/",emoji:"🍜"},{en:"soup",cn:"汤",ipa:"/suːp/",emoji:"🍲"},{en:"egg",cn:"鸡蛋",ipa:"/eɡ/",emoji:"🥚"},{en:"milk",cn:"牛奶",ipa:"/mɪlk/",emoji:"🥛"},{en:"juice",cn:"果汁",ipa:"/dʒuːs/",emoji:"🧃"},{en:"cake",cn:"蛋糕",ipa:"/keɪk/",emoji:"🎂"}],sentence:"For breakfast I eat bread with an egg and drink milk or juice. For lunch I have rice and noodle soup. For dessert I love cake!",sentence_cn:"早餐我吃面包配鸡蛋，喝牛奶或果汁。午饭吃米饭和面条汤。甜点我最爱蛋糕！"},
+ {id:"body",family:"身体家族",grade:"pep4",emoji:"🧍",words:[{en:"head",cn:"头",ipa:"/hed/",emoji:"🗣️"},{en:"eye",cn:"眼睛",ipa:"/aɪ/",emoji:"👁️"},{en:"nose",cn:"鼻子",ipa:"/nəʊz/",emoji:"👃"},{en:"mouth",cn:"嘴巴",ipa:"/maʊθ/",emoji:"👄"},{en:"ear",cn:"耳朵",ipa:"/ɪər/",emoji:"👂"},{en:"hand",cn:"手",ipa:"/hænd/",emoji:"✋"},{en:"foot",cn:"脚",ipa:"/fʊt/",emoji:"🦶"},{en:"leg",cn:"腿",ipa:"/leɡ/",emoji:"🦵"}],sentence:"Shake your head, open your eye, use your nose to smell, your mouth to talk, your ear to listen, then wave your hand, kick your leg and stamp your foot.",sentence_cn:"摇摇头，睁开眼睛，用鼻子闻，用嘴说话，用耳朵听，然后挥挥手、踢踢腿、跺跺脚。"},
+ {id:"weather",family:"天气家族",grade:"pep4",emoji:"⛅",words:[{en:"sunny",cn:"晴天的",ipa:"/ˈsʌni/",emoji:"☀️"},{en:"cloudy",cn:"多云的",ipa:"/ˈklaʊdi/",emoji:"☁️"},{en:"rainy",cn:"下雨的",ipa:"/ˈreɪni/",emoji:"🌧️"},{en:"windy",cn:"有风的",ipa:"/ˈwɪndi/",emoji:"💨"},{en:"snowy",cn:"下雪的",ipa:"/ˈsnəʊi/",emoji:"❄️"},{en:"hot",cn:"热的",ipa:"/hɒt/",emoji:"🔥"},{en:"cold",cn:"冷的",ipa:"/kəʊld/",emoji:"🥶"},{en:"warm",cn:"暖和的",ipa:"/wɔːrm/",emoji:"🌤️"}],sentence:"Today is sunny and warm, but yesterday was cloudy and windy. Last week it was cold and snowy, and last summer it was very hot and rainy.",sentence_cn:"今天晴朗温暖，但昨天多云有风。上周又冷又下雪，去年夏天又热又多雨。"},
+ {id:"transport",family:"交通家族",grade:"pep4",emoji:"🚌",words:[{en:"bus",cn:"公共汽车",ipa:"/bʌs/",emoji:"🚌"},{en:"car",cn:"汽车",ipa:"/kɑːr/",emoji:"🚗"},{en:"bike",cn:"自行车",ipa:"/baɪk/",emoji:"🚲"},{en:"train",cn:"火车",ipa:"/treɪn/",emoji:"🚂"},{en:"plane",cn:"飞机",ipa:"/pleɪn/",emoji:"✈️"},{en:"ship",cn:"轮船",ipa:"/ʃɪp/",emoji:"🚢"},{en:"subway",cn:"地铁",ipa:"/ˈsʌbweɪ/",emoji:"🚇"},{en:"taxi",cn:"出租车",ipa:"/ˈtæksi/",emoji:"🚕"}],sentence:"I go to school by bus. Dad drives a car to work. Grandpa rides a bike. Uncle takes a train or plane. We also use the ship, subway and taxi.",sentence_cn:"我坐公共汽车上学，爸爸开汽车上班，爷爷骑自行车，叔叔坐火车或飞机，我们也会用到轮船、地铁和出租车。"},
+ {id:"sports",family:"运动家族",grade:"pep5",emoji:"⚽",words:[{en:"football",cn:"足球",ipa:"/ˈfʊtbɔːl/",emoji:"⚽"},{en:"basketball",cn:"篮球",ipa:"/ˈbɑːskɪtbɔːl/",emoji:"🏀"},{en:"swimming",cn:"游泳",ipa:"/ˈswɪmɪŋ/",emoji:"🏊"},{en:"running",cn:"跑步",ipa:"/ˈrʌnɪŋ/",emoji:"🏃"},{en:"cycling",cn:"骑车",ipa:"/ˈsaɪklɪŋ/",emoji:"🚴"},{en:"tennis",cn:"网球",ipa:"/ˈtenɪs/",emoji:"🎾"},{en:"badminton",cn:"羽毛球",ipa:"/ˈbædmɪntən/",emoji:"🏸"},{en:"skating",cn:"滑冰",ipa:"/ˈskeɪtɪŋ/",emoji:"⛸️"}],sentence:"My school has football and basketball teams. After school I enjoy swimming and running. On weekends I go cycling, play tennis and badminton, and in winter we try skating.",sentence_cn:"学校有足球队和篮球队，放学后我喜欢游泳和跑步，周末骑车、打网球和羽毛球，冬天还会滑冰。"},
+ {id:"seasons",family:"季节家族",grade:"pep5",emoji:"🌸",words:[{en:"spring",cn:"春天",ipa:"/sprɪŋ/",emoji:"🌸"},{en:"summer",cn:"夏天",ipa:"/ˈsʌmər/",emoji:"☀️"},{en:"autumn",cn:"秋天",ipa:"/ˈɔːtəm/",emoji:"🍂"},{en:"winter",cn:"冬天",ipa:"/ˈwɪntər/",emoji:"❄️"},{en:"March",cn:"三月",ipa:"/mɑːrtʃ/",emoji:"📅"},{en:"June",cn:"六月",ipa:"/dʒuːn/",emoji:"📅"},{en:"September",cn:"九月",ipa:"/sepˈtembər/",emoji:"📅"},{en:"December",cn:"十二月",ipa:"/dɪˈsembər/",emoji:"🎄"}],sentence:"Spring begins in March with flowers. Summer arrives in June with heat. Autumn comes in September with falling leaves. Winter starts in December with snow.",sentence_cn:"三月春天到来鲜花盛开，六月夏天来临天气炎热，九月秋天降临落叶纷纷，十二月冬天开始白雪飘飘。"},
+ {id:"hobbies",family:"爱好家族",grade:"pep5",emoji:"🎨",words:[{en:"reading",cn:"阅读",ipa:"/ˈriːdɪŋ/",emoji:"📖"},{en:"drawing",cn:"画画",ipa:"/ˈdrɔːɪŋ/",emoji:"🎨"},{en:"singing",cn:"唱歌",ipa:"/ˈsɪŋɪŋ/",emoji:"🎵"},{en:"dancing",cn:"跳舞",ipa:"/ˈdɑːnsɪŋ/",emoji:"💃"},{en:"cooking",cn:"烹饪",ipa:"/ˈkʊkɪŋ/",emoji:"👨‍🍳"},{en:"hiking",cn:"远足",ipa:"/ˈhaɪkɪŋ/",emoji:"🥾"},{en:"painting",cn:"绘画",ipa:"/ˈpeɪntɪŋ/",emoji:"🖌️"},{en:"fishing",cn:"钓鱼",ipa:"/ˈfɪʃɪŋ/",emoji:"🎣"}],sentence:"My sister loves reading and drawing. I prefer singing and dancing. Mom enjoys cooking and painting on weekends. Dad goes hiking and fishing in the mountains.",sentence_cn:"姐姐喜欢阅读和画画，我更喜欢唱歌和跳舞，妈妈周末享受烹饪和绘画，爸爸则去山里远足和钓鱼。"},
+ {id:"feelings",family:"情感家族",grade:"pep6",emoji:"😊",words:[{en:"happy",cn:"快乐的",ipa:"/ˈhæpi/",emoji:"😊"},{en:"sad",cn:"悲伤的",ipa:"/sæd/",emoji:"😢"},{en:"angry",cn:"生气的",ipa:"/ˈæŋɡri/",emoji:"😠"},{en:"excited",cn:"兴奋的",ipa:"/ɪkˈsaɪtɪd/",emoji:"😄"},{en:"nervous",cn:"紧张的",ipa:"/ˈnɜːrvəs/",emoji:"😰"},{en:"bored",cn:"无聊的",ipa:"/bɔːrd/",emoji:"😒"},{en:"tired",cn:"疲惫的",ipa:"/ˈtaɪərd/",emoji:"😴"},{en:"proud",cn:"自豪的",ipa:"/praʊd/",emoji:"😤"}],sentence:"Before the show I felt happy and excited but nervous. After a long rehearsal I was tired and a bit bored. When it went well I was proud, but my friend was sad and angry.",sentence_cn:"演出前我感到快乐兴奋但紧张，长时间排练后又累又无聊，顺利后我很自豪，但朋友因失误而悲伤生气。"},
+ {id:"environment",family:"环境家族",grade:"pep6",emoji:"🌍",words:[{en:"forest",cn:"森林",ipa:"/ˈfɒrɪst/",emoji:"🌲"},{en:"river",cn:"河流",ipa:"/ˈrɪvər/",emoji:"🏞️"},{en:"ocean",cn:"海洋",ipa:"/ˈəʊʃən/",emoji:"🌊"},{en:"mountain",cn:"山",ipa:"/ˈmaʊntɪn/",emoji:"⛰️"},{en:"desert",cn:"沙漠",ipa:"/ˈdezərt/",emoji:"🏜️"},{en:"pollution",cn:"污染",ipa:"/pəˈluːʃən/",emoji:"💨"},{en:"recycle",cn:"回收",ipa:"/ˌriːˈsaɪkəl/",emoji:"♻️"},{en:"protect",cn:"保护",ipa:"/prəˈtekt/",emoji:"🛡️"}],sentence:"We must protect our forest, river and ocean from pollution. The mountain and desert also need our care. Let's recycle and keep the Earth clean.",sentence_cn:"我们必须保护森林、河流和海洋免受污染，山地和沙漠也需要我们的呵护，让我们回收利用保持地球清洁。"},
+];
+const COLORS=['#E85D8C','#4A9EF5','#F59E0B','#8B5CF6','#14B8A6','#EF4444','#10B981','#F97316'];
+const GRADES=[{key:'pep3',label:'3年级'},{key:'pep4',label:'4年级'},{key:'pep5',label:'5年级'},{key:'pep6',label:'6年级'}];
+let curGrade='pep3',curFamilyId=null;
+
+function init(){renderGradeTabs();renderGrid();}
+
+function renderGradeTabs(){
+  document.getElementById('gradeTabs').innerHTML=GRADES.map(g=>
+    `<button class="gtab ${g.key===curGrade?'active':''}" onclick="setGrade('${g.key}')">${g.label}</button>`
+  ).join('');
+}
+function setGrade(k){curGrade=k;curFamilyId=null;renderGradeTabs();renderGrid();hideDetail();}
+function renderGrid(){
+  const list=FAMILIES.filter(f=>f.grade===curGrade);
+  const label=GRADES.find(g=>g.key===curGrade).label;
+  document.getElementById('secTitle').textContent=`📚 ${label}词族（${list.length}组）`;
+  document.getElementById('familyGrid').innerHTML=list.map(f=>
+    `<div class="fcard ${f.id===curFamilyId?'active':''}" onclick="openFamily('${f.id}')">
+      <span class="fcard-emoji">${f.emoji}</span>
+      <div class="fcard-name">${f.family}</div>
+      <div class="fcard-count">${f.words.length}个词</div>
+    </div>`
+  ).join('');
+}
+function openFamily(id){
+  curFamilyId=id;renderGrid();
+  const f=FAMILIES.find(x=>x.id===id);
+  renderDetail(f);
+  setTimeout(()=>document.getElementById('detail').scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+}
+function hideDetail(){
+  const d=document.getElementById('detail');
+  d.classList.remove('show');d.innerHTML='';
+}
+function renderDetail(f){
+  const gradeLabel=GRADES.find(g=>g.key===f.grade).label;
+  const colorMap={};
+  f.words.forEach((w,i)=>colorMap[w.en.toLowerCase()]=COLORS[i]);
+  document.getElementById('detail').innerHTML=`
+    <div class="detail-header">
+      <span class="d-emoji">${f.emoji}</span>
+      <div><div class="d-title">${f.family}</div><span class="d-grade">${gradeLabel} · 人教版PEP</span></div>
+    </div>
+    <div class="sent-box">
+      <div class="sent-label">📖 语境例句</div>
+      <div class="sent-en">${highlightSentence(f.sentence,f.words,colorMap)}</div>
+      <div class="sent-cn">${f.sentence_cn}</div>
+      <button class="speak-all" onclick="speakText(${JSON.stringify(f.sentence)})">🔊</button>
+    </div>
+    ${buildWebSVG(f,colorMap)}
+    <div class="word-grid">${f.words.map((w,i)=>`
+      <div class="wcard" style="background:${COLORS[i]}" onclick="speakText('${w.en}')">
+        <div class="wcard-top">
+          <span class="wcard-emoji">${w.emoji}</span>
+          <button class="wcard-spk" onclick="event.stopPropagation();speakText('${w.en}')">🔊</button>
+        </div>
+        <div class="wcard-en">${w.en}</div>
+        <div class="wcard-ipa">${w.ipa}</div>
+        <div class="wcard-cn">${w.cn}</div>
+      </div>`).join('')}
+    </div>
+    <div class="detail-nav">
+      <button class="nav-btn" id="btnPrev" onclick="navFamily(-1)">← 上一族</button>
+      <button class="play-btn" onclick="goWordMatch()">🎮 用这族词打消消乐</button>
+      <button class="nav-btn" id="btnNext" onclick="navFamily(1)">下一族 →</button>
+    </div>`;
+  document.getElementById('detail').classList.add('show');
+  const list=FAMILIES.filter(x=>x.grade===curGrade);
+  const idx=list.findIndex(x=>x.id===f.id);
+  document.getElementById('btnPrev').disabled=idx===0;
+  document.getElementById('btnNext').disabled=idx===list.length-1;
+}
+function highlightSentence(sentence,words,colorMap){
+  let html=sentence;
+  [...words].sort((a,b)=>b.en.length-a.en.length).forEach(w=>{
+    const c=colorMap[w.en.toLowerCase()];
+    html=html.replace(new RegExp(`\\b(${w.en})\\b`,'gi'),
+      `<span class="w-tag" style="background:${c}22;color:${c};border:1.5px solid ${c}55" onclick="speakText('${w.en}')">$1</span>`);
+  });
+  return html;
+}
+function buildWebSVG(f,colorMap){
+  const W=400,H=320,cx=200,cy=160,r=118;
+  const n=f.words.length;
+  let lines='',nodes='';
+  f.words.forEach((w,i)=>{
+    const angle=(i*2*Math.PI/n)-Math.PI/2;
+    const x=+(cx+r*Math.cos(angle)).toFixed(1);
+    const y=+(cy+r*Math.sin(angle)).toFixed(1);
+    const c=COLORS[i];
+    lines+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="${c}" stroke-width="1.5" stroke-opacity=".35" stroke-dasharray="4 3"/>`;
+    nodes+=`<g onclick="speakText('${w.en}')" style="cursor:pointer">
+      <circle cx="${x}" cy="${y}" r="27" fill="${c}18" stroke="${c}" stroke-width="1.8"/>
+      <text x="${x}" y="${y-4}" text-anchor="middle" font-size="12" font-family="Nunito,sans-serif" font-weight="800" fill="${c}">${w.en}</text>
+      <text x="${x}" y="${y+12}" text-anchor="middle" font-size="12">${w.emoji}</text>
+    </g>`;
+  });
+  return `<div class="web-wrap"><svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+    ${lines}
+    <circle cx="${cx}" cy="${cy}" r="46" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2"/>
+    <text x="${cx}" y="${cy-6}" text-anchor="middle" font-size="13" font-family="Fredoka,cursive" font-weight="700" fill="#8B5CF6">${f.family.replace('家族','')}</text>
+    <text x="${cx}" y="${cy+14}" text-anchor="middle" font-size="20">${f.emoji}</text>
+    ${nodes}
+  </svg></div>`;
+}
+function navFamily(dir){
+  const list=FAMILIES.filter(f=>f.grade===curGrade);
+  const idx=list.findIndex(f=>f.id===curFamilyId);
+  const next=list[idx+dir];
+  if(next)openFamily(next.id);
+}
+function goWordMatch(){
+  const f=FAMILIES.find(x=>x.id===curFamilyId);
+  if(!f)return;
+  try{localStorage.setItem('eduplay_custom_vocab',JSON.stringify({name:f.family,pairs:f.words.map(w=>[w.en,w.cn])}));}catch(e){}
+  window.open('/word-match/','_blank');
+}
+function speakText(text){
+  if(!('speechSynthesis' in window))return fallbackAudio(text);
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='en-US';u.rate=text.includes(' ')?0.85:0.9;
+  const v=speechSynthesis.getVoices();
+  const pick=v.find(x=>x.lang.startsWith('en')&&/samantha|aria|zira|google us/i.test(x.name))||v.find(x=>x.lang.startsWith('en-US'))||v.find(x=>x.lang.startsWith('en'));
+  if(pick)u.voice=pick;
+  speechSynthesis.speak(u);
+}
+function fallbackAudio(word){
+  if(!word.includes(' '))new Audio(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(word)}&type=1`).play().catch(()=>{});
+}
+if('speechSynthesis' in window)speechSynthesis.onvoiceschanged=()=>{};
+init();
+</script>
+</body>
+</html>

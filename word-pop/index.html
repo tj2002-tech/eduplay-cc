@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>词力消消乐 — 小学英语翻牌配对游戏 | EduPlay</title>
+<meta name="description" content="小学英语翻牌配对消消乐，支持人教版词库和自定义导入，限时挑战或课堂对战模式，免费在线使用，无需下载。">
+<meta name="keywords" content="词力消消乐,英语翻牌游戏,小学英语配对游戏,课堂英语游戏,人教版英语游戏">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eduplay.cc/word-pop/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eduplay.cc/word-pop/">
+<meta property="og:title" content="词力消消乐 — 小学英语翻牌配对游戏 | EduPlay">
+<meta property="og:description" content="翻牌配对消消乐，支持人教版词库和自定义导入，限时挑战或课堂对战模式，免费在线使用。">
+<meta property="og:image" content="https://eduplay.cc/og-cover.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="EduPlay">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="词力消消乐 — 小学英语翻牌配对游戏 | EduPlay">
+<meta name="twitter:description" content="翻牌配对消消乐，人教版词库+自定义导入，限时挑战+课堂对战，免费使用。">
+<meta name="twitter:image" content="https://eduplay.cc/og-cover.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "词力消消乐",
+  "url": "https://eduplay.cc/word-pop/",
+  "description": "小学英语翻牌配对消消乐，支持人教版词库和自定义导入，限时挑战或课堂对战模式，免费在线使用。",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"CNY"},
+  "publisher": {"@type":"Organization","name":"EduPlay","url":"https://eduplay.cc"}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-top:#f8f4e8;--bg-bottom:#dff0ea;--panel:rgba(255,255,255,.88);--line:rgba(53,76,66,.12);--text:#25332d;--muted:#66756e;--brand:#1f9d74;--brand-deep:#197658;--accent:#ffb54d;--danger:#e8735b;--danger-soft:#fff0ec;--ok-soft:#eefaf5;--shadow:0 22px 54px rgba(47,69,60,.12)
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;color:var(--text);font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;background:radial-gradient(circle at 12% 0%,rgba(255,255,255,.72),transparent 26%),radial-gradient(circle at 88% 12%,rgba(255,230,178,.4),transparent 22%),linear-gradient(180deg,var(--bg-top),var(--bg-bottom))}
+.page{width:min(1220px,calc(100% - 24px));margin:18px auto 32px}
+.hero,.panel{background:var(--panel);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}
+.hero{padding:28px;overflow:hidden;position:relative;background:radial-gradient(circle at right top,rgba(201,242,223,.7),transparent 32%),radial-gradient(circle at left bottom,rgba(255,226,175,.34),transparent 26%),linear-gradient(145deg,rgba(255,253,247,.98),rgba(241,250,246,.9))}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:999px;pointer-events:none}
+.hero:before{width:220px;height:220px;right:-70px;top:-84px;background:radial-gradient(circle,rgba(255,194,79,.24),transparent 70%)}
+.hero:after{width:190px;height:190px;left:-50px;bottom:-80px;background:radial-gradient(circle,rgba(65,180,132,.18),transparent 68%)}
+.hero-top,.section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative;z-index:1}
+.eyebrow,.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;font-weight:800}
+.eyebrow{color:var(--brand-deep);background:rgba(31,157,116,.12)}
+.badge{color:var(--brand-deep);background:rgba(255,255,255,.82);border:1px solid rgba(31,157,116,.12)}
+h1{margin:16px 0 10px;font-size:clamp(2rem,4vw,4rem);line-height:1.04;letter-spacing:.02em}
+.subtitle{margin:0;max-width:760px;color:var(--muted);font-size:clamp(1rem,1.9vw,1.18rem);line-height:1.75}
+.hero-stats{margin-top:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative;z-index:1}
+.stat{padding:16px;border-radius:20px;background:rgba(255,255,255,.72);border:1px solid rgba(53,76,66,.08)}
+.stat-label{font-size:.92rem;color:var(--muted)}
+.stat-value{margin-top:8px;font-size:1.55rem;font-weight:900}
+.layout{display:grid;grid-template-columns:380px minmax(0,1fr);gap:18px;margin-top:18px}
+.panel{padding:20px}
+.controls{display:grid;gap:16px}
+.group{padding:16px;border-radius:20px;background:rgba(255,255,255,.58);border:1px solid rgba(53,76,66,.08)}
+.group h2,.group h3,.panel h2{margin:0;font-size:1.12rem}
+.note{margin:8px 0 0;color:var(--muted);line-height:1.65;font-size:.94rem}
+.field{margin-top:14px}
+.field label{display:block;margin-bottom:8px;color:var(--muted);font-size:.9rem;font-weight:700}
+select,textarea{width:100%;border:1px solid rgba(53,76,66,.14);background:#fffdfa;border-radius:14px;padding:12px 14px;color:var(--text);font-size:.98rem;outline:none}
+textarea{min-height:132px;resize:vertical;line-height:1.6}
+.chip-row,.action-row,.status-row,.result-row{display:flex;flex-wrap:wrap;gap:10px}
+.chip{appearance:none;border:1px solid rgba(53,76,66,.12);background:rgba(255,255,255,.8);color:var(--text);padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer;transition:all .18s ease}
+.chip.active{background:rgba(31,157,116,.14);border-color:rgba(31,157,116,.26);color:var(--brand-deep)}
+button{appearance:none;border:none;cursor:pointer;font-weight:800;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+button:hover{transform:translateY(-1px)}
+.primary,.secondary,.ghost{padding:13px 18px;border-radius:16px;font-size:.98rem}
+.primary{color:#fff;background:linear-gradient(135deg,var(--brand),#3cbf90);box-shadow:0 16px 30px rgba(31,157,116,.26)}
+.secondary{color:var(--text);background:rgba(255,255,255,.88);border:1px solid rgba(53,76,66,.12)}
+.ghost{color:#ae4d3d;background:var(--danger-soft);border:1px solid rgba(232,115,91,.18)}
+.play-area{display:grid;gap:16px}
+.topbar{padding:18px;border-radius:22px;background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(240,249,244,.9));border:1px solid rgba(53,76,66,.08)}
+.status-row{margin-top:14px}
+.status-card,.result-card{flex:1 1 110px;min-width:110px;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.8);border:1px solid rgba(53,76,66,.08)}
+.status-title,.result-title{color:var(--muted);font-size:.88rem}
+.status-value,.result-value{margin-top:7px;font-size:1.35rem;font-weight:900}
+.message{margin-top:16px;padding:16px 18px;border-radius:18px;line-height:1.7;background:linear-gradient(180deg,var(--ok-soft),rgba(255,255,255,.78));border:1px solid rgba(31,157,116,.12)}
+.board-shell{position:relative;padding:18px;border-radius:24px;background:radial-gradient(circle at 12% 10%,rgba(255,223,155,.24),transparent 16%),radial-gradient(circle at 88% 14%,rgba(86,194,151,.18),transparent 18%),linear-gradient(180deg,rgba(255,255,255,.86),rgba(248,252,250,.9));border:1px solid rgba(53,76,66,.08);min-height:560px}
+.board{display:grid;gap:12px}
+.board.size-8{grid-template-columns:repeat(4,minmax(0,1fr))}
+.board.size-10{grid-template-columns:repeat(5,minmax(0,1fr))}
+.board.size-12{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{position:relative;min-height:118px;background:transparent;padding:0;perspective:1000px}
+.card-inner{position:relative;width:100%;height:100%;min-height:118px;transform-style:preserve-3d;transition:transform .42s ease,opacity .28s ease}
+.card.flipped .card-inner{transform:rotateY(180deg)}
+.card.matched .card-inner{transform:rotateY(180deg) scale(.96);opacity:.22}
+.card-face{position:absolute;inset:0;border-radius:22px;backface-visibility:hidden;border:1px solid rgba(53,76,66,.1);box-shadow:0 14px 28px rgba(56,83,73,.08);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:14px}
+.card-front{background:linear-gradient(160deg,#fffaf0,#fff)}
+.card-front:before{content:"词";display:grid;place-items:center;width:52px;height:52px;border-radius:18px;margin-bottom:10px;font-size:1.2rem;font-weight:900;color:#fff;background:linear-gradient(135deg,var(--brand),#52d0a0);box-shadow:0 12px 24px rgba(31,157,116,.24)}
+.card-back{transform:rotateY(180deg);color:var(--text);background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(248,252,249,.98))}
+.card-back.word{background:linear-gradient(180deg,#fff9e8,#fffdf7)}
+.card-back.meaning{background:linear-gradient(180deg,#eef9f4,#fbfffd)}
+.type-tag{display:inline-flex;align-items:center;justify-content:center;min-width:62px;padding:6px 10px;border-radius:999px;font-size:.75rem;font-weight:800;letter-spacing:.04em}
+.word .type-tag{background:rgba(255,181,77,.18);color:#9f6505}
+.meaning .type-tag{background:rgba(31,157,116,.14);color:var(--brand-deep)}
+.card-text{margin-top:10px;font-size:clamp(1rem,1.8vw,1.3rem);font-weight:900;line-height:1.35}
+.card-sub{margin-top:8px;color:var(--muted);font-size:.9rem}
+.board-overlay{position:absolute;inset:18px;border-radius:22px;display:none;align-items:center;justify-content:center;background:rgba(250,252,251,.84);border:1px dashed rgba(53,76,66,.12);text-align:center;padding:24px}
+.board-overlay.show{display:flex}
+.empty-state{max-width:520px}
+.empty-state h3{margin:0;font-size:1.4rem}
+.empty-state p{margin:10px 0 0;line-height:1.75;color:var(--muted)}
+.results{padding:18px;border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(248,252,250,.94));border:1px solid rgba(53,76,66,.08)}
+.results.hidden{display:none}
+.tips{margin-top:16px;padding:16px;border-radius:18px;background:rgba(255,255,255,.72);border:1px solid rgba(53,76,66,.08);color:var(--muted);line-height:1.7}
+.helper{margin-top:8px;color:var(--muted);font-size:.88rem}
+.success-flash{animation:popFlash .42s ease}
+.fail-flash{animation:shake .28s ease}
+@keyframes popFlash{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+@media (max-width:1080px){.layout{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.page{width:min(100% - 16px,1220px)}.hero,.panel{padding:16px}.hero-stats{grid-template-columns:1fr 1fr}.board.size-8,.board.size-10,.board.size-12{grid-template-columns:repeat(2,minmax(0,1fr))}.board-shell{min-height:440px;padding:14px}.board-overlay{inset:14px}.card,.card-inner{min-height:104px}}
+.site-nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:0 24px;position:sticky;top:0;z-index:200}
+.site-nav-inner{max-width:1220px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.site-logo{font-family:'Nunito',sans-serif;font-size:22px;font-weight:900;color:#E85D8C;text-decoration:none}
+.site-logo span{color:#4A9EF5}
+.site-nav-links{display:flex;gap:24px;list-style:none}
+.site-nav-links a{text-decoration:none;color:#A0A0B8;font-weight:700;font-size:14px;transition:color .2s}
+.site-nav-links a:hover{color:#8B5CF6}
+.site-footer{background:#fff;border-top:1px solid rgba(53,76,66,.08);padding:24px;text-align:center;color:#66756e;font-size:13px;font-weight:700;margin-top:32px}
+.site-footer a{color:#1f9d74;text-decoration:none}
+@media(max-width:600px){.site-nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="/" class="site-logo">Edu<span>Play</span></a>
+    <ul class="site-nav-links">
+      <li><a href="/">游戏大厅</a></li>
+      <li><a href="/word-pop/" style="color:#1f9d74">词力消消乐</a></li>
+      <li><a href="/blog/">学习博客</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="page">
+  <section class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow">词力消消乐</div>
+        <h1>把背单词变成一场<br>可以立刻开玩的课堂闯关</h1>
+        <p class="subtitle">面向小学英语课堂的网页小游戏。支持教材词库、主题词库、自定义导入、标准发音、限时挑战与一键重开，电脑和平板直接打开就能用。</p>
+      </div>
+      <div class="badge" id="heroBadge">等待开始</div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-label">当前词库</div><div class="stat-value" id="heroBank">PEP 三年级上 · Unit 1</div></div>
+      <div class="stat"><div class="stat-label">最佳成绩</div><div class="stat-value" id="bestScore">0</div></div>
+      <div class="stat"><div class="stat-label">最快通关</div><div class="stat-value" id="bestTime">--</div></div>
+      <div class="stat"><div class="stat-label">累计开局</div><div class="stat-value" id="playCount">0</div></div>
+    </div>
+  </section>
+
+  <section class="layout">
+    <aside class="panel controls">
+      <div class="group">
+        <h2>快速开局</h2>
+        <p class="note">先选词库，再选难度，点击开始就能直接进入。适合课堂大屏、电脑投屏和平板触控。</p>
+        <div class="field"><label for="bankSelect">词库选择</label><select id="bankSelect"></select></div>
+        <div class="field"><label>难度模式</label><div class="chip-row" id="difficultyRow"></div></div>
+        <div class="field"><label>课堂模式</label><div class="chip-row" id="modeRow"></div></div>
+        <div class="action-row" style="margin-top:14px">
+          <button class="primary" id="startBtn">开始游戏</button>
+          <button class="secondary" id="restartBtn">重新洗牌</button>
+          <button class="secondary" id="fullscreenBtn">一键全屏</button>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3>自定义词库</h3>
+        <p class="note">每行一组，格式为：英文=中文。导入后会自动生成专属消消乐。</p>
+        <div class="field"><textarea id="customInput" placeholder="apple=苹果&#10;banana=香蕉&#10;teacher=老师&#10;classroom=教室"></textarea></div>
+        <div class="action-row">
+          <button class="primary" id="importBtn">导入词库</button>
+          <button class="secondary" id="sampleBtn">填入示例</button>
+        </div>
+        <div class="helper" id="customHint">建议至少输入 6 组单词，系统会按所选难度自动截取。</div>
+      </div>
+
+      <div class="group">
+        <h3>课堂设置</h3>
+        <div class="field"><label><input type="checkbox" id="speechToggle" checked> 播放英文发音</label></div>
+        <div class="field"><label><input type="checkbox" id="hintToggle" checked> 失败时显示轻提示</label></div>
+        <div class="field"><label><input type="checkbox" id="timerToggle" checked> 开启限时挑战</label></div>
+        <p class="note">限时模式更适合课堂竞赛；关闭后会切换为自由练习，不倒计时。</p>
+      </div>
+
+      <div class="group">
+        <h3>玩法说明</h3>
+        <p class="note">每次翻开两张卡片，如果英文和中文意思匹配成功，就会消除并得分。全部消除后自动结算。</p>
+        <div class="tips">小技巧：课堂模式建议用“对战模式”，让两组学生轮流上台点击；个人复习则更适合“练习模式”。</div>
+      </div>
+    </aside>
+
+    <section class="play-area">
+      <div class="topbar">
+        <div class="section-head">
+          <div>
+            <h2>游戏面板</h2>
+            <p class="note" id="subTitle">选择词库后开始本局，系统会自动随机打乱英文卡和中文卡的位置。</p>
+          </div>
+          <div class="badge" id="stageBadge">未开始</div>
+        </div>
+        <div class="status-row">
+          <div class="status-card"><div class="status-title">得分</div><div class="status-value" id="scoreValue">0</div></div>
+          <div class="status-card"><div class="status-title">已配对</div><div class="status-value" id="matchValue">0 / 0</div></div>
+          <div class="status-card"><div class="status-title">剩余时间</div><div class="status-value" id="timeValue">--</div></div>
+          <div class="status-card"><div class="status-title">当前回合</div><div class="status-value" id="turnValue">练习</div></div>
+          <div class="status-card"><div class="status-title">正确率</div><div class="status-value" id="accuracyValue">0%</div></div>
+        </div>
+        <div class="message" id="messageBox">准备好后点击“开始游戏”。成功配对后会自动朗读英文单词。</div>
+      </div>
+
+      <div class="board-shell" id="boardShell">
+        <div class="board" id="board"></div>
+        <div class="board-overlay show" id="boardOverlay">
+          <div class="empty-state">
+            <h3>等待开局</h3>
+            <p>左侧选择词库与难度后开始。你也可以直接导入自定义词库，生成自己的单词消消乐。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="results hidden" id="resultsPanel">
+        <div class="section-head">
+          <div>
+            <h2>本局结算</h2>
+            <p class="note">通关后可以直接重开，也可以切换词库开始下一轮。</p>
+          </div>
+          <div class="badge" id="resultBadge">已完成</div>
+        </div>
+        <div class="result-row" style="margin-top:14px">
+          <div class="result-card"><div class="result-title">最终得分</div><div class="result-value" id="finalScore">0</div></div>
+          <div class="result-card"><div class="result-title">通关用时</div><div class="result-value" id="finalTime">--</div></div>
+          <div class="result-card"><div class="result-title">错误次数</div><div class="result-value" id="finalMistakes">0</div></div>
+          <div class="result-card"><div class="result-title">正确率</div><div class="result-value" id="finalAccuracy">0%</div></div>
+        </div>
+        <div class="tips" id="summaryText">继续练习，下一局挑战更快的通关速度。</div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 EduPlay · <a href="/">游戏大厅</a> · <a href="/word-family/">词族点读卡</a> · <a href="/word-match/">单词消消乐</a> · <a href="/blog/">学习博客</a> · <a href="/sitemap.xml">网站地图</a></p>
+  <p style="margin-top:6px">免费在线教育游戏，让学习更有趣</p>
+</footer>
+
+<script>
+const STORAGE_KEY="word-match-pop-v1";
+const SAMPLE_CUSTOM=["apple=苹果","banana=香蕉","teacher=老师","classroom=教室","window=窗户","schoolbag=书包","friend=朋友","happy=开心的"].join("\n");
+const BANKS=[
+  {id:"pep3u1",name:"PEP 三年级上 · Unit 1",items:[{word:"hello",meaning:"你好"},{word:"hi",meaning:"嗨"},{word:"goodbye",meaning:"再见"},{word:"teacher",meaning:"老师"},{word:"student",meaning:"学生"},{word:"friend",meaning:"朋友"},{word:"classroom",meaning:"教室"},{word:"book",meaning:"书"}]},
+  {id:"pep4school",name:"PEP 四年级 · 校园主题",items:[{word:"library",meaning:"图书馆"},{word:"playground",meaning:"操场"},{word:"computer room",meaning:"计算机教室"},{word:"music room",meaning:"音乐教室"},{word:"art room",meaning:"美术教室"},{word:"teachers' office",meaning:"教师办公室"},{word:"canteen",meaning:"食堂"},{word:"garden",meaning:"花园"},{word:"stairs",meaning:"楼梯"},{word:"wall",meaning:"墙"}]},
+  {id:"topic-food",name:"主题词汇 · 食物与饮料",items:[{word:"bread",meaning:"面包"},{word:"milk",meaning:"牛奶"},{word:"juice",meaning:"果汁"},{word:"rice",meaning:"米饭"},{word:"noodles",meaning:"面条"},{word:"egg",meaning:"鸡蛋"},{word:"fish",meaning:"鱼"},{word:"soup",meaning:"汤"},{word:"cake",meaning:"蛋糕"},{word:"water",meaning:"水"}]},
+  {id:"topic-animals",name:"主题词汇 · 动物乐园",items:[{word:"tiger",meaning:"老虎"},{word:"panda",meaning:"熊猫"},{word:"rabbit",meaning:"兔子"},{word:"monkey",meaning:"猴子"},{word:"elephant",meaning:"大象"},{word:"bird",meaning:"鸟"},{word:"horse",meaning:"马"},{word:"duck",meaning:"鸭子"},{word:"lion",meaning:"狮子"},{word:"bear",meaning:"熊"}]}
+];
+const DIFFICULTIES=[{id:"easy",name:"简单 4 组",pairCount:4,seconds:60},{id:"normal",name:"标准 5 组",pairCount:5,seconds:80},{id:"hard",name:"挑战 6 组",pairCount:6,seconds:95}];
+const MODES=[{id:"practice",name:"练习模式",turnLabel:"练习",scoreBonus:0},{id:"battle",name:"对战模式",turnLabel:"红队",scoreBonus:10}];
+const state={bankId:BANKS[0].id,difficultyId:DIFFICULTIES[1].id,modeId:MODES[0].id,board:[],openedIds:[],matchedIds:[],started:false,locked:false,score:0,attempts:0,matches:0,mistakes:0,secondsLeft:0,elapsed:0,startTimestamp:0,timerId:null,turnIndex:0,speechEnabled:true,hintEnabled:true,timerEnabled:true,customBank:null,stats:{bestScore:0,bestTime:null,playCount:0}};
+const el={heroBadge:document.getElementById("heroBadge"),heroBank:document.getElementById("heroBank"),bestScore:document.getElementById("bestScore"),bestTime:document.getElementById("bestTime"),playCount:document.getElementById("playCount"),bankSelect:document.getElementById("bankSelect"),difficultyRow:document.getElementById("difficultyRow"),modeRow:document.getElementById("modeRow"),startBtn:document.getElementById("startBtn"),restartBtn:document.getElementById("restartBtn"),fullscreenBtn:document.getElementById("fullscreenBtn"),customInput:document.getElementById("customInput"),importBtn:document.getElementById("importBtn"),sampleBtn:document.getElementById("sampleBtn"),customHint:document.getElementById("customHint"),speechToggle:document.getElementById("speechToggle"),hintToggle:document.getElementById("hintToggle"),timerToggle:document.getElementById("timerToggle"),subTitle:document.getElementById("subTitle"),stageBadge:document.getElementById("stageBadge"),scoreValue:document.getElementById("scoreValue"),matchValue:document.getElementById("matchValue"),timeValue:document.getElementById("timeValue"),turnValue:document.getElementById("turnValue"),accuracyValue:document.getElementById("accuracyValue"),messageBox:document.getElementById("messageBox"),board:document.getElementById("board"),boardOverlay:document.getElementById("boardOverlay"),boardShell:document.getElementById("boardShell"),resultsPanel:document.getElementById("resultsPanel"),resultBadge:document.getElementById("resultBadge"),finalScore:document.getElementById("finalScore"),finalTime:document.getElementById("finalTime"),finalMistakes:document.getElementById("finalMistakes"),finalAccuracy:document.getElementById("finalAccuracy"),summaryText:document.getElementById("summaryText")};
+function shuffle(list){const clone=[...list];for(let i=clone.length-1;i>0;i-=1){const j=Math.floor(Math.random()*(i+1));[clone[i],clone[j]]=[clone[j],clone[i]]}return clone}
+function formatTime(seconds){if(seconds===null||seconds===undefined||Number.isNaN(seconds))return"--";const min=String(Math.floor(seconds/60)).padStart(2,"0");const sec=String(seconds%60).padStart(2,"0");return min+":"+sec}
+function getDifficulty(){return DIFFICULTIES.find(item=>item.id===state.difficultyId)||DIFFICULTIES[0]}
+function getMode(){return MODES.find(item=>item.id===state.modeId)||MODES[0]}
+function getCurrentBank(){if(state.customBank&&state.bankId===state.customBank.id)return state.customBank;return BANKS.find(item=>item.id===state.bankId)||BANKS[0]}
+function loadStats(){const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;try{const parsed=JSON.parse(raw);state.stats.bestScore=parsed.bestScore||0;state.stats.bestTime=typeof parsed.bestTime==="number"?parsed.bestTime:null;state.stats.playCount=parsed.playCount||0}catch(error){console.warn("读取记录失败",error)}}
+function saveStats(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state.stats))}
+function renderBankOptions(){const banks=[...BANKS];if(state.customBank)banks.unshift(state.customBank);el.bankSelect.innerHTML=banks.map(bank=>'<option value="'+bank.id+'">'+bank.name+"</option>").join("");el.bankSelect.value=state.bankId}
+function renderChipGroup(target,list,activeId,onPick){target.innerHTML="";list.forEach(item=>{const btn=document.createElement("button");btn.className="chip"+(item.id===activeId?" active":"");btn.type="button";btn.textContent=item.name;btn.addEventListener("click",function(){onPick(item.id)});target.appendChild(btn)})}
+function syncTopStats(){const bank=getCurrentBank();el.heroBank.textContent=bank.name;el.bestScore.textContent=String(state.stats.bestScore);el.bestTime.textContent=formatTime(state.stats.bestTime);el.playCount.textContent=String(state.stats.playCount)}
+function currentAccuracy(){if(!state.attempts)return 0;return Math.round(state.matches/state.attempts*100)}
+function updateHUD(){const difficulty=getDifficulty();const mode=getMode();el.heroBadge.textContent=state.started?"游戏进行中":"等待开始";el.stageBadge.textContent=state.started?(state.timerEnabled?"限时挑战":"自由练习"):"未开始";el.scoreValue.textContent=String(state.score);el.matchValue.textContent=state.matches+" / "+difficulty.pairCount;el.timeValue.textContent=state.timerEnabled?formatTime(state.secondsLeft):"不限时";el.turnValue.textContent=mode.id==="battle"?(state.turnIndex%2===0?"红队":"蓝队"):mode.turnLabel;el.accuracyValue.textContent=currentAccuracy()+"%";syncTopStats()}
+function setMessage(text){el.messageBox.textContent=text}
+function getBoardSizeClass(){const count=getDifficulty().pairCount*2;if(count===8)return"size-8";if(count===10)return"size-10";return"size-12"}
+function buildBoard(){const bank=getCurrentBank();const difficulty=getDifficulty();const selected=shuffle(bank.items).slice(0,difficulty.pairCount);const cards=[];selected.forEach((item,index)=>{cards.push({id:"w-"+index,pairKey:item.word+"|"+item.meaning,type:"word",text:item.word,sub:"点击寻找中文意思",speak:item.word});cards.push({id:"m-"+index,pairKey:item.word+"|"+item.meaning,type:"meaning",text:item.meaning,sub:"点击寻找英文单词",speak:item.word})});state.board=shuffle(cards);state.openedIds=[];state.matchedIds=[];state.started=true;state.locked=false;state.score=0;state.attempts=0;state.matches=0;state.mistakes=0;state.turnIndex=0;state.elapsed=0;state.startTimestamp=Date.now();state.secondsLeft=difficulty.seconds;state.stats.playCount+=1;saveStats();renderBoard();updateHUD();el.resultsPanel.classList.add("hidden");el.boardOverlay.classList.remove("show");el.subTitle.textContent=bank.name+" · "+difficulty.name+" · "+getMode().name;setMessage("游戏开始。请翻开两张卡片，找到对应的英文和中文。");startTimer()}
+function renderBoard(){el.board.className="board "+getBoardSizeClass();el.board.innerHTML="";state.board.forEach(card=>{const button=document.createElement("button");const isFlipped=state.openedIds.includes(card.id);const isMatched=state.matchedIds.includes(card.id);button.type="button";button.className="card"+(isFlipped?" flipped":"")+(isMatched?" matched":"");button.dataset.id=card.id;button.innerHTML=['<div class="card-inner">','<div class="card-face card-front"><div class="card-sub">点击翻牌</div></div>','<div class="card-face card-back '+card.type+'">','<div class="type-tag">'+(card.type==="word"?"ENGLISH":"中文释义")+'</div>','<div class="card-text">'+escapeHtml(card.text)+'</div>','<div class="card-sub">'+escapeHtml(card.sub)+'</div>','</div>','</div>'].join("");button.disabled=isMatched;button.addEventListener("click",function(){handleCardClick(card.id)});el.board.appendChild(button)})}
+function escapeHtml(text){return String(text).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;")}
+function getCardById(cardId){return state.board.find(card=>card.id===cardId)}
+function speakWord(text){if(!state.speechEnabled||!("speechSynthesis"in window))return;window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(text);utterance.lang="en-US";utterance.rate=.92;utterance.pitch=1;window.speechSynthesis.speak(utterance)}
+function pulseBoard(className){el.boardShell.classList.remove("success-flash","fail-flash");void el.boardShell.offsetWidth;el.boardShell.classList.add(className)}
+function switchTurnIfNeeded(){if(getMode().id==="battle")state.turnIndex+=1}
+function handleCardClick(cardId){if(!state.started||state.locked)return;if(state.openedIds.includes(cardId)||state.matchedIds.includes(cardId))return;state.openedIds.push(cardId);renderBoard();if(state.openedIds.length<2)return;state.locked=true;const[firstId,secondId]=state.openedIds;const firstCard=getCardById(firstId);const secondCard=getCardById(secondId);state.attempts+=1;const isMatch=firstCard&&secondCard&&firstCard.pairKey===secondCard.pairKey&&firstCard.type!==secondCard.type;if(isMatch){state.matches+=1;state.score+=100+getMode().scoreBonus+Math.max(0,state.secondsLeft);state.matchedIds.push(firstId,secondId);pulseBoard("success-flash");speakWord(firstCard.speak||secondCard.speak||firstCard.text);setMessage("配对成功。继续找下一组，节奏很好。");setTimeout(function(){state.openedIds=[];state.locked=false;renderBoard();updateHUD();if(state.matches===getDifficulty().pairCount)finishGame(true)},420)}else{state.mistakes+=1;state.score=Math.max(0,state.score-20);pulseBoard("fail-flash");setMessage(state.hintEnabled?"这两张还不是一组。尽量记住它们的位置，再试一次。":"匹配失败，继续挑战。");switchTurnIfNeeded();setTimeout(function(){state.openedIds=[];state.locked=false;renderBoard();updateHUD()},720)}updateHUD()}
+function clearTimer(){if(state.timerId){clearInterval(state.timerId);state.timerId=null}}
+function startTimer(){clearTimer();state.timerId=setInterval(function(){if(!state.started)return;state.elapsed=Math.max(1,Math.floor((Date.now()-state.startTimestamp)/1000));if(state.timerEnabled){state.secondsLeft=Math.max(0,getDifficulty().seconds-state.elapsed);if(state.secondsLeft===0){updateHUD();finishGame(false);return}}updateHUD()},1000)}
+function finishGame(success){clearTimer();state.started=false;state.locked=true;state.elapsed=Math.max(1,Math.floor((Date.now()-state.startTimestamp)/1000));const totalTime=state.timerEnabled?Math.min(getDifficulty().seconds,state.elapsed):state.elapsed;if(success){const effectiveTime=Math.max(1,totalTime);if(state.score>state.stats.bestScore)state.stats.bestScore=state.score;if(state.stats.bestTime===null||effectiveTime<state.stats.bestTime)state.stats.bestTime=effectiveTime;saveStats();el.resultBadge.textContent="通关成功";setMessage("恭喜通关。本局已经完成，可以直接重新洗牌再玩一轮。");el.summaryText.textContent="这局表现不错，发音和词义匹配已经形成联动记忆。继续重开一轮，会更容易巩固。"}else{el.resultBadge.textContent="时间结束";setMessage("时间到了。这轮没有全部完成，换个难度或再来一局都可以。");el.summaryText.textContent="建议先切到简单或标准模式，让学生先熟悉词位记忆，再挑战限时关卡。"}syncTopStats();updateHUD();el.resultsPanel.classList.remove("hidden");el.finalScore.textContent=String(state.score);el.finalTime.textContent=formatTime(totalTime);el.finalMistakes.textContent=String(state.mistakes);el.finalAccuracy.textContent=currentAccuracy()+"%"}
+function parseCustomBank(text){const lines=text.split(/\r?\n/).map(line=>line.trim()).filter(Boolean);const items=[];for(const line of lines){const parts=line.split("=");if(parts.length<2)continue;const word=parts[0].trim();const meaning=parts.slice(1).join("=").trim();if(!word||!meaning)continue;items.push({word,meaning})}const unique=[];const seen=new Set();items.forEach(item=>{const key=item.word+"|"+item.meaning;if(!seen.has(key)){seen.add(key);unique.push(item)}});return unique}
+function importCustomBank(){const items=parseCustomBank(el.customInput.value);if(items.length<4){el.customHint.textContent="导入失败：至少需要 4 组“英文=中文”数据。";setMessage("自定义词库数量不够，请再补充几组英文和中文。");return}state.customBank={id:"custom-bank",name:"自定义词库",items};state.bankId=state.customBank.id;renderBankOptions();updatePickers();el.customHint.textContent="导入成功：已载入 "+items.length+" 组词汇，现在可以直接开始游戏。";setMessage("自定义词库已导入，可以开始你的专属消消乐了。")}
+function toggleFullscreen(){const target=document.documentElement;if(!document.fullscreenElement){target.requestFullscreen().catch(function(error){console.warn("全屏失败",error)})}else{document.exitFullscreen().catch(function(error){console.warn("退出全屏失败",error)})}}
+function resetBoardOnly(){if(!getCurrentBank())return;buildBoard()}
+function showEmptyOverlay(){el.boardOverlay.classList.add("show");el.resultsPanel.classList.add("hidden");clearTimer();state.started=false;state.locked=false;state.board=[];state.openedIds=[];state.matchedIds=[];el.board.innerHTML="";updateHUD()}
+function updatePickers(){renderChipGroup(el.difficultyRow,DIFFICULTIES,state.difficultyId,function(id){state.difficultyId=id;updatePickers()});renderChipGroup(el.modeRow,MODES,state.modeId,function(id){state.modeId=id;updatePickers()});updateHUD()}
+function bindEvents(){el.bankSelect.addEventListener("change",function(){state.bankId=el.bankSelect.value;syncTopStats();updateHUD();if(!state.started)setMessage("词库已切换，点击“开始游戏”即可开始。")});el.startBtn.addEventListener("click",buildBoard);el.restartBtn.addEventListener("click",resetBoardOnly);el.fullscreenBtn.addEventListener("click",toggleFullscreen);el.sampleBtn.addEventListener("click",function(){el.customInput.value=SAMPLE_CUSTOM;el.customHint.textContent="示例词库已填入，可以直接导入或继续修改。"});el.importBtn.addEventListener("click",importCustomBank);el.speechToggle.addEventListener("change",function(){state.speechEnabled=el.speechToggle.checked});el.hintToggle.addEventListener("change",function(){state.hintEnabled=el.hintToggle.checked});el.timerToggle.addEventListener("change",function(){state.timerEnabled=el.timerToggle.checked;if(!state.started)updateHUD()});window.addEventListener("beforeunload",clearTimer)}
+function init(){loadStats();renderBankOptions();updatePickers();bindEvents();syncTopStats();updateHUD();showEmptyOverlay();el.customInput.value=SAMPLE_CUSTOM}
+init();
+</script>
+</body>
+</html>

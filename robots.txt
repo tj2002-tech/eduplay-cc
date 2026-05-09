@@ -2,5 +2,18 @@ User-agent: *
 Allow: /
 Sitemap: https://eduplay.cc/sitemap.xml
 
+# Baidu
 User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Other common crawlers
+User-agent: Sogou Spider
+Allow: /
+User-agent: 360Spider
 Allow: /
