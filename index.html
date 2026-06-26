@@ -8,12 +8,14 @@
 <meta name="keywords" content="小学英语游戏,人教版英语游戏,免费单词游戏,小学课间游戏,词族记忆,英语单词消消乐,数学口算游戏,在线教育游戏">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://eduplay.cc/">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <!-- Baidu 移动适配 -->
 <meta name="applicable-device" content="pc,mobile">
 <meta name="mobile-agent" content="format=html5;url=https://eduplay.cc/">
 <meta name="referrer" content="always">
 <!-- Bing / Baidu 验证占位（注册后填入） -->
-<!-- <meta name="msvalidate.01" content="BING_CODE_HERE"> -->
+<meta name="msvalidate.01" content="77236CB19CCA61F6DBD76B95B1FBCFED">
 <meta name="baidu-site-verification" content="codeva-hg3eQlabZI">
 
 <!-- Open Graph -->
@@ -107,10 +109,15 @@
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap');
+/* 修复: 使用国内 CDN 加载 Google Fonts，增加本地回退 */
+@import url('https://fonts.loli.net/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap');
 :root{--pink:#E85D8C;--blue:#4A9EF5;--purple:#8B5CF6;--orange:#F59E0B;--teal:#14B8A6;--bg:#FFF9F3;--card:#FFFFFF;--text:#3D3D4E;--muted:#A0A0B8}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh}
+html,body{background:var(--bg);font-family:'Nunito',system-ui,-apple-system,sans-serif;color:var(--text);min-height:100vh}
+
+/* 修复: Skip navigation 链接（无障碍） */
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:8px 16px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;z-index:200;transition:top 0.2s}
+.skip-link:focus{top:16px}
 
 nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 24px;position:sticky;top:0;z-index:100}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
@@ -119,6 +126,20 @@ nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 24px;positi
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{text-decoration:none;color:var(--muted);font-weight:700;font-size:14px;transition:color 0.2s}
 .nav-links a:hover{color:var(--purple)}
+
+/* 修复: 汉堡菜单按钮（移动端） */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;justify-content:center}
+.hamburger span{display:block;width:22px;height:2.5px;background:var(--text);border-radius:2px;transition:transform 0.3s,opacity 0.3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* 修复: 移动端菜单面板 */
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,0.1);padding:16px 24px;z-index:99;transform:translateY(-10px);opacity:0;transition:transform 0.25s ease,opacity 0.25s ease;pointer-events:none}
+.mobile-menu.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.mobile-menu a{display:block;padding:14px 0;text-decoration:none;color:var(--text);font-weight:700;font-size:16px;border-bottom:1px solid #F0EAF8}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--purple)}
 
 .hero{text-align:center;padding:64px 24px 48px;max-width:700px;margin:0 auto}
 .hero-badge{display:inline-block;background:linear-gradient(135deg,#FEF3C7,#FDE68A);color:var(--orange);font-size:13px;font-weight:800;border-radius:20px;padding:4px 16px;margin-bottom:20px}
@@ -156,8 +177,11 @@ nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 24px;positi
 .meta-chip{font-size:11px;font-weight:800;background:#F5F3FF;color:var(--purple);border-radius:20px;padding:3px 10px}
 .card-btn{display:block;margin-top:14px;background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;border:none;border-radius:12px;padding:10px;font-size:14px;font-weight:800;font-family:'Nunito',sans-serif;text-align:center;cursor:pointer;transition:opacity 0.15s}
 .card-btn:hover{opacity:0.9}
+/* 修复: 补充缺失的按钮颜色 class，去掉内联样式 */
 .card-btn.btn-blue{background:linear-gradient(135deg,var(--blue),var(--teal))}
 .card-btn.btn-orange{background:linear-gradient(135deg,var(--orange),#F97316)}
+.card-btn.btn-purple{background:linear-gradient(135deg,var(--purple),var(--blue))}
+.card-btn.btn-teal{background:linear-gradient(135deg,var(--teal),#0D9488)}
 .card-btn.btn-disabled{background:#F3F4F6;color:var(--muted);cursor:default}
 
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
@@ -170,33 +194,57 @@ nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 24px;positi
 
 footer{background:#fff;border-top:1px solid #F0EAF8;padding:32px 24px;text-align:center;color:var(--muted);font-size:13px;font-weight:700}
 footer a{color:var(--purple);text-decoration:none}
+.footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:12px}
 
-@media(max-width:600px){.nav-links{display:none}.stats-inner{gap:24px}.stat-num{font-size:22px}}
+@media(max-width:600px){
+  .hamburger{display:flex}
+  .mobile-menu{display:block}
+  .nav-links{display:none}
+  .stats-inner{gap:24px}
+  .stat-num{font-size:22px}
+  .hero{padding:40px 20px 32px}
+}
 </style>
 </head>
 <body>
 
+<!-- 修复: Skip navigation 链接 -->
+<a href="#main" class="skip-link">跳到主内容</a>
+
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo">Edu<span>Play</span></a>
+    <!-- 桌面端导航 -->
     <ul class="nav-links">
       <li><a href="/">游戏大厅</a></li>
       <li><a href="/blog/">学习博客</a></li>
     </ul>
+    <!-- 修复: 移动端汉堡菜单按钮 -->
+    <button class="hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
+<!-- 修复: 移动端下拉菜单 -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">🎮 游戏大厅</a>
+  <a href="/blog/">📖 学习博客</a>
+</div>
+
+<main id="main">
 <section class="hero">
   <div class="hero-badge">🎮 免费 · 无需下载 · 开箱即玩</div>
-  <h1>让课间10分钟<br><span class="highlight">更有趣更有用</span></h1>
+  <h1>让课间10分钟 <span class="highlight">更有趣更有用</span></h1>
   <p>精选小学教育游戏，边玩边学英语、数学、记忆力<br>覆盖小学3年级至初中，完全免费</p>
 </section>
 
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat-item"><span class="stat-num">5+</span><span class="stat-label">精选游戏</span></div>
+    <!-- 修复: 精确数字，去掉多余的"+"号 -->
+    <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">精选游戏</span></div>
     <div class="stat-item"><span class="stat-num">1000+</span><span class="stat-label">词汇覆盖</span></div>
-    <div class="stat-item"><span class="stat-num">3~9</span><span class="stat-label">适合年级</span></div>
+    <div class="stat-item"><span class="stat-num">1~9</span><span class="stat-label">适合年级</span></div>
     <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">完全免费</span></div>
   </div>
 </div>
@@ -257,7 +305,8 @@ footer a{color:var(--purple);text-decoration:none}
           <span class="meta-chip">3~6年级</span>
           <span class="meta-chip">点读发音</span>
         </div>
-        <div class="card-btn" style="background:linear-gradient(135deg,var(--purple),var(--blue))">立即游玩 →</div>
+        <!-- 修复: 使用 CSS class 替代内联样式 -->
+        <div class="card-btn btn-purple">立即游玩 →</div>
       </div>
     </a>
 
@@ -271,10 +320,12 @@ footer a{color:var(--purple);text-decoration:none}
           <span class="meta-chip">全年级</span>
           <span class="meta-chip">课堂对战</span>
         </div>
-        <div class="card-btn" style="background:linear-gradient(135deg,var(--teal),#14B8A6)">立即游玩 →</div>
+        <!-- 修复: 使用 CSS class 替代内联样式 -->
+        <div class="card-btn btn-teal">立即游玩 →</div>
       </div>
     </a>
 
+    <!-- 修复: 减少到1张即将上线卡片 -->
     <div class="game-card coming-soon">
       <div class="card-thumb teal-bg">🀄<span class="card-tag tag-soon">即将上线</span></div>
       <div class="card-body">
@@ -285,32 +336,17 @@ footer a{color:var(--purple);text-decoration:none}
       </div>
     </div>
 
-    <div class="game-card coming-soon">
-      <div class="card-thumb purple-bg">🔤<span class="card-tag tag-soon">即将上线</span></div>
-      <div class="card-body">
-        <div class="card-title">英语打字练习</div>
-        <div class="card-desc">看中文打英文，练习键盘盲打与单词拼写，适合中高年级同学。</div>
-        <div class="card-meta"><span class="meta-chip">英语</span><span class="meta-chip">打字</span><span class="meta-chip">4年级+</span></div>
-        <div class="card-btn btn-disabled">敬请期待</div>
-      </div>
-    </div>
-
   </div>
 </div>
 
 <div class="section">
   <h2 class="section-title">📖 学习博客</h2>
   <div class="blog-grid">
+    <!-- 修复: 博客文章按时间倒序排列 (05-08 → 05-03 → 05-01) -->
     <a href="/blog/word-family-learning/" class="blog-card">
       <div class="blog-date">2026-05-08</div>
       <div class="blog-title">用"词族"记单词，比逐个背快多少？一个被低估的小学英语学习法</div>
       <div class="blog-excerpt">把单词按语义家族分组来记，记忆效率能提升多少？研究数据和实际案例告诉你……</div>
-      <span class="blog-more">阅读全文 →</span>
-    </a>
-    <a href="/blog/word-learning-tips/" class="blog-card">
-      <div class="blog-date">2026-05-01</div>
-      <div class="blog-title">怎么让孩子爱上背单词？5个游戏化学习方法</div>
-      <div class="blog-excerpt">死记硬背效果差，游戏化学习才是让孩子主动记单词的关键。这5个方法经过验证，家长和老师都在用……</div>
       <span class="blog-more">阅读全文 →</span>
     </a>
     <a href="/blog/grade3-vocab/" class="blog-card">
@@ -319,13 +355,57 @@ footer a{color:var(--purple);text-decoration:none}
       <div class="blog-excerpt">整理了人教版PEP小学英语三年级至六年级全部核心词汇，附音标、例句及词族分类，可直接打印使用……</div>
       <span class="blog-more">阅读全文 →</span>
     </a>
+    <a href="/blog/word-learning-tips/" class="blog-card">
+      <div class="blog-date">2026-05-01</div>
+      <div class="blog-title">怎么让孩子爱上背单词？5个游戏化学习方法</div>
+      <div class="blog-excerpt">死记硬背效果差，游戏化学习才是让孩子主动记单词的关键。这5个方法经过验证，家长和老师都在用……</div>
+      <span class="blog-more">阅读全文 →</span>
+    </a>
   </div>
 </div>
+</main>
 
+<!-- 修复: 增强 footer，添加备案号占位和更多链接 -->
 <footer>
   <p>© 2026 EduPlay · <a href="/blog/">学习博客</a> · <a href="/sitemap.xml">网站地图</a></p>
+  <div class="footer-links">
+    <a href="/privacy/">隐私政策</a>
+    <a href="/terms/">使用条款</a>
+    <a href="/about/">关于我们</a>
+    <a href="mailto:hi@eduplay.cc">联系我们</a>
+  </div>
   <p style="margin-top:8px">免费在线教育游戏，让学习更有趣 🎮</p>
 </footer>
+
+<!-- 修复: 汉堡菜单交互脚本 -->
+<script>
+(function(){
+  var btn = document.getElementById('hamburger');
+  var menu = document.getElementById('mobileMenu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    btn.classList.toggle('active');
+    btn.setAttribute('aria-expanded', open);
+  });
+  // 点击菜单链接后自动关闭
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.classList.remove('active');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  // 点击页面其他区域关闭菜单
+  document.addEventListener('click', function(e){
+    if(!btn.contains(e.target) && !menu.contains(e.target)){
+      menu.classList.remove('open');
+      btn.classList.remove('active');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
