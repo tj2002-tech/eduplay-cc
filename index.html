@@ -205,6 +205,14 @@ footer a{color:var(--purple);text-decoration:none}
   .hero{padding:40px 20px 32px}
 }
 </style>
+<!-- Google Analytics 4 (占位ID，请替换为你的 G-XXXXXX 后推送) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 
@@ -407,5 +415,15 @@ footer a{color:var(--purple);text-decoration:none}
 })();
 </script>
 
+<!-- 百度统计 (占位ID，请替换 hm.js? 后的站点ID后推送) -->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?XXXXXXXXXX";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 </body>
 </html>

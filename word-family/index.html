@@ -101,6 +101,14 @@ footer{background:#fff;border-top:1px solid #F0EAF8;padding:28px 24px;text-align
 footer a{color:var(--purple);text-decoration:none}
 @media(max-width:600px){.nav-links{display:none}.family-grid{grid-template-columns:repeat(3,1fr)}.word-grid{grid-template-columns:repeat(2,1fr)}.detail{padding:20px 16px 24px}.d-title{font-size:24px}.detail-nav{gap:6px}.nav-btn,.play-btn{padding:9px 14px;font-size:13px}}
 </style>
+<!-- Google Analytics 4 (占位ID，请替换为你的 G-XXXXXX 后推送) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 <nav>
@@ -276,6 +284,16 @@ function fallbackAudio(word){
 }
 if('speechSynthesis' in window)speechSynthesis.onvoiceschanged=()=>{};
 init();
+</script>
+<!-- 百度统计 (占位ID，请替换 hm.js? 后的站点ID后推送) -->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?XXXXXXXXXX";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
 </script>
 </body>
 </html>

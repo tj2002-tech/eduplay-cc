@@ -129,6 +129,14 @@ button:hover{transform:translateY(-1px)}
 .site-footer a{color:#1f9d74;text-decoration:none}
 @media(max-width:600px){.site-nav-links{display:none}}
 </style>
+<!-- Google Analytics 4 (占位ID，请替换为你的 G-XXXXXX 后推送) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 <nav class="site-nav">
@@ -301,6 +309,16 @@ function updatePickers(){renderChipGroup(el.difficultyRow,DIFFICULTIES,state.dif
 function bindEvents(){el.bankSelect.addEventListener("change",function(){state.bankId=el.bankSelect.value;syncTopStats();updateHUD();if(!state.started)setMessage("词库已切换，点击「开始游戏」即可开始。")});el.startBtn.addEventListener("click",buildBoard);el.restartBtn.addEventListener("click",resetBoardOnly);el.fullscreenBtn.addEventListener("click",toggleFullscreen);el.sampleBtn.addEventListener("click",function(){el.customInput.value=SAMPLE_CUSTOM;el.customHint.textContent="示例词库已填入，可以直接导入或继续修改。"});el.importBtn.addEventListener("click",importCustomBank);el.speechToggle.addEventListener("change",function(){state.speechEnabled=el.speechToggle.checked});el.hintToggle.addEventListener("change",function(){state.hintEnabled=el.hintToggle.checked});el.timerToggle.addEventListener("change",function(){state.timerEnabled=el.timerToggle.checked;if(!state.started)updateHUD()});window.addEventListener("beforeunload",clearTimer)}
 function init(){loadStats();renderBankOptions();updatePickers();bindEvents();syncTopStats();updateHUD();showEmptyOverlay();el.customInput.value=SAMPLE_CUSTOM}
 init();
+</script>
+<!-- 百度统计 (占位ID，请替换 hm.js? 后的站点ID后推送) -->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?XXXXXXXXXX";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
 </script>
 </body>
 </html>

@@ -54,6 +54,14 @@ footer{background:#fff;border-top:1px solid #F0EAF8;padding:28px 24px;text-align
 footer a{color:var(--purple);text-decoration:none}
 @media(max-width:600px){.nav-links{display:none}}
 </style>
+<!-- Google Analytics 4 (占位ID，请替换为你的 G-XXXXXX 后推送) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 <nav>
@@ -118,5 +126,15 @@ footer a{color:var(--purple);text-decoration:none}
 <footer>
   <p>© 2026 EduPlay · <a href="/">游戏大厅</a> · <a href="/blog/">学习博客</a> · <a href="/sitemap.xml">网站地图</a></p>
 </footer>
+<!-- 百度统计 (占位ID，请替换 hm.js? 后的站点ID后推送) -->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?XXXXXXXXXX";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
 </body>
 </html>
