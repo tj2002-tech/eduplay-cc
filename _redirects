@@ -1,0 +1,2 @@
+# Redirect obsolete og-cover.png (removed from repo) to the current JPEG version.
+/og-cover.png /og-cover.jpg 301
