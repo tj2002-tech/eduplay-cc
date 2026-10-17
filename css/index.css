@@ -1,0 +1,95 @@
+/* 修复: 使用国内 CDN 加载 Google Fonts，增加本地回退 */
+
+:root{--pink:#E85D8C;--blue:#4A9EF5;--purple:#8B5CF6;--orange:#F59E0B;--teal:#14B8A6;--bg:#FFF9F3;--card:#FFFFFF;--text:#3D3D4E;--muted:#A0A0B8}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);font-family:'Nunito',system-ui,-apple-system,sans-serif;color:var(--text);min-height:100vh}
+
+/* 修复: Skip navigation 链接（无障碍） */
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--purple);color:#fff;padding:8px 16px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;z-index:200;transition:top 0.2s}
+.skip-link:focus{top:16px}
+
+nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 24px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:'Fredoka',cursive;font-size:26px;font-weight:700;color:var(--pink);text-decoration:none}
+.logo span{color:var(--blue)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:700;font-size:14px;transition:color 0.2s}
+.nav-links a:hover{color:var(--purple)}
+
+/* 修复: 汉堡菜单按钮（移动端） */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;justify-content:center}
+.hamburger span{display:block;width:22px;height:2.5px;background:var(--text);border-radius:2px;transition:transform 0.3s,opacity 0.3s}
+.hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* 修复: 移动端菜单面板 */
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,0.1);padding:16px 24px;z-index:99;transform:translateY(-10px);opacity:0;transition:transform 0.25s ease,opacity 0.25s ease;pointer-events:none}
+.mobile-menu.open{transform:translateY(0);opacity:1;pointer-events:auto}
+.mobile-menu a{display:block;padding:14px 0;text-decoration:none;color:var(--text);font-weight:700;font-size:16px;border-bottom:1px solid #F0EAF8}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--purple)}
+
+.hero{text-align:center;padding:64px 24px 48px;max-width:700px;margin:0 auto}
+.hero-badge{display:inline-block;background:linear-gradient(135deg,#FEF3C7,#FDE68A);color:var(--orange);font-size:13px;font-weight:800;border-radius:20px;padding:4px 16px;margin-bottom:20px}
+.hero h1{font-family:'Fredoka',cursive;font-size:clamp(32px,6vw,52px);font-weight:700;line-height:1.15;margin-bottom:16px}
+.hero h1 .highlight{color:var(--pink)}
+.hero p{font-size:17px;color:var(--muted);line-height:1.7;font-weight:700}
+
+.stats-bar{background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;padding:20px 24px;margin-bottom:48px}
+.stats-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.stat-item{text-align:center}
+.stat-num{font-family:'Fredoka',cursive;font-size:28px;font-weight:700;display:block}
+.stat-label{font-size:12px;opacity:0.85;font-weight:700}
+
+.section{max-width:1100px;margin:0 auto;padding:0 24px 64px}
+.section-title{font-family:'Fredoka',cursive;font-size:26px;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+
+.game-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.game-card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);text-decoration:none;color:var(--text);transition:transform 0.2s cubic-bezier(.34,1.56,.64,1),box-shadow 0.2s;display:block}
+.game-card:not(.coming-soon):hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.12)}
+.game-card.coming-soon{opacity:0.7;pointer-events:none}
+.card-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative}
+.card-thumb.pink-bg{background:linear-gradient(135deg,#FFE4EF,#FFB3D1)}
+.card-thumb.blue-bg{background:linear-gradient(135deg,#E0F0FF,#B3D9FF)}
+.card-thumb.orange-bg{background:linear-gradient(135deg,#FFF3E0,#FFD9A0)}
+.card-thumb.teal-bg{background:linear-gradient(135deg,#E0FAF5,#A7F3E4)}
+.card-thumb.purple-bg{background:linear-gradient(135deg,#F0E8FF,#D6B8FF)}
+.card-tag{position:absolute;top:12px;right:12px;font-size:11px;font-weight:800;border-radius:20px;padding:3px 10px}
+.tag-hot{background:#FEE2E2;color:#EF4444}
+.tag-new{background:#DCFCE7;color:#16A34A}
+.tag-soon{background:#F3F4F6;color:#9CA3AF}
+.card-body{padding:18px 20px 20px}
+.card-title{font-family:'Fredoka',cursive;font-size:20px;font-weight:700;margin-bottom:6px}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.6;font-weight:700;margin-bottom:14px}
+.card-meta{display:flex;gap:8px;flex-wrap:wrap}
+.meta-chip{font-size:11px;font-weight:800;background:#F5F3FF;color:var(--purple);border-radius:20px;padding:3px 10px}
+.card-btn{display:block;margin-top:14px;background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;border:none;border-radius:12px;padding:10px;font-size:14px;font-weight:800;font-family:'Nunito',sans-serif;text-align:center;cursor:pointer;transition:opacity 0.15s}
+.card-btn:hover{opacity:0.9}
+/* 修复: 补充缺失的按钮颜色 class，去掉内联样式 */
+.card-btn.btn-blue{background:linear-gradient(135deg,var(--blue),var(--teal))}
+.card-btn.btn-orange{background:linear-gradient(135deg,var(--orange),#F97316)}
+.card-btn.btn-purple{background:linear-gradient(135deg,var(--purple),var(--blue))}
+.card-btn.btn-teal{background:linear-gradient(135deg,var(--teal),#0D9488)}
+.card-btn.btn-disabled{background:#F3F4F6;color:var(--muted);cursor:default}
+
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.blog-card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,0.06);text-decoration:none;color:var(--text);transition:transform 0.2s,box-shadow 0.2s;display:block;border-left:4px solid var(--purple)}
+.blog-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,0.1)}
+.blog-date{font-size:12px;color:var(--muted);font-weight:700;margin-bottom:8px}
+.blog-title{font-family:'Fredoka',cursive;font-size:18px;font-weight:700;line-height:1.4;margin-bottom:8px}
+.blog-excerpt{font-size:13px;color:var(--muted);line-height:1.6;font-weight:700}
+.blog-more{display:inline-block;margin-top:10px;font-size:13px;font-weight:800;color:var(--purple)}
+
+footer{background:#fff;border-top:1px solid #F0EAF8;padding:32px 24px;text-align:center;color:var(--muted);font-size:13px;font-weight:700}
+footer a{color:var(--purple);text-decoration:none}
+.footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:12px}
+
+@media(max-width:600px){
+  .hamburger{display:flex}
+  .mobile-menu{display:block}
+  .nav-links{display:none}
+  .stats-inner{gap:24px}
+  .stat-num{font-size:22px}
+  .hero{padding:40px 20px 32px}
+}

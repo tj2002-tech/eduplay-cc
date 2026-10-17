@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>用「词族」记单词，比逐个背快多少？一个被低估的小学英语学习法 | EduPlay博客</title>
@@ -55,100 +56,7 @@
   ]
 }
 </script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap');
-:root{--pink:#E85D8C;--blue:#4A9EF5;--purple:#8B5CF6;--orange:#F59E0B;--teal:#14B8A6;--bg:#FFF9F3;--card:#FFFFFF;--text:#3D3D4E;--muted:#A0A0B8}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);font-family:'Nunito',sans-serif;color:var(--text);line-height:1.8}
-nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 24px;position:sticky;top:0;z-index:100}
-.nav-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font-family:'Fredoka',cursive;font-size:24px;font-weight:700;color:var(--pink);text-decoration:none}
-.logo span{color:var(--blue)}
-.nav-links{display:flex;gap:24px;list-style:none}
-.nav-links a{text-decoration:none;color:var(--muted);font-weight:700;font-size:14px;transition:color 0.2s}
-.nav-links a:hover{color:var(--purple)}
-.article-wrap{max-width:800px;margin:0 auto;padding:40px 24px 80px}
-.breadcrumb{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);font-weight:700;margin-bottom:32px;flex-wrap:wrap}
-.breadcrumb a{color:var(--muted);text-decoration:none}
-.breadcrumb a:hover{color:var(--purple)}
-.article-header{margin-bottom:40px}
-.article-tag{display:inline-block;background:linear-gradient(135deg,#F5F3FF,#EDE9FE);color:var(--purple);font-size:12px;font-weight:800;border-radius:20px;padding:4px 14px;margin-bottom:16px}
-h1.article-title{font-family:'Fredoka',cursive;font-size:clamp(26px,5vw,38px);font-weight:700;line-height:1.25;color:var(--text);margin-bottom:16px}
-.article-meta{display:flex;gap:16px;align-items:center;font-size:13px;color:var(--muted);font-weight:700;flex-wrap:wrap}
-.meta-item{display:flex;align-items:center;gap:4px}
-.hook-box{background:linear-gradient(135deg,#F5F3FF,#EDE9FE);border-left:4px solid var(--purple);border-radius:0 12px 12px 0;padding:20px 24px;margin:32px 0;font-size:15px;font-weight:700;line-height:1.8;color:#4C1D95}
-.hook-box strong{color:var(--purple)}
-.article-body{font-size:16px;font-weight:700;line-height:1.9;color:var(--text)}
-.article-body h2{font-family:'Fredoka',cursive;font-size:24px;font-weight:700;color:var(--text);margin:48px 0 16px;padding-bottom:8px;border-bottom:2px solid #F0EAF8}
-.article-body h3{font-family:'Fredoka',cursive;font-size:19px;font-weight:700;color:var(--purple);margin:32px 0 12px}
-.article-body p{margin-bottom:16px}
-.article-body ul,.article-body ol{margin:16px 0 16px 24px}
-.article-body li{margin-bottom:8px}
-.article-body a{color:var(--purple);font-weight:800;text-decoration:underline;text-decoration-color:rgba(139,92,246,0.3)}
-.article-body a:hover{text-decoration-color:var(--purple)}
-.article-body strong{color:var(--pink)}
-/* Comparison */
-.compare-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
-.compare-card{border-radius:16px;padding:20px 22px}
-.compare-bad{background:linear-gradient(135deg,#FEF2F2,#FEE2E2);border-top:4px solid #EF4444}
-.compare-good{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border-top:4px solid var(--teal)}
-.compare-label{font-family:'Fredoka',cursive;font-size:14px;font-weight:700;margin-bottom:10px}
-.compare-bad .compare-label{color:#EF4444}
-.compare-good .compare-label{color:var(--teal)}
-.compare-card ul{margin:0;padding-left:18px}
-.compare-card li{font-size:14px;margin-bottom:6px;font-weight:700}
-/* Family demo */
-.family-demo{background:var(--card);border-radius:20px;padding:24px 28px;margin:28px 0;box-shadow:0 4px 20px rgba(0,0,0,0.07);border-top:4px solid var(--purple)}
-.family-demo-title{font-family:'Fredoka',cursive;font-size:18px;font-weight:700;color:var(--purple);margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.word-bubbles{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.word-bubble{background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;border-radius:12px;padding:8px 16px;font-family:'Fredoka',cursive;font-size:16px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:2px}
-.word-bubble .cn{font-size:12px;opacity:0.85;font-family:'Nunito',sans-serif;font-weight:800}
-.sentence-box{background:#F5F3FF;border-radius:12px;padding:14px 18px;font-size:14px;line-height:1.7;color:var(--text)}
-.sentence-box .en{font-weight:800;margin-bottom:4px}
-.sentence-box .cn{color:var(--muted)}
-/* Stats */
-.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
-.stat-card{background:var(--card);border-radius:16px;padding:20px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,0.07)}
-.stat-num{font-family:'Fredoka',cursive;font-size:32px;font-weight:700;color:var(--purple);display:block;margin-bottom:6px}
-.stat-label{font-size:13px;color:var(--muted);font-weight:700;line-height:1.5}
-/* Steps */
-.steps{list-style:none;margin:20px 0;padding:0;counter-reset:step}
-.steps li{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start;counter-increment:step}
-.step-num{background:var(--purple);color:#fff;font-family:'Fredoka',cursive;font-size:18px;font-weight:700;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.step-content{font-size:15px;font-weight:700;line-height:1.7}
-.step-content strong{color:var(--purple)}
-/* Game */
-.game-highlight{background:var(--card);border-radius:16px;padding:20px 24px;margin:24px 0;box-shadow:0 4px 16px rgba(0,0,0,0.07);border-left:4px solid var(--purple);display:flex;gap:16px;align-items:flex-start}
-.game-icon{font-size:36px;flex-shrink:0}
-.game-info h3{margin:0 0 6px;font-family:'Fredoka',cursive;font-size:17px;color:var(--text)}
-.game-info p{font-size:14px;color:var(--muted);margin:0 0 10px;line-height:1.6}
-.game-btn{display:inline-block;background:linear-gradient(135deg,var(--purple),var(--blue));color:#fff;text-decoration:none;border-radius:10px;padding:6px 18px;font-size:13px;font-weight:800;font-family:'Nunito',sans-serif;transition:opacity 0.15s}
-.game-btn:hover{opacity:0.88;text-decoration:none}
-/* Tip */
-.tip-box{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border-left:4px solid var(--teal);border-radius:0 12px 12px 0;padding:18px 22px;margin:28px 0;font-size:14px;line-height:1.8}
-.tip-box strong{color:var(--teal)}
-/* CTA */
-.cta-box{background:linear-gradient(135deg,var(--purple),var(--blue));border-radius:20px;padding:36px 28px;text-align:center;color:#fff;margin:48px 0}
-.cta-box h3{font-family:'Fredoka',cursive;font-size:26px;font-weight:700;margin-bottom:10px}
-.cta-box p{font-size:15px;opacity:0.9;margin-bottom:24px;font-weight:700}
-.cta-btn{display:inline-block;background:#fff;color:var(--purple);text-decoration:none;border-radius:14px;padding:12px 32px;font-size:15px;font-weight:900;font-family:'Nunito',sans-serif;transition:transform 0.15s,box-shadow 0.15s;box-shadow:0 4px 16px rgba(0,0,0,0.15)}
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2);text-decoration:none}
-/* Related */
-.related{margin-top:48px;padding-top:32px;border-top:2px solid #F0EAF8}
-.related h3{font-family:'Fredoka',cursive;font-size:20px;font-weight:700;margin-bottom:16px;color:var(--text)}
-.related-links{display:flex;flex-direction:column;gap:12px}
-.related-link{background:var(--card);border-radius:12px;padding:14px 18px;text-decoration:none;color:var(--text);font-weight:800;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-left:3px solid var(--purple);transition:transform 0.15s}
-.related-link:hover{transform:translateX(4px)}
-footer{background:#fff;border-top:1px solid #F0EAF8;padding:28px 24px;text-align:center;color:var(--muted);font-size:13px;font-weight:700}
-footer a{color:var(--purple);text-decoration:none}
-@media(max-width:600px){
-  .nav-links{display:none}
-  .compare-wrap{grid-template-columns:1fr}
-  .stats-row{grid-template-columns:1fr 1fr}
-  .game-highlight{flex-direction:column;gap:10px}
-  .article-wrap{padding:24px 16px 60px}
-}
-</style>
+<link rel="stylesheet" href="/css/blog-word-family-learning.css">
 </head>
 <body>
 

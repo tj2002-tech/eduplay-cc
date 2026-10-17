@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>EduPlay 记忆翻牌 — 免费在线英语单词记忆游戏</title>
@@ -27,117 +28,7 @@
   "offers": {"@type":"Offer","price":"0","priceCurrency":"CNY"}
 }
 </script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap');
-:root{
-  --pink:#E85D8C;--blue:#4A9EF5;--purple:#8B5CF6;--orange:#F59E0B;--teal:#14B8A6;
-  --bg:#FFF9F3;--card:#FFFFFF;--text:#3D3D4E;--muted:#A0A0B8;
-  --shadow-sm:0 2px 8px rgba(0,0,0,0.06);--shadow-md:0 8px 24px rgba(0,0,0,0.09);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);font-family:'Nunito',sans-serif;color:var(--text);min-height:100vh;-webkit-tap-highlight-color:transparent}
-
-/* NAV */
-nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 20px;position:sticky;top:0;z-index:100}
-.nav-inner{max-width:700px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-.logo{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--pink);text-decoration:none}
-.logo span{color:var(--blue)}
-.nav-back{font-size:13px;font-weight:800;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color 0.2s}
-.nav-back:hover{color:var(--purple)}
-
-/* LAYOUT */
-#app{max-width:700px;margin:0 auto;padding:16px 14px 12px}
-
-/* TOP BAR */
-.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.game-title{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--text)}
-.game-title span{color:var(--blue)}
-
-/* STATS */
-.stat-row{display:flex;gap:8px;margin-bottom:14px}
-.stat{background:var(--card);border-radius:14px;padding:7px 16px;text-align:center;box-shadow:var(--shadow-sm);border:1.5px solid rgba(0,0,0,0.04);flex:1}
-.stat-v{font-family:'Fredoka',cursive;font-size:20px;font-weight:700;color:var(--pink);line-height:1.1}
-.stat-v.blue{color:var(--blue)}
-.stat-v.purple{color:var(--purple)}
-.stat-l{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:800}
-
-/* DIFFICULTY */
-.diff-wrap{margin-bottom:14px}
-.diff-label{font-size:11px;color:var(--muted);font-weight:800;margin-bottom:6px;letter-spacing:0.5px}
-.diff-btns{display:flex;gap:8px}
-.dbtn{background:var(--card);border:2px solid #EDE5F5;color:var(--purple);font-size:13px;font-weight:800;border-radius:24px;padding:7px 20px;cursor:pointer;transition:all 0.2s;font-family:'Nunito',sans-serif;flex:1;text-align:center}
-.dbtn:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
-.dbtn.active{background:var(--purple);color:#fff;border-color:var(--purple);box-shadow:0 4px 14px rgba(139,92,246,0.3)}
-
-/* HINT */
-.hint{background:var(--card);border-radius:12px;padding:9px 16px;font-size:13px;color:var(--muted);text-align:center;box-shadow:var(--shadow-sm);margin-bottom:14px;font-weight:700;line-height:1.5}
-.hint b{color:var(--purple)}
-
-/* START BTN */
-.btn-start{width:100%;background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;border:none;border-radius:14px;padding:12px;font-size:15px;font-weight:900;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:0 4px 16px rgba(74,158,245,0.3);transition:all 0.15s;margin-bottom:18px;letter-spacing:0.3px}
-.btn-start:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(74,158,245,0.4)}
-.btn-start:active{transform:scale(0.97)}
-
-/* PROGRESS */
-.progress-row{display:flex;justify-content:center;gap:5px;margin-bottom:16px;flex-wrap:wrap}
-.pdot{width:10px;height:10px;border-radius:50%;background:#E8E0F0;transition:all 0.3s cubic-bezier(.34,1.56,.64,1)}
-.pdot.matched{background:var(--teal);transform:scale(1.2);box-shadow:0 0 6px rgba(20,184,166,0.4)}
-
-/* FULLSCREEN BTN */
-.btn-icon{background:var(--card);border:2px solid #EDE5F5;color:var(--purple);font-size:18px;border-radius:10px;padding:4px 9px;cursor:pointer;transition:all 0.2s;line-height:1;font-family:sans-serif;display:flex;align-items:center}
-.btn-icon:hover{background:var(--purple);color:#fff;border-color:var(--purple)}
-
-/* CARD GRID */
-.card-grid{display:grid;gap:10px;justify-content:center}
-.card-grid.easy{grid-template-columns:repeat(4,1fr)}
-.card-grid.medium{grid-template-columns:repeat(6,1fr)}
-.card-grid.hard{grid-template-columns:repeat(8,1fr)}
-
-/* CARD */
-.card-wrap{cursor:pointer;perspective:600px;min-width:0}
-.card-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.45s cubic-bezier(.4,0,.2,1)}
-.card-wrap.flipped .card-inner{transform:rotateY(180deg)}
-.card-wrap.matched .card-inner{transform:rotateY(180deg)}
-
-.card-face{position:absolute;inset:0;border-radius:12px;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;user-select:none}
-
-/* BACK face (shown when face-down) */
-.card-back{background:linear-gradient(135deg,var(--purple),var(--blue));box-shadow:var(--shadow-sm)}
-.card-back-inner{width:60%;height:60%;border-radius:8px;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;font-family:'Fredoka',cursive;font-size:clamp(14px,3vw,20px);color:rgba(255,255,255,0.8);font-weight:700;letter-spacing:-0.5px}
-
-/* FRONT face (shown when flipped) */
-.card-front{transform:rotateY(180deg);flex-direction:column;gap:4px;padding:6px;text-align:center}
-.card-front.en{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border:2px solid #BFDBFE}
-.card-front.zh{background:linear-gradient(135deg,#FDF4FF,#F3E8FF);border:2px solid #E9D5FF}
-.card-wrap.matched .card-front.en{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border-color:#BBF7D0}
-.card-wrap.matched .card-front.zh{background:linear-gradient(135deg,#F0FFF4,#DCFCE7);border-color:#BBF7D0}
-.card-wrap.wrong .card-front{animation:wrongShake 0.4s ease}
-@keyframes wrongShake{0%,100%{transform:rotateY(180deg) translateX(0)}25%{transform:rotateY(180deg) translateX(-4px)}75%{transform:rotateY(180deg) translateX(4px)}}
-
-.word-en{font-family:'Nunito',sans-serif;font-weight:900;color:var(--blue);line-height:1.1}
-.word-zh{font-family:'Nunito',sans-serif;font-weight:800;color:var(--purple);line-height:1.1}
-.word-icon{font-size:clamp(14px,3vw,20px)}
-
-/* matched glow */
-.card-wrap.matched .card-face.card-front{box-shadow:0 0 0 2px var(--teal),0 4px 12px rgba(20,184,166,0.25)}
-
-/* OVERLAY */
-.overlay{position:fixed;inset:0;background:rgba(139,92,246,0.15);backdrop-filter:blur(6px);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
-.modal{background:#fff;border-radius:24px;padding:36px 28px;text-align:center;max-width:360px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.15);animation:modalIn 0.4s cubic-bezier(.34,1.56,.64,1)}
-@keyframes modalIn{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}
-.modal .em{font-size:64px;margin-bottom:8px}
-.modal h2{font-family:'Fredoka',cursive;font-size:28px;font-weight:700;margin-bottom:6px}
-.modal .sub{font-size:14px;color:var(--muted);font-weight:700;margin-bottom:20px}
-.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
-.chip{background:#F5F3FF;color:var(--purple);font-size:13px;font-weight:800;border-radius:20px;padding:5px 14px}
-.chip.teal{background:#F0FFF4;color:var(--teal)}
-.chip.orange{background:#FFF7ED;color:var(--orange)}
-.modal .btn-go{width:100%;background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;border:none;border-radius:14px;padding:12px;font-size:15px;font-weight:900;font-family:'Nunito',sans-serif;cursor:pointer;margin-bottom:10px;box-shadow:0 4px 16px rgba(74,158,245,0.3)}
-.modal .btn-go:hover{opacity:0.9}
-
-/* CONFETTI canvas */
-canvas#ptx{position:fixed;inset:0;pointer-events:none;z-index:99}
-</style>
+<link rel="stylesheet" href="/css/memory-flip.css">
 </head>
 <body>
 <canvas id="ptx"></canvas>
