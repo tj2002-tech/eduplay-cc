@@ -5,14 +5,12 @@
   --bg:#FFF9F3;--card:#FFFFFF;--text:#3D3D4E;--muted:#A0A0B8;
   --shadow-sm:0 2px 8px rgba(0,0,0,0.06);--shadow-md:0 8px 24px rgba(0,0,0,0.10);
 }
-*{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg);font-family:'Nunito',sans-serif;color:var(--text);-webkit-tap-highlight-color:transparent}
 
 /* NAV */
 nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 20px;position:sticky;top:0;z-index:100}
 .nav-inner{max-width:580px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
 .logo{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--pink);text-decoration:none}
-.logo span{color:var(--blue)}
 .nav-back{font-size:13px;font-weight:800;color:var(--muted);text-decoration:none;transition:color 0.2s}
 .nav-back:hover{color:var(--orange)}
 
