@@ -7,10 +7,12 @@ html,body{background:var(--bg);font-family:'Nunito',sans-serif;color:var(--text)
 
 /* NAV */
 nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 20px;position:sticky;top:0;z-index:100}
-.nav-inner{max-width:700px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
 .logo{font-family:'Fredoka',cursive;font-size:22px;font-weight:700;color:var(--pink);text-decoration:none}
 .nav-back{font-size:13px;font-weight:800;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:4px;transition:color 0.2s}
 .nav-back:hover{color:var(--purple)}
+.nav-links{display:flex;gap:20px;list-style:none}
+@media(max-width:760px){.nav-links{display:none}}
 
 /* LAYOUT */
 #app{max-width:700px;margin:0 auto;padding:16px 14px 12px}
@@ -104,3 +106,7 @@ nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 20px;positi
 
 /* CONFETTI canvas */
 canvas#ptx{position:fixed;inset:0;pointer-events:none;z-index:99}
+
+/* sticky footer: pin footer to viewport bottom on short pre-game screens */
+body{display:flex;flex-direction:column;min-height:100vh}
+#app{flex:1 0 auto}
