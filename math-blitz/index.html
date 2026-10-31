@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
+<link rel="icon" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>EduPlay 数学口算抢答 — 免费在线小学数学速算练习</title>
+<title data-i18n-doc="page.title">EduPlay Math Blitz — Free Online Mental Math Practice</title>
 <meta name="description" content="EduPlay 数学口算抢答，限时抢答加减乘除口算题，三种难度覆盖小学1-6年级，练出计算速度与准确率。免费在线玩无需下载。">
 <meta name="keywords" content="数学口算,小学数学游戏,口算练习,加减乘除,数学速算,免费在线游戏,EduPlay">
 <meta name="robots" content="index, follow">
@@ -30,6 +31,79 @@
 </script>
 <link rel="stylesheet" href="/site.css">
 <link rel="stylesheet" href="/css/math-blitz.css">
+<script>window.__DICT = {
+  zh: {
+    'page.title': 'EduPlay 数学口算抢答 — 免费在线小学数学速算练习',
+    'nav.games': '游戏大厅',
+    'nav.wordFamily': '词族点读',
+    'nav.wordMatch': '单词消消乐',
+    'nav.wordPop': '词力消消乐',
+    'nav.memoryFlip': '记忆翻牌',
+    'nav.mathBlitz': '数学口算',
+    'nav.blog': '学习博客',
+    'game.title': '数学<span>口算抢答</span> 🔢',
+    'fs.fullscreen': '全屏',
+    'stat.score': '分数',
+    'stat.combo': '连击',
+    'diff.label': '📚 选择难度',
+    'diff.easy': '初级 加减法',
+    'diff.medium': '进阶 加减乘',
+    'diff.hard': '挑战 四则运算',
+    'hint': '点击 <b>开始游戏</b>，每题 <b>10秒</b> 限时<br>答对得分 + 速度加成，连续答对有 <b>连击</b> 加成 🔥<br>共 <b>10题 / 3条命</b>，支持键盘 <b>1 2 3 4</b> 快速作答',
+    'start.start': '🎮 开始游戏',
+    'start.restart': '🔄 重新开始',
+    'kh.1': '① 左上',
+    'kh.2': '② 右上',
+    'kh.3': '③ 左下',
+    'kh.4': '④ 右下',
+    'q.label': '题目 {n} / {total}',
+    'end.win': '太棒了！',
+    'end.lose': '继续加油！',
+    'end.summary': '答对 {n}/{total} 题 · 准确率 {p}%',
+    'end.score': '分',
+    'end.combo': '🔥 最高 {n} 连击',
+    'end.again': '🔄 再来一局',
+    'end.diff': '换个难度',
+    'nav.sitemap': '网站地图',
+    'footer.tagline': '免费在线教育游戏，让学习更有趣 🎮'
+  },
+  en: {
+    'page.title': 'EduPlay Math Blitz — Free Online Mental Math Practice',
+    'nav.games': 'Game Hub',
+    'nav.wordFamily': 'Word Family',
+    'nav.wordMatch': 'Word Match',
+    'nav.wordPop': 'Word Pop',
+    'nav.memoryFlip': 'Memory Flip',
+    'nav.mathBlitz': 'Math Blitz',
+    'nav.blog': 'Blog',
+    'game.title': 'Math<span>Blitz</span> 🔢',
+    'fs.fullscreen': 'Fullscreen',
+    'stat.score': 'Score',
+    'stat.combo': 'Combo',
+    'diff.label': '📚 Choose Difficulty',
+    'diff.easy': 'Easy · +/-',
+    'diff.medium': 'Medium · + - ×',
+    'diff.hard': 'Hard · All Operations',
+    'hint': 'Tap <b>Start Game</b> — <b>10 seconds</b> per question<br>Correct answers earn points + speed bonus, streaks build <b>combo</b> 🔥<br><b>10 questions / 3 lives</b>, use keys <b>1 2 3 4</b> to answer fast',
+    'start.start': '🎮 Start Game',
+    'start.restart': '🔄 Restart',
+    'kh.1': '① Top-left',
+    'kh.2': '② Top-right',
+    'kh.3': '③ Bottom-left',
+    'kh.4': '④ Bottom-right',
+    'q.label': 'Question {n} / {total}',
+    'end.win': 'Awesome!',
+    'end.lose': 'Keep going!',
+    'end.summary': '{n}/{total} correct · {p}% accuracy',
+    'end.score': 'pts',
+    'end.combo': '🔥 Best {n} combo',
+    'end.again': '🔄 Play Again',
+    'end.diff': 'Change difficulty',
+    'nav.sitemap': 'Sitemap',
+    'footer.tagline': 'Free educational games that make learning fun 🎮'
+  }
+};</script>
+<script src="/js/i18n.js"></script>
 </head>
 <body>
 
@@ -37,13 +111,13 @@
   <div class="nav-inner">
     <a href="/" class="logo">Edu<span>Play</span></a>
     <ul class="nav-links">
-      <li><a href="/">游戏大厅</a></li>
-      <li><a href="/word-family/">词族点读</a></li>
-      <li><a href="/word-match/">单词消消乐</a></li>
-      <li><a href="/word-pop/">词力消消乐</a></li>
-      <li><a href="/memory-flip/">记忆翻牌</a></li>
-      <li><a href="/math-blitz/" style="color:var(--pink)">数学口算</a></li>
-      <li><a href="/blog/">学习博客</a></li>
+      <li><a href="/" data-i18n="nav.games">Game Hub</a></li>
+      <li><a href="/word-family/" data-i18n="nav.wordFamily">Word Family</a></li>
+      <li><a href="/word-match/" data-i18n="nav.wordMatch">Word Match</a></li>
+      <li><a href="/word-pop/" data-i18n="nav.wordPop">Word Pop</a></li>
+      <li><a href="/memory-flip/" data-i18n="nav.memoryFlip">Memory Flip</a></li>
+      <li><a href="/math-blitz/" style="color:var(--pink)" data-i18n="nav.mathBlitz">Math Blitz</a></li>
+      <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
     </ul>
   </div>
 </nav>
@@ -52,8 +126,8 @@
 
   <!-- TOPBAR -->
   <div class="topbar">
-    <div class="game-title">数学<span>口算抢答</span> 🔢</div>
-    <button class="btn-icon" id="fsBtn" onclick="toggleFS()" title="全屏">⛶</button>
+    <div class="game-title" data-i18n-html="game.title">Math<span>Blitz</span> 🔢</div>
+    <button class="btn-icon" id="fsBtn" onclick="toggleFS()" title="Fullscreen" data-i18n-title="fs.fullscreen">⛶</button>
   </div>
 
   <!-- STATS (in-game only) -->
@@ -65,33 +139,33 @@
     </div>
     <div class="stat-box">
       <div class="stat-v orange" id="scoreEl">0</div>
-      <div class="stat-l">分数</div>
+      <div class="stat-l" data-i18n="stat.score">Score</div>
     </div>
     <div class="combo-box" id="comboBox">
       <div class="stat-v" id="comboEl">×1</div>
-      <div class="stat-l">连击</div>
+      <div class="stat-l" data-i18n="stat.combo">Combo</div>
     </div>
   </div>
 
   <!-- DIFFICULTY -->
   <div class="diff-wrap" id="diffWrap">
-    <div class="diff-label">📚 选择难度</div>
+    <div class="diff-label" data-i18n="diff.label">📚 Choose Difficulty</div>
     <div class="diff-btns">
-      <button class="dbtn active" onclick="setDiff('easy',this)">初级 加减法</button>
-      <button class="dbtn" onclick="setDiff('medium',this)">进阶 加减乘</button>
-      <button class="dbtn" onclick="setDiff('hard',this)">挑战 四则运算</button>
+      <button class="dbtn active" onclick="setDiff('easy',this)" data-i18n="diff.easy">Easy · +/-</button>
+      <button class="dbtn" onclick="setDiff('medium',this)" data-i18n="diff.medium">Medium · + - ×</button>
+      <button class="dbtn" onclick="setDiff('hard',this)" data-i18n="diff.hard">Hard · All Operations</button>
     </div>
   </div>
 
   <!-- HINT -->
-  <div class="hint" id="hint">
-    点击 <b>开始游戏</b>，每题 <b>10秒</b> 限时<br>
-    答对得分 + 速度加成，连续答对有 <b>连击</b> 加成 🔥<br>
-    共 <b>10题 / 3条命</b>，支持键盘 <b>1 2 3 4</b> 快速作答
+  <div class="hint" id="hint" data-i18n-html="hint">
+    Tap <b>Start Game</b> — <b>10 seconds</b> per question<br>
+    Correct answers earn points + speed bonus, streaks build <b>combo</b> 🔥<br>
+    <b>10 questions / 3 lives</b>, use keys <b>1 2 3 4</b> to answer fast
   </div>
 
   <!-- START BTN -->
-  <button class="btn-start" id="startBtn" onclick="startGame()">🎮 开始游戏</button>
+  <button class="btn-start" id="startBtn" onclick="startGame()" data-i18n="start.start">🎮 Start Game</button>
 
   <!-- PROGRESS (in-game only) -->
   <div class="progress-row" id="progressRow" style="display:none"></div>
@@ -110,7 +184,7 @@
       </div>
       <!-- Question -->
       <div class="question-box">
-        <div class="q-label" id="qLabel">题目 1 / 10</div>
+        <div class="q-label" id="qLabel">Question 1 / 10</div>
         <div class="q-eq" id="qEq">—</div>
       </div>
     </div>
@@ -120,8 +194,8 @@
 
     <!-- Keyboard hint -->
     <div class="key-hint">
-      <span class="kh">① 左上</span><span class="kh">② 右上</span>
-      <span class="kh">③ 左下</span><span class="kh">④ 右下</span>
+      <span class="kh" data-i18n="kh.1">① Top-left</span><span class="kh" data-i18n="kh.2">② Top-right</span>
+      <span class="kh" data-i18n="kh.3">③ Bottom-left</span><span class="kh" data-i18n="kh.4">④ Bottom-right</span>
     </div>
 
   </div>
@@ -206,7 +280,7 @@ function startGame() {
   // 切换 UI 到游戏模式
   show('statsRow'); show('progressRow'); show('gameArea');
   hide('hint'); hide('diffWrap');
-  document.getElementById('startBtn').textContent = '🔄 重新开始';
+  document.getElementById('startBtn').textContent = EDU.t('start.restart');
 
   renderHearts(); updateStats(); renderDots();
   loadQ();
@@ -217,7 +291,7 @@ function loadQ() {
   G.q = genQ();
   const opts = genOpts(G.q.ans);
 
-  document.getElementById('qLabel').textContent = `题目 ${G.idx + 1} / ${TOTAL}`;
+  document.getElementById('qLabel').textContent = EDU.t('q.label', {n: G.idx + 1, total: TOTAL});
   const eq = document.getElementById('qEq');
   eq.textContent = G.q.q;
   eq.style.color = 'var(--text)';
@@ -362,15 +436,15 @@ function endGame() {
     <div class="modal">
       <div class="em">${won ? '🎉' : '💪'}</div>
       <div style="font-size:26px;margin-bottom:6px">${stars}</div>
-      <h2>${won ? '太棒了！' : '继续加油！'}</h2>
-      <p class="sub">答对 ${correct}/${TOTAL} 题 · 准确率 ${accuracy}%</p>
+      <h2>${won ? EDU.t('end.win') : EDU.t('end.lose')}</h2>
+      <p class="sub">${EDU.t('end.summary', {n: correct, total: TOTAL, p: accuracy})}</p>
       <div class="chips">
-        <span class="chip">🏆 ${G.score} 分</span>
+        <span class="chip">🏆 ${G.score} ${EDU.t('end.score')}</span>
         <span class="chip teal">✅ ${correct}/${TOTAL}</span>
-        <span class="chip purple">🔥 最高 ${G.maxCombo} 连击</span>
+        <span class="chip purple">${EDU.t('end.combo', {n: G.maxCombo})}</span>
       </div>
-      <button class="btn-go primary" onclick="this.closest('.overlay').remove();startGame()">🔄 再来一局</button>
-      <button class="btn-go secondary" onclick="this.closest('.overlay').remove();backMenu()">换个难度</button>
+      <button class="btn-go primary" onclick="this.closest('.overlay').remove();startGame()">${EDU.t('end.again')}</button>
+      <button class="btn-go secondary" onclick="this.closest('.overlay').remove();backMenu()">${EDU.t('end.diff')}</button>
     </div>`;
   document.body.appendChild(ov);
 }
@@ -378,7 +452,7 @@ function endGame() {
 function backMenu() {
   hide('statsRow'); hide('progressRow'); hide('gameArea');
   show('hint'); show('diffWrap');
-  document.getElementById('startBtn').textContent = '🎮 开始游戏';
+  document.getElementById('startBtn').textContent = EDU.t('start.start');
   G.running = false;
 }
 
@@ -406,8 +480,8 @@ function show(id) { document.getElementById(id).style.display = ''; }
 function hide(id) { document.getElementById(id).style.display = 'none'; }
 </script>
 <footer>
-  <p>© 2026 EduPlay · <a href="/">游戏大厅</a> · <a href="/blog/">学习博客</a> · <a href="/sitemap.xml">网站地图</a></p>
-  <p style="margin-top:6px">免费在线教育游戏，让学习更有趣 🎮</p>
+  <p>© 2026 EduPlay · <a href="/" data-i18n="nav.games">Game Hub</a> · <a href="/blog/" data-i18n="nav.blog">Blog</a> · <a href="/sitemap.xml" data-i18n="nav.sitemap">Sitemap</a></p>
+  <p style="margin-top:6px" data-i18n="footer.tagline">Free educational games that make learning fun 🎮</p>
 </footer>
 
 </body>

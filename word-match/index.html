@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
+<link rel="icon" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;700;800;900&family=Ma+Shan+Zheng&display=swap">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>EduPlay 单词消消乐 — 免费在线小学英语单词游戏</title>
+<title data-i18n-doc="page.title">EduPlay Word Match — Free Online English Word Game for Kids</title>
 <meta name="description" content="EduPlay 单词消消乐，趣味英中配对游戏，覆盖小学3年级至初一人教版词库，支持自定义词组。每日打卡、成就系统、错词复习，让孩子爱上背单词！">
 <meta name="keywords" content="单词消消乐,小学英语单词,英语游戏,人教版词汇,单词配对,免费英语学习,EduPlay">
 <meta name="robots" content="index, follow">
@@ -49,19 +50,298 @@
 </script>
 <link rel="stylesheet" href="/site.css">
 <link rel="stylesheet" href="/css/word-match.css">
+<script>window.__DICT = {
+  zh: {
+    'page.title': 'EduPlay 单词消消乐 — 免费在线小学英语单词游戏',
+    'nav.games': '游戏大厅',
+    'nav.wordFamily': '词族点读',
+    'nav.wordMatch': '单词消消乐',
+    'nav.wordPop': '词力消消乐',
+    'nav.memoryFlip': '记忆翻牌',
+    'nav.mathBlitz': '数学口算',
+    'nav.blog': '学习博客',
+    'stat.score': '得分',
+    'stat.combo': '连击',
+    'stat.sec': '秒',
+    'lb.titleAttr': '排行榜',
+    'ach.titleAttr': '成就',
+    'xp.lvlAttr': '点击查看等级详情',
+    'streak.text': '连续打卡 {n} 天',
+    'streak.sub.done': '✅ 今日已打卡',
+    'streak.sub.pending': '完成一局即可打卡',
+    'grade.label': '📚 选择词库',
+    'grade.g3': '三年级',
+    'grade.g4': '四年级',
+    'grade.g5': '五年级',
+    'grade.g6': '六年级',
+    'grade.g7': '初一',
+    'grade.wrong': '📝 错词本',
+    'grade.custom': '＋ 自定义',
+    'pair.6': '6 对',
+    'pair.8': '8 对',
+    'pair.10': '10 对',
+    'pair.12': '12 对',
+    'time.60': '60 秒',
+    'time.90': '90 秒',
+    'time.120': '120 秒',
+    'time.0': '无限制',
+    'btn.start': '▶ 开始游戏',
+    'hint.ready': '点击 <b>开始游戏</b>，然后把 <b style="color:var(--blue)">蓝色英文气泡</b> 和对应的 <b style="color:var(--pink)">粉色中文气泡</b> 配对消除 🎯',
+    'hint.empty.review': '<b style="color:#EF4444">错词本是空的！先去玩几局攒错词吧 😊</b>',
+    'hint.empty.normal': '<b style="color:#EF4444">该词组为空，请选择其他词库或添加单词</b>',
+    'hint.mode.review': '📝 <b style="color:#EF4444">错词复习模式</b> — 配对成功 3 次自动从错词本移除',
+    'hint.mode.normal': '点击 <b style="color:var(--blue)">蓝色气泡</b>（英文）→ 再点 <b style="color:var(--pink)">粉色气泡</b>（中文）配对消除 ✨',
+    'lvl.1': '单词新手', 'lvl.2': '单词新手', 'lvl.3': '单词新手',
+    'lvl.4': '词汇学徒', 'lvl.5': '词汇学徒', 'lvl.6': '词汇学徒',
+    'lvl.7': '词汇达人', 'lvl.8': '词汇达人', 'lvl.9': '词汇达人', 'lvl.10': '词汇达人',
+    'lvl.11': '词汇大师', 'lvl.12': '词汇大师', 'lvl.13': '词汇大师', 'lvl.14': '词汇大师', 'lvl.15': '词汇大师',
+    'lvl.16': '词汇传说', 'lvl.17': '词汇传说', 'lvl.18': '词汇传说', 'lvl.19': '词汇传说', 'lvl.20': '词汇传说',
+    'lvlup.title': '升级啦！Lv.{n}',
+    'lvlup.sub': '继续努力，词汇量与日俱增！',
+    'lvlup.close': '太棒了！',
+    'ach.title': '🏆 成就墙',
+    'ach.progress': '已解锁 {n} / {total}',
+    'ach.close': '关闭',
+    'ach.unlocked': '成就解锁！',
+    'ach.first_game.name': '初次冒险', 'ach.first_game.desc': '完成第 1 局游戏',
+    'ach.perfect.name': '十全十美', 'ach.perfect.desc': '单局全部消除',
+    'ach.combo5.name': '连击达人', 'ach.combo5.desc': '单局连击达到 5',
+    'ach.combo8.name': '连击传说', 'ach.combo8.desc': '单局连击达到 8',
+    'ach.words100.name': '百词斩', 'ach.words100.desc': '累计消除 100 对',
+    'ach.words500.name': '五百强', 'ach.words500.desc': '累计消除 500 对',
+    'ach.words1000.name': '千词王', 'ach.words1000.desc': '累计消除 1000 对',
+    'ach.streak3.name': '坚持三天', 'ach.streak3.desc': '连续打卡 3 天',
+    'ach.streak7.name': '七天勇士', 'ach.streak7.desc': '连续打卡 7 天',
+    'ach.streak30.name': '月度之星', 'ach.streak30.desc': '连续打卡 30 天',
+    'ach.speed12.name': '闪电手速', 'ach.speed12.desc': '60秒内消除12对',
+    'ach.zero_error.name': '零失误', 'ach.zero_error.desc': '单局 0 次错误配对',
+    'ach.custom3.name': '定制达人', 'ach.custom3.desc': '创建 3 个自定义词组',
+    'ach.lv5.name': '初入江湖', 'ach.lv5.desc': '达到 5 级',
+    'ach.lv10.name': '词汇达人', 'ach.lv10.desc': '达到 10 级',
+    'ach.lv20.name': '传说宗师', 'ach.lv20.desc': '达到 20 级',
+    'lb.title': '📊 排行榜',
+    'lb.sub': '你的个人历史最佳记录（本地）',
+    'lb.tab.score': '🏅 最高分', 'lb.unit.score': '分',
+    'lb.tab.combo': '🔥 最高连击', 'lb.unit.combo': '连击',
+    'lb.tab.pairs': '📚 消除对数', 'lb.unit.pairs': '对',
+    'lb.tab.streak': '📅 打卡天数', 'lb.unit.streak': '天',
+    'lb.close': '关闭',
+    'lb.clear': '清除排行数据',
+    'lb.empty': '暂无记录，快去玩一局吧！',
+    'lb.clear.confirm': '确定清除所有排行榜数据？',
+    'ww.title': '📝 错词本',
+    'ww.empty': '🎉 错词本是空的，继续保持！',
+    'ww.sub': '共 {n} 个错词，专项复习强化记忆',
+    'ww.start': '🎯 错词复习模式',
+    'ww.close': '关闭',
+    'mastered': '✓ 已掌握！',
+    'share.game': '单词消消乐',
+    'share.score': '本局得分',
+    'share.combo': '🔥 最高连击',
+    'share.acc': '🎯 正确率',
+    'share.pairs': '📊 累计消除',
+    'share.streak': '📅 打卡天数',
+    'share.unit.pairs': '对',
+    'share.unit.streak': '天',
+    'share.footer': '来 PK 我！→ eduplay.cc',
+    'share.dl': '💾 保存图片',
+    'share.cancel': '关闭',
+    'cv.edit': '✏️ 编辑词组',
+    'cv.create': '＋ 创建自定义词组',
+    'cv.sub': '输入英中单词对，每行一对，用空格或Tab分隔',
+    'cv.name': '词组名称',
+    'cv.name.ph': '例如：Unit 3 单词',
+    'cv.pairs': '单词对（每行一对）',
+    'cv.hint': '支持空格或Tab分隔，也可从Excel直接粘贴。上限50对。',
+    'cv.cancel': '取消',
+    'cv.save': '保存',
+    'cv.saved': '✓ 已保存',
+    'cv.err.name': '请输入词组名称',
+    'cv.err.empty': '请输入至少一对单词',
+    'cv.err.line': '第 {n} 行格式错误：「{line}」',
+    'cv.err.incomplete': '第 {n} 行内容不完整',
+    'cv.err.none': '没有解析到有效的单词对',
+    'cv.err.limit': '单词对数量超过上限（50对），已截取前50对',
+    'cv.saved.title': '已保存的词组',
+    'cv.item.count': '{n}对',
+    'cv.del.confirm': '确定删除词组「{name}」？',
+    'end.win': '全部消除！',
+    'end.time': '时间到了！',
+    'end.win.sub': '太棒了！所有单词配对成功',
+    'end.lose.sub': '已消除 {n} / {total} 对',
+    'end.total': '总分',
+    'end.combo': '🔥 最高连击 ×{n}',
+    'end.acc': '🎯 正确率 {n}%',
+    'end.cumulative': '📊 累计 {n} 对',
+    'end.again': '🔄 再来一局',
+    'end.share': '📸 生成分享卡片',
+    'end.words': '查看本局单词 ▾',
+    'end.words.hide': '收起单词 ▴',
+    'combo.nice': '不错！',
+    'combo.great': '太棒了！',
+    'combo.master': '连击达人！',
+    'combo.unstoppable': '无敌！',
+    'combo.insane': '逆天！',
+    'combo.legend': '传说！',
+    'xp.cur': '当前经验：{n} XP',
+    'xp.next': '距离 Lv.{n2} 还需：{n} XP',
+    'xp.max': '已达最高等级！',
+    'nav.sitemap': '网站地图',
+    'footer.tagline': '免费在线教育游戏，让学习更有趣 🎮'
+  },
+  en: {
+    'page.title': 'EduPlay Word Match — Free Online English Word Game for Kids',
+    'nav.games': 'Game Hub',
+    'nav.wordFamily': 'Word Family',
+    'nav.wordMatch': 'Word Match',
+    'nav.wordPop': 'Word Pop',
+    'nav.memoryFlip': 'Memory Flip',
+    'nav.mathBlitz': 'Math Blitz',
+    'nav.blog': 'Blog',
+    'stat.score': 'Score',
+    'stat.combo': 'Combo',
+    'stat.sec': 's',
+    'lb.titleAttr': 'Leaderboard',
+    'ach.titleAttr': 'Achievements',
+    'xp.lvlAttr': 'Click for level details',
+    'streak.text': '{n}-day streak',
+    'streak.sub.done': '✅ Checked in today',
+    'streak.sub.pending': 'Play one round to check in',
+    'grade.label': '📚 Choose Word List',
+    'grade.g3': 'Grade 3',
+    'grade.g4': 'Grade 4',
+    'grade.g5': 'Grade 5',
+    'grade.g6': 'Grade 6',
+    'grade.g7': 'Grade 7',
+    'grade.wrong': '📝 Wrong Words',
+    'grade.custom': '＋ Custom',
+    'pair.6': '6 pairs',
+    'pair.8': '8 pairs',
+    'pair.10': '10 pairs',
+    'pair.12': '12 pairs',
+    'time.60': '60 s',
+    'time.90': '90 s',
+    'time.120': '120 s',
+    'time.0': 'No Limit',
+    'btn.start': '▶ Start Game',
+    'hint.ready': 'Tap <b>Start Game</b>, then match each <b style="color:var(--blue)">blue English bubble</b> with its <b style="color:var(--pink)">pink Chinese bubble</b> 🎯',
+    'hint.empty.review': '<b style="color:#EF4444">Your wrong word book is empty! Play a few rounds to collect words 😊</b>',
+    'hint.empty.normal': '<b style="color:#EF4444">This word list is empty. Pick another list or add words</b>',
+    'hint.mode.review': '📝 <b style="color:#EF4444">Wrong Word Review</b> — matching a word 3 times removes it from the book',
+    'hint.mode.normal': 'Tap a <b style="color:var(--blue)">blue bubble</b> (English) → then a <b style="color:var(--pink)">pink bubble</b> (Chinese) to match ✨',
+    'lvl.1': 'Newbie', 'lvl.2': 'Newbie', 'lvl.3': 'Newbie',
+    'lvl.4': 'Apprentice', 'lvl.5': 'Apprentice', 'lvl.6': 'Apprentice',
+    'lvl.7': 'Expert', 'lvl.8': 'Expert', 'lvl.9': 'Expert', 'lvl.10': 'Expert',
+    'lvl.11': 'Master', 'lvl.12': 'Master', 'lvl.13': 'Master', 'lvl.14': 'Master', 'lvl.15': 'Master',
+    'lvl.16': 'Legend', 'lvl.17': 'Legend', 'lvl.18': 'Legend', 'lvl.19': 'Legend', 'lvl.20': 'Legend',
+    'lvlup.title': 'Level up! Lv.{n}',
+    'lvlup.sub': 'Keep going — your vocabulary grows every day!',
+    'lvlup.close': 'Awesome!',
+    'ach.title': '🏆 Achievements',
+    'ach.progress': 'Unlocked {n} / {total}',
+    'ach.close': 'Close',
+    'ach.unlocked': 'Achievement unlocked!',
+    'ach.first_game.name': 'First Steps', 'ach.first_game.desc': 'Finish your first game',
+    'ach.perfect.name': 'Perfect Run', 'ach.perfect.desc': 'Clear all pairs in one game',
+    'ach.combo5.name': 'Combo Master', 'ach.combo5.desc': 'Reach a combo of 5 in one game',
+    'ach.combo8.name': 'Combo Legend', 'ach.combo8.desc': 'Reach a combo of 8 in one game',
+    'ach.words100.name': 'Hundred Club', 'ach.words100.desc': 'Clear 100 pairs in total',
+    'ach.words500.name': '500 Club', 'ach.words500.desc': 'Clear 500 pairs in total',
+    'ach.words1000.name': 'Word King', 'ach.words1000.desc': 'Clear 1000 pairs in total',
+    'ach.streak3.name': 'Three Days Strong', 'ach.streak3.desc': 'Check in for 3 days in a row',
+    'ach.streak7.name': 'Week Warrior', 'ach.streak7.desc': 'Check in for 7 days in a row',
+    'ach.streak30.name': 'Month Star', 'ach.streak30.desc': 'Check in for 30 days in a row',
+    'ach.speed12.name': 'Lightning Hands', 'ach.speed12.desc': 'Clear 12 pairs in 60 seconds',
+    'ach.zero_error.name': 'Flawless', 'ach.zero_error.desc': 'Zero wrong matches in one game',
+    'ach.custom3.name': 'Custom Creator', 'ach.custom3.desc': 'Create 3 custom word lists',
+    'ach.lv5.name': 'Rising Star', 'ach.lv5.desc': 'Reach level 5',
+    'ach.lv10.name': 'Vocabulary Expert', 'ach.lv10.desc': 'Reach level 10',
+    'ach.lv20.name': 'Grand Master', 'ach.lv20.desc': 'Reach level 20',
+    'lb.title': '📊 Leaderboard',
+    'lb.sub': 'Your personal best records (local)',
+    'lb.tab.score': '🏅 Best Score', 'lb.unit.score': 'pts',
+    'lb.tab.combo': '🔥 Best Combo', 'lb.unit.combo': 'combo',
+    'lb.tab.pairs': '📚 Pairs Cleared', 'lb.unit.pairs': 'pairs',
+    'lb.tab.streak': '📅 Check-in Days', 'lb.unit.streak': 'days',
+    'lb.close': 'Close',
+    'lb.clear': 'Clear leaderboard',
+    'lb.empty': 'No records yet — go play a round!',
+    'lb.clear.confirm': 'Clear all leaderboard data?',
+    'ww.title': '📝 Wrong Word Book',
+    'ww.empty': '🎉 Your wrong word book is empty — keep it up!',
+    'ww.sub': '{n} wrong words — review them to strengthen memory',
+    'ww.start': '🎯 Review Mode',
+    'ww.close': 'Close',
+    'mastered': '✓ Mastered!',
+    'share.game': 'Word Match',
+    'share.score': 'Score',
+    'share.combo': '🔥 Best Combo',
+    'share.acc': '🎯 Accuracy',
+    'share.pairs': '📊 Total Pairs',
+    'share.streak': '📅 Check-in Days',
+    'share.unit.pairs': 'pairs',
+    'share.unit.streak': 'days',
+    'share.footer': 'Beat me! → eduplay.cc',
+    'share.dl': '💾 Save Image',
+    'share.cancel': 'Close',
+    'cv.edit': '✏️ Edit List',
+    'cv.create': '＋ Create Custom List',
+    'cv.sub': 'Enter English-Chinese pairs, one per line, separated by space or Tab',
+    'cv.name': 'List Name',
+    'cv.name.ph': 'e.g. Unit 3 Words',
+    'cv.pairs': 'Word Pairs (one per line)',
+    'cv.hint': 'Supports space or Tab; you can paste from Excel. Max 50 pairs.',
+    'cv.cancel': 'Cancel',
+    'cv.save': 'Save',
+    'cv.saved': '✓ Saved',
+    'cv.err.name': 'Enter a list name',
+    'cv.err.empty': 'Enter at least one word pair',
+    'cv.err.line': 'Line {n} format error: "{line}"',
+    'cv.err.incomplete': 'Line {n} is incomplete',
+    'cv.err.none': 'No valid word pairs found',
+    'cv.err.limit': 'Too many pairs (max 50) — keeping the first 50',
+    'cv.saved.title': 'Saved Lists',
+    'cv.item.count': '{n} pairs',
+    'cv.del.confirm': 'Delete list "{name}"?',
+    'end.win': 'All cleared!',
+    'end.time': "Time's up!",
+    'end.win.sub': 'Awesome! All word pairs matched',
+    'end.lose.sub': '{n} / {total} pairs cleared',
+    'end.total': 'Total Score',
+    'end.combo': '🔥 Best Combo ×{n}',
+    'end.acc': '🎯 Accuracy {n}%',
+    'end.cumulative': '📊 Total {n} pairs',
+    'end.again': '🔄 Play Again',
+    'end.share': '📸 Share Card',
+    'end.words': 'Words this round ▾',
+    'end.words.hide': 'Hide words ▴',
+    'combo.nice': 'Nice!',
+    'combo.great': 'Awesome!',
+    'combo.master': 'Combo master!',
+    'combo.unstoppable': 'Unstoppable!',
+    'combo.insane': 'Insane!',
+    'combo.legend': 'Legendary!',
+    'xp.cur': 'Current XP: {n}',
+    'xp.next': '{n} XP to reach Lv.{n2}',
+    'xp.max': 'Max level reached!',
+    'nav.sitemap': 'Sitemap',
+    'footer.tagline': 'Free educational games that make learning fun 🎮'
+  }
+};</script>
+<script src="/js/i18n.js"></script>
 </head>
 <body>
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo">Edu<span>Play</span></a>
     <ul class="nav-links">
-      <li><a href="/">游戏大厅</a></li>
-      <li><a href="/word-family/">词族点读</a></li>
-      <li><a href="/word-match/" style="color:var(--pink)">单词消消乐</a></li>
-      <li><a href="/word-pop/">词力消消乐</a></li>
-      <li><a href="/memory-flip/">记忆翻牌</a></li>
-      <li><a href="/math-blitz/">数学口算</a></li>
-      <li><a href="/blog/">学习博客</a></li>
+      <li><a href="/" data-i18n="nav.games">Game Hub</a></li>
+      <li><a href="/word-family/" data-i18n="nav.wordFamily">Word Family</a></li>
+      <li><a href="/word-match/" style="color:var(--pink)" data-i18n="nav.wordMatch">Word Match</a></li>
+      <li><a href="/word-pop/" data-i18n="nav.wordPop">Word Pop</a></li>
+      <li><a href="/memory-flip/" data-i18n="nav.memoryFlip">Memory Flip</a></li>
+      <li><a href="/math-blitz/" data-i18n="nav.mathBlitz">Math Blitz</a></li>
+      <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
     </ul>
   </div>
 </nav>
@@ -73,54 +353,54 @@
   <div class="topbar">
     <h1 class="logo">Edu<span>Play</span><span class="dot"></span></h1>
     <div class="top-icons">
-      <div class="stat"><div class="stat-v" id="sScore">0</div><div class="stat-l">得分</div></div>
-      <div class="stat"><div class="stat-v blue" id="sCombo">×1</div><div class="stat-l">连击</div></div>
-      <div class="stat"><div class="stat-v" id="sTimer">–</div><div class="stat-l">秒</div></div>
-      <button class="btn-icon" id="lbBtn" title="排行榜">📊</button>
-      <button class="btn-icon" id="achBtn" title="成就">🏆</button>
+      <div class="stat"><div class="stat-v" id="sScore">0</div><div class="stat-l" data-i18n="stat.score">Score</div></div>
+      <div class="stat"><div class="stat-v blue" id="sCombo">×1</div><div class="stat-l" data-i18n="stat.combo">Combo</div></div>
+      <div class="stat"><div class="stat-v" id="sTimer">–</div><div class="stat-l" data-i18n="stat.sec">s</div></div>
+      <button class="btn-icon" id="lbBtn" title="Leaderboard" data-i18n-title="lb.titleAttr">📊</button>
+      <button class="btn-icon" id="achBtn" title="Achievements" data-i18n-title="ach.titleAttr">🏆</button>
     </div>
   </div>
 
   <!-- XP Bar -->
   <div class="xp-bar-wrap">
-    <div class="xp-level-badge" id="xpLvl" title="点击查看等级详情">Lv.1</div>
+    <div class="xp-level-badge" id="xpLvl" title="Click for level details" data-i18n-title="xp.lvlAttr">Lv.1</div>
     <div class="xp-bar-bg"><div class="xp-bar-fill" id="xpFill" style="width:0%"></div></div>
-    <div class="xp-title" id="xpTitle">单词新手</div>
+    <div class="xp-title" id="xpTitle">Newbie</div>
   </div>
 
   <!-- Streak Banner -->
   <div class="streak-banner" id="streakBanner">
     <div class="streak-fire">🔥</div>
     <div class="streak-info">
-      <div class="streak-days" id="streakText">连续打卡 0 天</div>
-      <div class="streak-sub" id="streakSub">完成一局即可打卡</div>
+      <div class="streak-days" id="streakText">0-day streak</div>
+      <div class="streak-sub" id="streakSub">Play one round to check in</div>
     </div>
     <div class="streak-cal" id="streakCal"></div>
   </div>
 
   <div class="grade-wrap">
-    <div class="grade-label">📚 选择词库</div>
+    <div class="grade-label" data-i18n="grade.label">📚 Choose Word List</div>
     <div class="grade-btns" id="gradeContainer">
-      <button class="gbtn active" data-book="pep3">三年级</button>
-      <button class="gbtn" data-book="pep4">四年级</button>
-      <button class="gbtn" data-book="pep5">五年级</button>
-      <button class="gbtn" data-book="pep6">六年级</button>
-      <button class="gbtn" data-book="jr1">初一</button>
-      <button class="gbtn wrong-btn" id="wrongWordBtn">📝 错词本 <span class="wrong-badge" id="wrongCount" style="display:none">0</span></button>
-      <button class="gbtn custom" id="addVocabBtn">＋ 自定义</button>
+      <button class="gbtn active" data-book="pep3" data-i18n="grade.g3">Grade 3</button>
+      <button class="gbtn" data-book="pep4" data-i18n="grade.g4">Grade 4</button>
+      <button class="gbtn" data-book="pep5" data-i18n="grade.g5">Grade 5</button>
+      <button class="gbtn" data-book="pep6" data-i18n="grade.g6">Grade 6</button>
+      <button class="gbtn" data-book="jr1" data-i18n="grade.g7">Grade 7</button>
+      <button class="gbtn wrong-btn" id="wrongWordBtn" data-i18n="grade.wrong">📝 Wrong Words <span class="wrong-badge" id="wrongCount" style="display:none">0</span></button>
+      <button class="gbtn custom" id="addVocabBtn" data-i18n="grade.custom">＋ Custom</button>
     </div>
   </div>
 
   <div class="ctrl-row">
-    <select id="pairSel"><option value="6">6 对</option><option value="8" selected>8 对</option><option value="10">10 对</option><option value="12">12 对</option></select>
-    <select id="timeSel"><option value="60" selected>60 秒</option><option value="90">90 秒</option><option value="120">120 秒</option><option value="0">无限制</option></select>
-    <button class="btn-go" id="startBtn">▶ 开始游戏</button>
+    <select id="pairSel"><option value="6" data-i18n="pair.6">6 pairs</option><option value="8" selected data-i18n="pair.8">8 pairs</option><option value="10" data-i18n="pair.10">10 pairs</option><option value="12" data-i18n="pair.12">12 pairs</option></select>
+    <select id="timeSel"><option value="60" selected data-i18n="time.60">60 s</option><option value="90" data-i18n="time.90">90 s</option><option value="120" data-i18n="time.120">120 s</option><option value="0" data-i18n="time.0">No Limit</option></select>
+    <button class="btn-go" id="startBtn" data-i18n="btn.start">▶ Start Game</button>
     <button class="btn-icon on" id="sndBtn">🔊</button>
     <button class="btn-icon" id="fsBtn">⛶</button>
   </div>
 
   <div class="timer-strip"><div class="timer-fill" id="tFill" style="width:100%"></div></div>
-  <div class="hint-box" id="hint">点击 <b>开始游戏</b>，然后把 <b style="color:var(--blue)">蓝色英文气泡</b> 和对应的 <b style="color:var(--pink)">粉色中文气泡</b> 配对消除 🎯</div>
+  <div class="hint-box" id="hint" data-i18n-html="hint.ready">Tap <b>Start Game</b>, then match each <b style="color:var(--blue)">blue English bubble</b> with its <b style="color:var(--pink)">pink Chinese bubble</b> 🎯</div>
   <div class="progress-row" id="progress"></div>
   <div class="grid" id="grid"></div>
 </div>
@@ -137,27 +417,28 @@ const VOCAB={
 
 // ==================== LEVEL SYSTEM ====================
 const LEVELS=[
-  {lv:1, xp:0,     title:'单词新手', icon:'🌱'},
-  {lv:2, xp:100,   title:'单词新手', icon:'🌱'},
-  {lv:3, xp:250,   title:'单词新手', icon:'🌱'},
-  {lv:4, xp:450,   title:'词汇学徒', icon:'📗'},
-  {lv:5, xp:700,   title:'词汇学徒', icon:'📗'},
-  {lv:6, xp:1000,  title:'词汇学徒', icon:'📗'},
-  {lv:7, xp:1350,  title:'词汇达人', icon:'📚'},
-  {lv:8, xp:1750,  title:'词汇达人', icon:'📚'},
-  {lv:9, xp:2200,  title:'词汇达人', icon:'📚'},
-  {lv:10,xp:2700,  title:'词汇达人', icon:'📚'},
-  {lv:11,xp:3300,  title:'词汇大师', icon:'🎓'},
-  {lv:12,xp:4000,  title:'词汇大师', icon:'🎓'},
-  {lv:13,xp:4800,  title:'词汇大师', icon:'🎓'},
-  {lv:14,xp:5700,  title:'词汇大师', icon:'🎓'},
-  {lv:15,xp:6700,  title:'词汇大师', icon:'🎓'},
-  {lv:16,xp:7800,  title:'词汇传说', icon:'👑'},
-  {lv:17,xp:9000,  title:'词汇传说', icon:'👑'},
-  {lv:18,xp:10300, title:'词汇传说', icon:'👑'},
-  {lv:19,xp:11700, title:'词汇传说', icon:'👑'},
-  {lv:20,xp:13200, title:'词汇传说', icon:'👑'},
+  {lv:1, xp:0,     titleKey:1, icon:'🌱'},
+  {lv:2, xp:100,   titleKey:2, icon:'🌱'},
+  {lv:3, xp:250,   titleKey:3, icon:'🌱'},
+  {lv:4, xp:450,   titleKey:4, icon:'📗'},
+  {lv:5, xp:700,   titleKey:5, icon:'📗'},
+  {lv:6, xp:1000,  titleKey:6, icon:'📗'},
+  {lv:7, xp:1350,  titleKey:7, icon:'📚'},
+  {lv:8, xp:1750,  titleKey:8, icon:'📚'},
+  {lv:9, xp:2200,  titleKey:9, icon:'📚'},
+  {lv:10,xp:2700,  titleKey:10, icon:'📚'},
+  {lv:11,xp:3300,  titleKey:11, icon:'🎓'},
+  {lv:12,xp:4000,  titleKey:12, icon:'🎓'},
+  {lv:13,xp:4800,  titleKey:13, icon:'🎓'},
+  {lv:14,xp:5700,  titleKey:14, icon:'🎓'},
+  {lv:15,xp:6700,  titleKey:15, icon:'🎓'},
+  {lv:16,xp:7800,  titleKey:16, icon:'👑'},
+  {lv:17,xp:9000,  titleKey:17, icon:'👑'},
+  {lv:18,xp:10300, titleKey:18, icon:'👑'},
+  {lv:19,xp:11700, titleKey:19, icon:'👑'},
+  {lv:20,xp:13200, titleKey:20, icon:'👑'},
 ];
+function lvlTitle(lv){return EDU.t('lvl.'+lv)}
 
 function getLevelInfo(xp){
   let cur=LEVELS[0];
@@ -165,7 +446,7 @@ function getLevelInfo(xp){
   const nextIdx=LEVELS.findIndex(l=>l.lv===cur.lv);
   const next=LEVELS[nextIdx+1]||null;
   const pct=next?Math.round(((xp-cur.xp)/(next.xp-cur.xp))*100):100;
-  return{lv:cur.lv,title:cur.title,icon:cur.icon,pct,cur,next,xp};
+  return{lv:cur.lv,title:lvlTitle(cur.lv),icon:cur.icon,pct,cur,next,xp};
 }
 
 function renderXPBar(){
@@ -203,10 +484,10 @@ function showLevelUp(info){
   ov.className='lvlup-overlay';
   ov.innerHTML=`<div class="lvlup-card">
     <div class="lv-icon">${info.icon}</div>
-    <h2>升级啦！Lv.${info.lv}</h2>
-    <div class="lv-sub">继续努力，词汇量与日俱增！</div>
+    <h2>${EDU.t('lvlup.title',{n:info.lv})}</h2>
+    <div class="lv-sub">${EDU.t('lvlup.sub')}</div>
     <div class="lv-title">${info.title}</div>
-    <button id="lvlupClose">太棒了！</button>
+    <button id="lvlupClose">${EDU.t('lvlup.close')}</button>
   </div>`;
   document.body.appendChild(ov);
   burst(innerWidth/2,innerHeight/2,60);
@@ -216,23 +497,25 @@ function showLevelUp(info){
 
 // ==================== ACHIEVEMENTS DEF ====================
 const ACH_DEFS=[
-  {id:'first_game',cat:'新手',name:'初次冒险',desc:'完成第 1 局游戏',icon:'⭐'},
-  {id:'perfect',cat:'新手',name:'十全十美',desc:'单局全部消除',icon:'🎯'},
-  {id:'combo5',cat:'连击',name:'连击达人',desc:'单局连击达到 5',icon:'🔥'},
-  {id:'combo8',cat:'连击',name:'连击传说',desc:'单局连击达到 8',icon:'💥'},
-  {id:'words100',cat:'积累',name:'百词斩',desc:'累计消除 100 对',icon:'📚'},
-  {id:'words500',cat:'积累',name:'五百强',desc:'累计消除 500 对',icon:'📖'},
-  {id:'words1000',cat:'积累',name:'千词王',desc:'累计消除 1000 对',icon:'👑'},
-  {id:'streak3',cat:'打卡',name:'坚持三天',desc:'连续打卡 3 天',icon:'💪'},
-  {id:'streak7',cat:'打卡',name:'七天勇士',desc:'连续打卡 7 天',icon:'🎖'},
-  {id:'streak30',cat:'打卡',name:'月度之星',desc:'连续打卡 30 天',icon:'🌟'},
-  {id:'speed12',cat:'挑战',name:'闪电手速',desc:'60秒内消除12对',icon:'⚡'},
-  {id:'zero_error',cat:'挑战',name:'零失误',desc:'单局 0 次错误配对',icon:'💎'},
-  {id:'custom3',cat:'词库',name:'定制达人',desc:'创建 3 个自定义词组',icon:'🎨'},
-  {id:'lv5',cat:'等级',name:'初入江湖',desc:'达到 5 级',icon:'📗'},
-  {id:'lv10',cat:'等级',name:'词汇达人',desc:'达到 10 级',icon:'📚'},
-  {id:'lv20',cat:'等级',name:'传说宗师',desc:'达到 20 级',icon:'👑'},
+  {id:'first_game',cat:'新手',icon:'⭐'},
+  {id:'perfect',cat:'新手',icon:'🎯'},
+  {id:'combo5',cat:'连击',icon:'🔥'},
+  {id:'combo8',cat:'连击',icon:'💥'},
+  {id:'words100',cat:'积累',icon:'📚'},
+  {id:'words500',cat:'积累',icon:'📖'},
+  {id:'words1000',cat:'积累',icon:'👑'},
+  {id:'streak3',cat:'打卡',icon:'💪'},
+  {id:'streak7',cat:'打卡',icon:'🎖'},
+  {id:'streak30',cat:'打卡',icon:'🌟'},
+  {id:'speed12',cat:'挑战',icon:'⚡'},
+  {id:'zero_error',cat:'挑战',icon:'💎'},
+  {id:'custom3',cat:'词库',icon:'🎨'},
+  {id:'lv5',cat:'等级',icon:'📗'},
+  {id:'lv10',cat:'等级',icon:'📚'},
+  {id:'lv20',cat:'等级',icon:'👑'},
 ];
+function achName(id){return EDU.t('ach.'+id+'.name')}
+function achDesc(id){return EDU.t('ach.'+id+'.desc')}
 
 // ==================== STORAGE ====================
 const STORE_KEY='eduplay_data';
@@ -288,7 +571,7 @@ function playTone(freq,dur){if(!G.snd)return;try{const ac=new(window.AudioContex
 function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=~~(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
 function pop(txt,x,y,c){const d=document.createElement('div');d.className='pop';d.textContent=txt;d.style.cssText=`left:${x-22}px;top:${y-12}px;color:${c}`;document.body.appendChild(d);setTimeout(()=>d.remove(),950)}
 let cTO;
-function showCombo(n){const msgs=['不错！','太棒了！','连击达人！','无敌！','逆天！'];const cols=['#F59E0B','#FB923C','#E85D8C','#8B5CF6','#14B8A6'];const idx=Math.min(n-2,4);const el=document.getElementById('comboText'),sub=document.getElementById('comboSub');el.textContent='×'+n;el.style.color=cols[idx];sub.textContent=msgs[idx]||'传说！';document.getElementById('comboFlash').classList.add('show');clearTimeout(cTO);cTO=setTimeout(()=>document.getElementById('comboFlash').classList.remove('show'),700)}
+function showCombo(n){const msgs=[EDU.t('combo.nice'),EDU.t('combo.great'),EDU.t('combo.master'),EDU.t('combo.unstoppable'),EDU.t('combo.insane')];const cols=['#F59E0B','#FB923C','#E85D8C','#8B5CF6','#14B8A6'];const idx=Math.min(n-2,4);const el=document.getElementById('comboText'),sub=document.getElementById('comboSub');el.textContent='×'+n;el.style.color=cols[idx];sub.textContent=msgs[idx]||EDU.t('combo.legend');document.getElementById('comboFlash').classList.add('show');clearTimeout(cTO);cTO=setTimeout(()=>document.getElementById('comboFlash').classList.remove('show'),700)}
 function todayStr(){return new Date().toISOString().slice(0,10)}
 function getWeekDays(){const d=[];const now=new Date();const day=now.getDay()||7;for(let i=1;i<=7;i++){const dt=new Date(now);dt.setDate(now.getDate()-day+i);d.push(dt.toISOString().slice(0,10))}return d}
 
@@ -324,12 +607,12 @@ function doCheckin(){
 
 function renderStreak(){
   updateStreak();
-  document.getElementById('streakText').textContent='连续打卡 '+userData.dailyStreak+' 天';
-  document.getElementById('streakSub').textContent=userData.todayPlayed?'✅ 今日已打卡':'完成一局即可打卡';
+  document.getElementById('streakText').textContent=EDU.t('streak.text',{n:userData.dailyStreak});
+  document.getElementById('streakSub').textContent=userData.todayPlayed?EDU.t('streak.sub.done'):EDU.t('streak.sub.pending');
   const cal=document.getElementById('streakCal');
   cal.innerHTML='';
   const week=getWeekDays();
-  const dayNames=['一','二','三','四','五','六','日'];
+  const dayNames=EDU.getLang()==='zh'?['一','二','三','四','五','六','日']:['M','T','W','T','F','S','S'];
   const today=todayStr();
   week.forEach((d,i)=>{
     const dot=document.createElement('div');
@@ -353,7 +636,7 @@ function unlockAch(id){
 function showAchToast(def){
   const t=document.createElement('div');
   t.className='ach-toast';
-  t.innerHTML=`<div class="ach-toast-icon">${def.icon}</div><div class="ach-toast-text">成就解锁！<span class="ach-toast-name">${def.name}</span></div>`;
+  t.innerHTML=`<div class="ach-toast-icon">${def.icon}</div><div class="ach-toast-text">${EDU.t('ach.unlocked')}<span class="ach-toast-name">${achName(def.id)}</span></div>`;
   document.body.appendChild(t);
   setTimeout(()=>t.remove(),3200);
 }
@@ -391,10 +674,10 @@ function showAchievements(){
   const ov=document.createElement('div');
   ov.className='ach-overlay';
   ov.innerHTML=`<div class="ach-modal">
-    <h3>🏆 成就墙</h3>
-    <div class="ach-progress">已解锁 ${unlocked.length} / ${total}</div>
+    <h3>${EDU.t('ach.title')}</h3>
+    <div class="ach-progress">${EDU.t('ach.progress',{n:unlocked.length,total})}</div>
     <div class="ach-grid" id="achGrid"></div>
-    <button class="ach-close" id="achClose">关闭</button>
+    <button class="ach-close" id="achClose">${EDU.t('ach.close')}</button>
   </div>`;
   document.body.appendChild(ov);
   const grid=document.getElementById('achGrid');
@@ -402,7 +685,7 @@ function showAchievements(){
     const isUnlocked=unlocked.includes(a.id);
     const card=document.createElement('div');
     card.className='ach-card '+(isUnlocked?'unlocked':'locked');
-    card.innerHTML=`<div class="ach-icon">${a.icon}</div><div class="ach-name">${a.name}</div><div class="ach-desc">${a.desc}</div>`;
+    card.innerHTML=`<div class="ach-icon">${a.icon}</div><div class="ach-name">${achName(a.id)}</div><div class="ach-desc">${achDesc(a.id)}</div>`;
     grid.appendChild(card);
   });
   document.getElementById('achClose').onclick=()=>ov.remove();
@@ -416,13 +699,10 @@ function addToLeaderboard(entry){
   lb.scores.push({v:entry.score,date:todayStr()});
   lb.combos.push({v:entry.combo,date:todayStr()});
   lb.pairs.push({v:entry.pairs,date:todayStr()});
-  // streaks already tracked via dailyStreak
-  // sort descending, keep top 10
   ['scores','combos','pairs'].forEach(k=>{
     lb[k].sort((a,b)=>b.v-a.v);
     if(lb[k].length>10)lb[k]=lb[k].slice(0,10);
   });
-  // streak history
   lb.streaks.push({v:userData.dailyStreak,date:todayStr()});
   lb.streaks.sort((a,b)=>b.v-a.v);
   if(lb.streaks.length>10)lb.streaks=lb.streaks.slice(0,10);
@@ -432,21 +712,21 @@ function addToLeaderboard(entry){
 function showLeaderboard(){
   const lb=userData.leaderboard||{scores:[],combos:[],pairs:[],streaks:[]};
   const tabs=[
-    {key:'scores',label:'🏅 最高分',unit:'分'},
-    {key:'combos',label:'🔥 最高连击',unit:'连击'},
-    {key:'pairs',label:'📚 消除对数',unit:'对'},
-    {key:'streaks',label:'📅 打卡天数',unit:'天'},
+    {key:'scores',label:EDU.t('lb.tab.score'),unit:EDU.t('lb.unit.score')},
+    {key:'combos',label:EDU.t('lb.tab.combo'),unit:EDU.t('lb.unit.combo')},
+    {key:'pairs',label:EDU.t('lb.tab.pairs'),unit:EDU.t('lb.unit.pairs')},
+    {key:'streaks',label:EDU.t('lb.tab.streak'),unit:EDU.t('lb.unit.streak')},
   ];
   let activeTab=0;
   const ov=document.createElement('div');
   ov.className='lb-overlay';
   ov.innerHTML=`<div class="lb-modal">
-    <h3>📊 排行榜</h3>
-    <div class="lb-sub">你的个人历史最佳记录（本地）</div>
+    <h3>${EDU.t('lb.title')}</h3>
+    <div class="lb-sub">${EDU.t('lb.sub')}</div>
     <div class="lb-tabs" id="lbTabs"></div>
     <div class="lb-list" id="lbList"></div>
-    <button class="lb-close" id="lbClose">关闭</button>
-    <button class="lb-clear" id="lbClear">清除排行数据</button>
+    <button class="lb-close" id="lbClose">${EDU.t('lb.close')}</button>
+    <button class="lb-clear" id="lbClear">${EDU.t('lb.clear')}</button>
   </div>`;
   document.body.appendChild(ov);
 
@@ -464,7 +744,7 @@ function showLeaderboard(){
     const {key,unit}=tabs[idx];
     const data=lb[key]||[];
     const list=document.getElementById('lbList');
-    if(data.length===0){list.innerHTML=`<div class="lb-empty">暂无记录，快去玩一局吧！</div>`;return}
+    if(data.length===0){list.innerHTML=`<div class="lb-empty">${EDU.t('lb.empty')}</div>`;return}
     const rankClass=['gold','silver','bronze'];
     list.innerHTML=data.map((item,i)=>`
       <div class="lb-row">
@@ -476,7 +756,7 @@ function showLeaderboard(){
   renderTab(0);
   document.getElementById('lbClose').onclick=()=>ov.remove();
   document.getElementById('lbClear').onclick=()=>{
-    if(confirm('确定清除所有排行榜数据？'))
+    if(confirm(EDU.t('lb.clear.confirm')))
     {userData.leaderboard={scores:[],combos:[],pairs:[],streaks:[]};saveData();renderTab(activeTab)}
   };
   ov.onclick=e=>{if(e.target===ov)ov.remove()};
@@ -495,7 +775,7 @@ function showWrongWordBook(){
   const ov=document.createElement('div');
   ov.className='ww-overlay';
   const listHTML=words.length===0
-    ?'<div class="ww-empty">🎉 错词本是空的，继续保持！</div>'
+    ?`<div class="ww-empty">${EDU.t('ww.empty')}</div>`
     :words.sort((a,b)=>b[1].count-a[1].count).map(([en,{zh,count}])=>`
       <div class="ww-row" id="wwr-${en.replace(/[^a-z]/gi,'_')}">
         <div class="ww-en">${en}</div>
@@ -504,19 +784,18 @@ function showWrongWordBook(){
         <button class="ww-del" onclick="deleteWrongWord('${en.replace(/'/g,"\\'")}')">✕</button>
       </div>`).join('');
   ov.innerHTML=`<div class="ww-modal">
-    <h3>📝 错词本</h3>
-    <div class="ww-sub">共 ${words.length} 个错词，专项复习强化记忆</div>
+    <h3>${EDU.t('ww.title')}</h3>
+    <div class="ww-sub">${EDU.t('ww.sub',{n:words.length})}</div>
     <div class="ww-list">${listHTML}</div>
     <div class="ww-btns">
-      ${words.length>0?'<button class="ww-start" id="wwStart">🎯 错词复习模式</button>':''}
-      <button class="ww-close" id="wwClose">关闭</button>
+      ${words.length>0?`<button class="ww-start" id="wwStart">${EDU.t('ww.start')}</button>`:''}
+      <button class="ww-close" id="wwClose">${EDU.t('ww.close')}</button>
     </div>
   </div>`;
   document.body.appendChild(ov);
   if(words.length>0){
     document.getElementById('wwStart').onclick=()=>{
       ov.remove();
-      // select wrong word mode
       document.querySelectorAll('.gbtn').forEach(x=>x.classList.remove('active'));
       document.getElementById('wrongWordBtn').classList.add('active');
       G.book='wrongwords';
@@ -542,34 +821,29 @@ function generateShareCard(data){
   c.width=W;c.height=H;
   const ctx=c.getContext('2d');
 
-  // Background gradient
   const grad=ctx.createLinearGradient(0,0,W,H);
   grad.addColorStop(0,'#8B5CF6');grad.addColorStop(0.5,'#4A9EF5');grad.addColorStop(1,'#14B8A6');
   ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
 
-  // Decorative circles
   ctx.globalAlpha=0.12;
   ctx.fillStyle='#fff';
   ctx.beginPath();ctx.arc(340,60,120,0,6.28);ctx.fill();
   ctx.beginPath();ctx.arc(50,440,90,0,6.28);ctx.fill();
   ctx.globalAlpha=1;
 
-  // Card body
   ctx.fillStyle='rgba(255,255,255,0.95)';
   roundRect(ctx,24,90,W-48,H-120,20);
   ctx.fill();
 
-  // Logo
   ctx.font='bold 28px Fredoka One, sans-serif';
   ctx.fillStyle='#E85D8C';
   ctx.textAlign='center';
   ctx.fillText('EduPlay',W/2,48);
   ctx.font='bold 14px Nunito, sans-serif';
   ctx.fillStyle='rgba(255,255,255,0.85)';
-  ctx.fillText('单词消消乐',W/2,70);
+  ctx.fillText(EDU.t('share.game'),W/2,70);
 
   const info=getLevelInfo(data.xp);
-  // Level badge
   ctx.fillStyle='#8B5CF6';
   roundRect(ctx,W/2-55,102,110,30,15);ctx.fill();
   ctx.font='bold 14px Nunito, sans-serif';
@@ -577,24 +851,21 @@ function generateShareCard(data){
   ctx.textAlign='center';
   ctx.fillText(`${info.icon} Lv.${info.lv} ${info.title}`,W/2,122);
 
-  // Score
   ctx.fillStyle='#3D3D4E';
   ctx.font='bold 18px Nunito, sans-serif';
-  ctx.fillText('本局得分',W/2,165);
+  ctx.fillText(EDU.t('share.score'),W/2,165);
   ctx.font='bold 72px Fredoka One, sans-serif';
   ctx.fillStyle='#4A9EF5';
   ctx.fillText(data.score,W/2,240);
 
-  // Stars
   ctx.font='28px serif';
   ctx.fillText(data.stars,W/2,275);
 
-  // Stats chips
   const chips=[
-    ['🔥 最高连击',`×${data.combo}`],
-    ['🎯 正确率',`${data.acc}%`],
-    ['📊 累计消除',`${data.totalPairs}对`],
-    ['📅 打卡天数',`${data.streak}天`],
+    [EDU.t('share.combo'),`×${data.combo}`],
+    [EDU.t('share.acc'),`${data.acc}%`],
+    [EDU.t('share.pairs'),`${data.totalPairs}${EDU.t('share.unit.pairs')}`],
+    [EDU.t('share.streak'),`${data.streak}${EDU.t('share.unit.streak')}`],
   ];
   const chipW=156,chipH=60,chipGap=10;
   const startX=24+12,startY=292;
@@ -612,10 +883,9 @@ function generateShareCard(data){
     ctx.fillText(val,x+chipW/2,y+44);
   });
 
-  // Footer
   ctx.fillStyle='rgba(255,255,255,0.7)';
   ctx.font='bold 12px Nunito, sans-serif';
-  ctx.fillText('来 PK 我！→ eduplay.cc',W/2,H-16);
+  ctx.fillText(EDU.t('share.footer'),W/2,H-16);
 
   return c;
 }
@@ -630,7 +900,7 @@ function showShareCard(data){
   const cardCanvas=generateShareCard(data);
   const ov=document.createElement('div');
   ov.className='share-overlay';
-  ov.innerHTML=`<div class="share-wrap"><div id="shareCanvasHolder"></div><div class="share-btns"><button class="share-dl" id="shareDl">💾 保存图片</button><button class="share-cancel" id="shareCancel">关闭</button></div></div>`;
+  ov.innerHTML=`<div class="share-wrap"><div id="shareCanvasHolder"></div><div class="share-btns"><button class="share-dl" id="shareDl">${EDU.t('share.dl')}</button><button class="share-cancel" id="shareCancel">${EDU.t('share.cancel')}</button></div></div>`;
   document.body.appendChild(ov);
   document.getElementById('shareCanvasHolder').appendChild(cardCanvas);
   document.getElementById('shareDl').onclick=()=>{
@@ -649,17 +919,17 @@ function showCustomVocabEditor(editKey){
   const ov=document.createElement('div');
   ov.className='cv-overlay';
   ov.innerHTML=`<div class="cv-modal">
-    <h3>${existing?'✏️ 编辑词组':'＋ 创建自定义词组'}</h3>
-    <div class="cv-sub">输入英中单词对，每行一对，用空格或Tab分隔</div>
-    <label>词组名称</label>
-    <input type="text" id="cvName" placeholder="例如：Unit 3 单词" value="${existing?editKey:''}">
-    <label>单词对（每行一对）</label>
+    <h3>${existing?EDU.t('cv.edit'):EDU.t('cv.create')}</h3>
+    <div class="cv-sub">${EDU.t('cv.sub')}</div>
+    <label>${EDU.t('cv.name')}</label>
+    <input type="text" id="cvName" placeholder="${EDU.t('cv.name.ph')}" value="${existing?editKey:''}">
+    <label>${EDU.t('cv.pairs')}</label>
     <textarea id="cvText" placeholder="apple 苹果&#10;book 书本&#10;cat 猫">${existing?existing.map(p=>p[0]+' '+p[1]).join('\n'):''}</textarea>
-    <div class="cv-hint">支持空格或Tab分隔，也可从Excel直接粘贴。上限50对。</div>
+    <div class="cv-hint">${EDU.t('cv.hint')}</div>
     <div class="cv-error" id="cvError"></div>
     <div class="cv-btns">
-      <button class="cv-cancel" id="cvCancel">取消</button>
-      <button class="cv-save" id="cvSave">保存</button>
+      <button class="cv-cancel" id="cvCancel">${EDU.t('cv.cancel')}</button>
+      <button class="cv-save" id="cvSave">${EDU.t('cv.save')}</button>
     </div>
     <div class="cv-saved" id="cvSaved"></div>
   </div>`;
@@ -672,29 +942,29 @@ function showCustomVocabEditor(editKey){
     const text=document.getElementById('cvText').value.trim();
     const errEl=document.getElementById('cvError');
     errEl.style.display='none';
-    if(!name){errEl.textContent='请输入词组名称';errEl.style.display='block';return}
-    if(!text){errEl.textContent='请输入至少一对单词';errEl.style.display='block';return}
+    if(!name){errEl.textContent=EDU.t('cv.err.name');errEl.style.display='block';return}
+    if(!text){errEl.textContent=EDU.t('cv.err.empty');errEl.style.display='block';return}
     const lines=text.split('\n').map(l=>l.trim()).filter(l=>l);
     const pairs=[];const errors=[];const seen=new Set();
     lines.forEach((line,i)=>{
       const parts=line.split(/[\t ]+/);
-      if(parts.length<2){errors.push(`第 ${i+1} 行格式错误：「${line}」`);return}
+      if(parts.length<2){errors.push(EDU.t('cv.err.line',{n:i+1,line}));return}
       const en=parts[0].trim(),zh=parts.slice(1).join(' ').trim();
-      if(!en||!zh){errors.push(`第 ${i+1} 行内容不完整`);return}
+      if(!en||!zh){errors.push(EDU.t('cv.err.incomplete',{n:i+1}));return}
       if(seen.has(en.toLowerCase())){return}
       seen.add(en.toLowerCase());
       pairs.push([en,zh]);
     });
     if(errors.length>0){errEl.innerHTML=errors.slice(0,3).join('<br>');errEl.style.display='block';return}
-    if(pairs.length===0){errEl.textContent='没有解析到有效的单词对';errEl.style.display='block';return}
-    if(pairs.length>50){errEl.textContent='单词对数量超过上限（50对），已截取前50对';pairs.length=50;errEl.style.display='block'}
+    if(pairs.length===0){errEl.textContent=EDU.t('cv.err.none');errEl.style.display='block';return}
+    if(pairs.length>50){errEl.textContent=EDU.t('cv.err.limit');pairs.length=50;errEl.style.display='block'}
     if(existing&&editKey!==name)delete userData.customVocabs[editKey];
     userData.customVocabs[name]=pairs;
     saveData();renderGradeButtons();renderSavedVocabs();checkCustomVocabAchievements();
     document.getElementById('cvName').value='';document.getElementById('cvText').value='';
     errEl.style.display='none';
     const saveBtn=document.getElementById('cvSave');
-    saveBtn.textContent='✓ 已保存';setTimeout(()=>saveBtn.textContent='保存',1500);
+    saveBtn.textContent='✓ '+EDU.t('cv.save');setTimeout(()=>saveBtn.textContent=EDU.t('cv.save'),1500);
   };
 }
 
@@ -703,14 +973,14 @@ function renderSavedVocabs(){
   if(!container)return;
   const keys=Object.keys(userData.customVocabs);
   if(keys.length===0){container.innerHTML='';return}
-  let html='<div class="cv-saved-title">已保存的词组</div>';
+  let html=`<div class="cv-saved-title">${EDU.t('cv.saved.title')}</div>`;
   keys.forEach(k=>{
     const count=userData.customVocabs[k].length;
     html+=`<div class="cv-item">
-      <div><span class="cv-item-name">${k}</span> <span class="cv-item-count">${count}对</span></div>
+      <div><span class="cv-item-name">${k}</span> <span class="cv-item-count">${EDU.t('cv.item.count',{n:count})}</span></div>
       <div class="cv-item-actions">
-        <button onclick="editCustomVocab('${k.replace(/'/g,"\\'")}')" title="编辑">✏️</button>
-        <button onclick="deleteCustomVocab('${k.replace(/'/g,"\\'")}')" title="删除">🗑️</button>
+        <button onclick="editCustomVocab('${k.replace(/'/g,"\\'")}')" title="${EDU.t('cv.edit')}">✏️</button>
+        <button onclick="deleteCustomVocab('${k.replace(/'/g,"\\'")}')" title="Delete">🗑️</button>
       </div>
     </div>`;
   });
@@ -719,7 +989,7 @@ function renderSavedVocabs(){
 
 window.editCustomVocab=function(key){document.querySelector('.cv-overlay')?.remove();showCustomVocabEditor(key)};
 window.deleteCustomVocab=function(key){
-  if(!confirm('确定删除词组「'+key+'」？'))return;
+  if(!confirm(EDU.t('cv.del.confirm',{name:key})))return;
   delete userData.customVocabs[key];saveData();renderGradeButtons();renderSavedVocabs();
 };
 
@@ -804,9 +1074,7 @@ function startGame(){
 
   const allVocab=getVocab();
   if(allVocab.length===0){
-    document.getElementById('hint').innerHTML=G.isReviewMode
-      ?'<b style="color:#EF4444">错词本是空的！先去玩几局攒错词吧 😊</b>'
-      :'<b style="color:#EF4444">该词组为空，请选择其他词库或添加单词</b>';
+    document.getElementById('hint').innerHTML=G.isReviewMode?EDU.t('hint.empty.review'):EDU.t('hint.empty.normal');
     G.running=false;return;
   }
   const vocab=shuffle(allVocab).slice(0,Math.min(n,allVocab.length));
@@ -832,8 +1100,7 @@ function startGame(){
     setTimeout(()=>{b.classList.remove('entering');b.classList.add('entered');b.style.transition='transform 0.18s cubic-bezier(.34,1.56,.64,1),box-shadow 0.18s,opacity 0.35s'},40+idx*35);
   });
 
-  const modeHint=G.isReviewMode?'📝 <b style="color:#EF4444">错词复习模式</b> — 配对成功 3 次自动从错词本移除':
-    '点击 <b style="color:var(--blue)">蓝色气泡</b>（英文）→ 再点 <b style="color:var(--pink)">粉色气泡</b>（中文）配对消除 ✨';
+  const modeHint=G.isReviewMode?EDU.t('hint.mode.review'):EDU.t('hint.mode.normal');
   document.getElementById('hint').innerHTML=modeHint;
   renderProgress();updateHUD();updateTimer();
   if(G.tMax<9999){G.iv=setInterval(()=>{if(!G.running)return;G.timer--;updateTimer();if(G.timer<=0)endGame('time')},1000)}
@@ -872,7 +1139,6 @@ function checkMatch(){
     pop('+'+pts,(er.left+er.right)/2,(er.top+er.bottom)/2-10,'#F59E0B');
     if(pc>=2)showCombo(pc);
 
-    // Review mode: track matches per word, remove after 3
     if(G.isReviewMode){
       const enWord=en.dataset.word;
       G.reviewMatches[enWord]=(G.reviewMatches[enWord]||0)+1;
@@ -881,7 +1147,7 @@ function checkMatch(){
         saveData();
         renderWrongWordCount();
         const removeEl=document.createElement('div');
-        removeEl.className='pop';removeEl.textContent='✓ 已掌握！';
+        removeEl.className='pop';removeEl.textContent=EDU.t('mastered');
         removeEl.style.cssText=`left:${(er.left+er.right)/2-40}px;top:${(er.top+er.bottom)/2-40}px;color:#14B8A6;font-size:16px`;
         document.body.appendChild(removeEl);setTimeout(()=>removeEl.remove(),950);
       }
@@ -933,13 +1199,11 @@ function endGame(reason){
   saveData();
   checkGameAchievements();
 
-  // XP for game
   let xpEarned=20;
   if(G.matched===G.total&&G.total>0)xpEarned+=50;
   if(G.maxCombo>=3)xpEarned+=10;
   gainXP(xpEarned,null,null,null);
 
-  // Leaderboard
   addToLeaderboard({score:G.score,combo:G.maxCombo,pairs:G.matched});
 
   const win=reason==='win',acc=G.total>0?Math.round((G.matched/G.total)*100):0;
@@ -962,19 +1226,19 @@ function endGame(reason){
   ov.innerHTML=`<div class="modal">
     <div class="em">${win?'🎉':'⏰'}</div>
     <div class="stars">${stars}</div>
-    <h2>${win?'全部消除！':'时间到了！'}</h2>
-    <p class="sub">${win?'太棒了！所有单词配对成功':'已消除 '+G.matched+' / '+G.total+' 对'}</p>
+    <h2>${win?EDU.t('end.win'):EDU.t('end.time')}</h2>
+    <p class="sub">${win?EDU.t('end.win.sub'):EDU.t('end.lose.sub',{n:G.matched,total:G.total})}</p>
     <span class="big">${G.score}</span>
-    <div class="big-label">总分</div>
+    <div class="big-label">${EDU.t('end.total')}</div>
     <div class="chips">
-      <span class="chip">🔥 最高连击 ×${G.maxCombo}</span>
-      <span class="chip">🎯 正确率 ${acc}%</span>
-      <span class="chip">📊 累计 ${userData.totalPairs} 对</span>
+      <span class="chip">${EDU.t('end.combo',{n:G.maxCombo})}</span>
+      <span class="chip">${EDU.t('end.acc',{n:acc})}</span>
+      <span class="chip">${EDU.t('end.cumulative',{n:userData.totalPairs})}</span>
       <span class="chip">${lvInfo.icon} Lv.${lvInfo.lv} ${lvInfo.title}</span>
     </div>
-    <button class="btn-go" onclick="document.querySelector('.overlay').remove();startGame()">🔄 再来一局</button>
-    <button class="btn-share" id="shareBtn">📸 生成分享卡片</button>
-    <button class="btn-link" id="toggleWordList">查看本局单词 ▾</button>
+    <button class="btn-go" onclick="document.querySelector('.overlay').remove();startGame()">${EDU.t('end.again')}</button>
+    <button class="btn-share" id="shareBtn">${EDU.t('end.share')}</button>
+    <button class="btn-link" id="toggleWordList">${EDU.t('end.words')}</button>
     <div id="wordListContainer" style="display:none;max-height:200px;overflow-y:auto">${wordListHTML}</div>
   </div>`;
   document.body.appendChild(ov);
@@ -984,7 +1248,7 @@ function endGame(reason){
     const c=document.getElementById('wordListContainer');
     const shown=c.style.display!=='none';
     c.style.display=shown?'none':'block';
-    document.getElementById('toggleWordList').textContent=shown?'查看本局单词 ▾':'收起单词 ▴';
+    document.getElementById('toggleWordList').textContent=shown?EDU.t('end.words'):EDU.t('end.words.hide');
   };
 }
 
@@ -997,7 +1261,7 @@ document.getElementById('lbBtn').onclick=showLeaderboard;
 document.getElementById('xpLvl').onclick=()=>{
   const info=getLevelInfo(userData.xp);
   const next=info.next;
-  alert(`${info.icon} Lv.${info.lv} ${info.title}\n当前经验：${userData.xp} XP\n${next?`距离 Lv.${next.lv} 还需：${next.xp-userData.xp} XP`:'已达最高等级！'}`);
+  alert(`${info.icon} Lv.${info.lv} ${info.title}\n${EDU.t('xp.cur',{n:userData.xp})}\n${next?EDU.t('xp.next',{n:next.xp-userData.xp,n2:next.lv}):EDU.t('xp.max')}`);
 };
 
 renderStreak();
@@ -1006,8 +1270,8 @@ renderXPBar();
 renderWrongWordCount();
 </script>
 <footer>
-  <p>© 2026 EduPlay · <a href="/">游戏大厅</a> · <a href="/blog/">学习博客</a> · <a href="/sitemap.xml">网站地图</a></p>
-  <p style="margin-top:6px">免费在线教育游戏，让学习更有趣 🎮</p>
+  <p>© 2026 EduPlay · <a href="/" data-i18n="nav.games">Game Hub</a> · <a href="/blog/" data-i18n="nav.blog">Blog</a> · <a href="/sitemap.xml" data-i18n="nav.sitemap">Sitemap</a></p>
+  <p style="margin-top:6px" data-i18n="footer.tagline">Free educational games that make learning fun 🎮</p>
 </footer>
 
 </body>

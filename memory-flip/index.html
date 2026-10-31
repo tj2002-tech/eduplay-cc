@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
+<link rel="icon" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>EduPlay 记忆翻牌 — 免费在线英语单词记忆游戏</title>
+<title data-i18n-doc="page.title">EduPlay Memory Flip — Free Online Word Memory Game</title>
 <meta name="description" content="EduPlay 记忆翻牌，翻开卡片配对英中单词，训练记忆力与词汇量。三种难度，覆盖小学常用词汇，免费在线游玩无需下载。">
 <meta name="keywords" content="记忆翻牌,英语单词记忆游戏,小学英语游戏,记忆力训练,免费在线游戏,EduPlay">
 <meta name="robots" content="index, follow">
@@ -30,6 +31,71 @@
 </script>
 <link rel="stylesheet" href="/site.css">
 <link rel="stylesheet" href="/css/memory-flip.css">
+<script>window.__DICT = {
+  zh: {
+    'page.title': 'EduPlay 记忆翻牌 — 免费在线英语单词记忆游戏',
+    'nav.games': '游戏大厅',
+    'nav.wordFamily': '词族点读',
+    'nav.wordMatch': '单词消消乐',
+    'nav.wordPop': '词力消消乐',
+    'nav.memoryFlip': '记忆翻牌',
+    'nav.mathBlitz': '数学口算',
+    'nav.blog': '学习博客',
+    'game.title': '记忆<span>翻牌</span> 🃏',
+    'fs.fullscreen': '全屏',
+    'stat.sec': '秒',
+    'stat.flips': '翻牌数',
+    'stat.matched': '已配对',
+    'diff.label': '📚 选择难度',
+    'diff.easy': '初级 8对',
+    'diff.medium': '进阶 12对',
+    'diff.hard': '挑战 16对',
+    'hint.ready': '点击 <b>开始游戏</b>，翻开两张卡片，把 <b>英文</b> 和对应的 <b>中文</b> 配对消除 🎯',
+    'hint.play': '翻开两张卡片，把 <b>英文</b> 和对应的 <b>中文</b> 配对消除！',
+    'start.start': '🎮 开始游戏',
+    'start.restart': '🔄 重新开始',
+    'end.title': '全部配对！',
+    'end.sub': '太棒了，你的记忆力真强！',
+    'end.flips': '次翻牌',
+    'end.score': '分',
+    'end.again': '🔄 再来一局',
+    'end.back': '返回查看',
+    'nav.sitemap': '网站地图',
+    'footer.tagline': '免费在线教育游戏，让学习更有趣 🎮'
+  },
+  en: {
+    'page.title': 'EduPlay Memory Flip — Free Online Word Memory Game',
+    'nav.games': 'Game Hub',
+    'nav.wordFamily': 'Word Family',
+    'nav.wordMatch': 'Word Match',
+    'nav.wordPop': 'Word Pop',
+    'nav.memoryFlip': 'Memory Flip',
+    'nav.mathBlitz': 'Math Blitz',
+    'nav.blog': 'Blog',
+    'game.title': 'Memory<span>Flip</span> 🃏',
+    'fs.fullscreen': 'Fullscreen',
+    'stat.sec': 's',
+    'stat.flips': 'Flips',
+    'stat.matched': 'Matched',
+    'diff.label': '📚 Choose Difficulty',
+    'diff.easy': 'Easy · 8 pairs',
+    'diff.medium': 'Medium · 12 pairs',
+    'diff.hard': 'Hard · 16 pairs',
+    'hint.ready': 'Tap <b>Start Game</b>, flip two cards and match each <b>English</b> word with its <b>Chinese</b> meaning 🎯',
+    'hint.play': 'Flip two cards and match each <b>English</b> word with its <b>Chinese</b> meaning!',
+    'start.start': '🎮 Start Game',
+    'start.restart': '🔄 Restart',
+    'end.title': 'All matched!',
+    'end.sub': 'Awesome, your memory is amazing!',
+    'end.flips': 'flips',
+    'end.score': 'pts',
+    'end.again': '🔄 Play Again',
+    'end.back': 'Back',
+    'nav.sitemap': 'Sitemap',
+    'footer.tagline': 'Free educational games that make learning fun 🎮'
+  }
+};</script>
+<script src="/js/i18n.js"></script>
 </head>
 <body>
 <canvas id="ptx"></canvas>
@@ -38,41 +104,41 @@
   <div class="nav-inner">
     <a href="/" class="logo">Edu<span>Play</span></a>
     <ul class="nav-links">
-      <li><a href="/">游戏大厅</a></li>
-      <li><a href="/word-family/">词族点读</a></li>
-      <li><a href="/word-match/">单词消消乐</a></li>
-      <li><a href="/word-pop/">词力消消乐</a></li>
-      <li><a href="/memory-flip/" style="color:var(--pink)">记忆翻牌</a></li>
-      <li><a href="/math-blitz/">数学口算</a></li>
-      <li><a href="/blog/">学习博客</a></li>
+      <li><a href="/" data-i18n="nav.games">Game Hub</a></li>
+      <li><a href="/word-family/" data-i18n="nav.wordFamily">Word Family</a></li>
+      <li><a href="/word-match/" data-i18n="nav.wordMatch">Word Match</a></li>
+      <li><a href="/word-pop/" data-i18n="nav.wordPop">Word Pop</a></li>
+      <li><a href="/memory-flip/" style="color:var(--pink)" data-i18n="nav.memoryFlip">Memory Flip</a></li>
+      <li><a href="/math-blitz/" data-i18n="nav.mathBlitz">Math Blitz</a></li>
+      <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
     </ul>
   </div>
 </nav>
 
 <div id="app">
   <div class="topbar">
-    <div class="game-title">记忆<span>翻牌</span> 🃏</div>
-    <button class="btn-icon" id="fsBtn" onclick="toggleFS()" title="全屏">⛶</button>
+    <div class="game-title" data-i18n-html="game.title">Memory<span>Flip</span> 🃏</div>
+    <button class="btn-icon" id="fsBtn" onclick="toggleFS()" title="Fullscreen" data-i18n-title="fs.fullscreen">⛶</button>
   </div>
 
   <div class="stat-row">
-    <div class="stat"><div class="stat-v blue" id="sTime">0</div><div class="stat-l">秒</div></div>
-    <div class="stat"><div class="stat-v" id="sFlips">0</div><div class="stat-l">翻牌数</div></div>
-    <div class="stat"><div class="stat-v purple" id="sMatched">0</div><div class="stat-l">已配对</div></div>
+    <div class="stat"><div class="stat-v blue" id="sTime">0</div><div class="stat-l" data-i18n="stat.sec">s</div></div>
+    <div class="stat"><div class="stat-v" id="sFlips">0</div><div class="stat-l" data-i18n="stat.flips">Flips</div></div>
+    <div class="stat"><div class="stat-v purple" id="sMatched">0</div><div class="stat-l" data-i18n="stat.matched">Matched</div></div>
   </div>
 
   <div class="diff-wrap">
-    <div class="diff-label">📚 选择难度</div>
+    <div class="diff-label" data-i18n="diff.label">📚 Choose Difficulty</div>
     <div class="diff-btns">
-      <button class="dbtn active" data-diff="easy" onclick="setDiff('easy',this)">初级 8对</button>
-      <button class="dbtn" data-diff="medium" onclick="setDiff('medium',this)">进阶 12对</button>
-      <button class="dbtn" data-diff="hard" onclick="setDiff('hard',this)">挑战 16对</button>
+      <button class="dbtn active" data-diff="easy" onclick="setDiff('easy',this)" data-i18n="diff.easy">Easy · 8 pairs</button>
+      <button class="dbtn" data-diff="medium" onclick="setDiff('medium',this)" data-i18n="diff.medium">Medium · 12 pairs</button>
+      <button class="dbtn" data-diff="hard" onclick="setDiff('hard',this)" data-i18n="diff.hard">Hard · 16 pairs</button>
     </div>
   </div>
 
-  <div class="hint" id="hint">点击 <b>开始游戏</b>，翻开两张卡片，把 <b>英文</b> 和对应的 <b>中文</b> 配对消除 🎯</div>
+  <div class="hint" id="hint" data-i18n-html="hint.ready">Tap <b>Start Game</b>, flip two cards and match each <b>English</b> word with its <b>Chinese</b> meaning 🎯</div>
 
-  <button class="btn-start" id="startBtn" onclick="startGame()">🎮 开始游戏</button>
+  <button class="btn-start" id="startBtn" onclick="startGame()" data-i18n="start.start">🎮 Start Game</button>
 
   <div class="progress-row" id="progressRow"></div>
   <div class="card-grid easy" id="grid"></div>
@@ -136,8 +202,8 @@ function startGame() {
   document.getElementById('sTime').textContent = '0';
   document.getElementById('sFlips').textContent = '0';
   document.getElementById('sMatched').textContent = '0';
-  document.getElementById('hint').innerHTML = '翻开两张卡片，把 <b>英文</b> 和对应的 <b>中文</b> 配对消除！';
-  document.getElementById('startBtn').textContent = '🔄 重新开始';
+  document.getElementById('hint').innerHTML = EDU.t('hint.play');
+  document.getElementById('startBtn').textContent = EDU.t('start.restart');
 
   // pick pairs
   const picked = shuffle(VOCAB).slice(0, G.pairs);
@@ -260,15 +326,15 @@ function endGame() {
     <div class="modal">
       <div class="em">🎉</div>
       <div style="font-size:28px;margin-bottom:4px">${stars}</div>
-      <h2>全部配对！</h2>
-      <p class="sub">太棒了，你的记忆力真强！</p>
+      <h2>${EDU.t('end.title')}</h2>
+      <p class="sub">${EDU.t('end.sub')}</p>
       <div class="chips">
         <span class="chip">⏱ ${fmt(G.timer)}</span>
-        <span class="chip teal">🃏 ${G.flips} 次翻牌</span>
-        <span class="chip orange">🏆 ${score} 分</span>
+        <span class="chip teal">🃏 ${G.flips} ${EDU.t('end.flips')}</span>
+        <span class="chip orange">🏆 ${score} ${EDU.t('end.score')}</span>
       </div>
-      <button class="btn-go" onclick="document.querySelector('.overlay').remove();startGame()">🔄 再来一局</button>
-      <button class="btn-go" style="background:linear-gradient(135deg,var(--pink),var(--orange))" onclick="document.querySelector('.overlay').remove()">返回查看</button>
+      <button class="btn-go" onclick="document.querySelector('.overlay').remove();startGame()">${EDU.t('end.again')}</button>
+      <button class="btn-go" style="background:linear-gradient(135deg,var(--pink),var(--orange))" onclick="document.querySelector('.overlay').remove()">${EDU.t('end.back')}</button>
     </div>`;
   document.body.appendChild(ov);
 }
@@ -357,8 +423,8 @@ function fitGrid() {
 window.addEventListener('resize', fitGrid);
 </script>
 <footer>
-  <p>© 2026 EduPlay · <a href="/">游戏大厅</a> · <a href="/blog/">学习博客</a> · <a href="/sitemap.xml">网站地图</a></p>
-  <p style="margin-top:6px">免费在线教育游戏，让学习更有趣 🎮</p>
+  <p>© 2026 EduPlay · <a href="/" data-i18n="nav.games">Game Hub</a> · <a href="/blog/" data-i18n="nav.blog">Blog</a> · <a href="/sitemap.xml" data-i18n="nav.sitemap">Sitemap</a></p>
+  <p style="margin-top:6px" data-i18n="footer.tagline">Free educational games that make learning fun 🎮</p>
 </footer>
 
 </body>

@@ -11,3 +11,8 @@ nav{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);padding:0 24px;positi
 .page-header p{font-size:16px;color:var(--muted);font-weight:700}
 footer{background:#fff;border-top:1px solid #F0EAF8;padding:28px 24px;text-align:center;color:var(--muted);font-size:13px;font-weight:700}
 footer a{color:var(--purple);text-decoration:none}
+
+/* EduPlay i18n: 语言切换按钮 */
+.lang-switch{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;border:none;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;transition:opacity .15s;line-height:1.4}
+.lang-switch:hover{opacity:.9}
+.lang-switch.mobile{margin-top:10px;width:100%;padding:12px;font-size:14px}
