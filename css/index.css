@@ -49,6 +49,7 @@ html,body{background:var(--bg);font-family:'Nunito',system-ui,-apple-system,sans
 .card-thumb.blue-bg{background:linear-gradient(135deg,#E0F0FF,#B3D9FF)}
 .card-thumb.orange-bg{background:linear-gradient(135deg,#FFF3E0,#FFD9A0)}
 .card-thumb.teal-bg{background:linear-gradient(135deg,#E0FAF5,#A7F3E4)}
+.card-thumb.green-bg{background:linear-gradient(135deg,#E8F9EC,#B8E6C8)}
 .card-thumb.purple-bg{background:linear-gradient(135deg,#F0E8FF,#D6B8FF)}
 .card-tag{position:absolute;top:12px;right:12px;font-size:11px;font-weight:800;border-radius:20px;padding:3px 10px}
 .tag-hot{background:#FEE2E2;color:#EF4444}
@@ -66,6 +67,7 @@ html,body{background:var(--bg);font-family:'Nunito',system-ui,-apple-system,sans
 .card-btn.btn-orange{background:linear-gradient(135deg,var(--orange),#F97316)}
 .card-btn.btn-purple{background:linear-gradient(135deg,var(--purple),var(--blue))}
 .card-btn.btn-teal{background:linear-gradient(135deg,var(--teal),#0D9488)}
+.card-btn.btn-green{background:linear-gradient(135deg,#2E9E63,#1F7A4D)}
 .card-btn.btn-disabled{background:#F3F4F6;color:var(--muted);cursor:default}
 
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}

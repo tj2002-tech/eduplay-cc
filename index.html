@@ -55,7 +55,8 @@
     {"@type":"ListItem","position":2,"name":"记忆翻牌","url":"https://eduplay.cc/memory-flip/"},
     {"@type":"ListItem","position":3,"name":"数学口算抢答","url":"https://eduplay.cc/math-blitz/"},
     {"@type":"ListItem","position":4,"name":"词族点读卡","url":"https://eduplay.cc/word-family/"},
-    {"@type":"ListItem","position":5,"name":"词力消消乐","url":"https://eduplay.cc/word-pop/"}
+    {"@type":"ListItem","position":5,"name":"词力消消乐","url":"https://eduplay.cc/word-pop/"},
+    {"@type":"ListItem","position":6,"name":"教室安静神器","url":"https://eduplay.cc/quiet-garden/"}
   ]
 }
 </script>
@@ -154,7 +155,12 @@
     'meta.battle': '课堂对战',
     'g6.title': '成语接龙',
     'g6.desc': '用上一个成语的最后一字开头，接出下一个成语，积累语文词汇。',
+    'g7.title': '教室安静神器',
+    'g7.desc': '麦克风检测课堂分贝，安静越久森林越茂盛。课堂噪音管理可视化工具，数据只在本机。',
     'meta.chi': '语文',
+    'meta.classroom': '课堂',
+    'meta.tool': '工具',
+    'meta.mic': '麦克风',
     'meta.g4_6': '4~6年级',
     'btn.play': '立即游玩 →',
     'btn.soon': '敬请期待',
@@ -171,6 +177,8 @@
     'b5.excerpt': '字母音、CVC拼读、魔法e、高频词——自然拼读5步入门路线，配合免费拼读配对游戏，让孩子自己读出单词……',
     'b6.title': '小学英语听力怎么练？分级训练法 + 每天15分钟家庭练习',
     'b6.excerpt': '孩子天天听还是听不懂？4级分级训练路线（辨音→单词短语→短句情境→故事对话）加每天15分钟流程，配合免费点读游戏，让孩子真正听进去……',
+    'b7.title': '教室安静不下来？课堂噪音管理的4个方法 + 免费分贝检测工具',
+    'b7.excerpt': '教室为什么总是吵？4个不用吼的课堂安静方法：可视化噪音反馈、固定安静信号、游戏化奖励、结构化任务过渡，配合免费分贝检测工具……',
     'blog.more': '阅读全文 →',
     'nav.sitemap': '网站地图',
     'nav.privacy': '隐私政策',
@@ -221,7 +229,12 @@
     'meta.battle': 'Classroom Battle',
     'g6.title': 'Idiom Chain',
     'g6.desc': 'Link Chinese idioms by the last character of the previous one. Build Chinese vocabulary.',
+    'g7.title': 'Quiet Garden',
+    'g7.desc': 'Detect classroom noise with your microphone — the quieter it stays, the fuller the forest grows. A visual classroom tool; data stays on your device.',
     'meta.chi': 'Chinese',
+    'meta.classroom': 'Classroom',
+    'meta.tool': 'Tool',
+    'meta.mic': 'Mic',
     'meta.g4_6': 'G4–G6',
     'btn.play': 'Play Now →',
     'btn.soon': 'Stay Tuned',
@@ -238,6 +251,8 @@
     'b5.excerpt': 'Letter sounds, CVC blending, magic e, sight words — a 5-step phonics path with a free matching game, so kids read words on their own…',
     'b6.title': 'How to practice English listening for primary school kids? A leveled path + a 15-minute daily routine',
     'b6.excerpt': 'Background audio is not practice. A 4-level listening path (sounds → words → sentences → stories) plus a 15-minute daily routine, with free tap-to-hear games…',
+    'b7.title': 'Classroom too noisy? 4 classroom noise management strategies + a free decibel meter',
+    'b7.excerpt': 'Why is the classroom always noisy? 4 no-shouting strategies: make the noise visible, fix one quiet signal, gamify the reward, structure transitions — plus a free decibel meter…',
     'blog.more': 'Read more →',
     'nav.sitemap': 'Sitemap',
     'nav.privacy': 'Privacy Policy',
@@ -365,6 +380,20 @@
       </div>
     </a>
 
+    <a href="/quiet-garden/" class="game-card">
+      <div class="card-thumb green-bg">🌳<span class="card-tag tag-new" data-i18n="tag.new">✨ New!</span></div>
+      <div class="card-body">
+        <div class="card-title" data-i18n="g7.title">Quiet Garden</div>
+        <div class="card-desc" data-i18n="g7.desc">Detect classroom noise with your microphone — the quieter it stays, the fuller the forest grows. A visual classroom tool; data stays on your device.</div>
+        <div class="card-meta">
+          <span class="meta-chip" data-i18n="meta.classroom">Classroom</span>
+          <span class="meta-chip" data-i18n="meta.tool">Tool</span>
+          <span class="meta-chip" data-i18n="meta.mic">Mic</span>
+        </div>
+        <div class="card-btn btn-green" data-i18n="btn.play">Play Now →</div>
+      </div>
+    </a>
+
     <!-- 即将上线 -->
     <div class="game-card coming-soon">
       <div class="card-thumb teal-bg">🀄<span class="card-tag tag-soon" data-i18n="tag.soon">Coming Soon</span></div>
@@ -382,7 +411,13 @@
 <div class="section">
   <h2 class="section-title" data-i18n="sec.blog">📖 Learning Blog</h2>
   <div class="blog-grid">
-    <!-- 博客文章按时间倒序排列 (11-03 listening → 11-02 phonics → 11-02 math → 05-08 → 05-03 → 05-01) -->
+    <!-- 博客文章按时间倒序排列 (11-04 quiet → 11-03 listening → 11-02 phonics → 11-02 math → 05-08 → 05-03 → 05-01) -->
+    <a href="/blog/classroom-quiet-tips/" class="blog-card">
+      <div class="blog-date">2026-11-04</div>
+      <div class="blog-title" data-i18n="b7.title">Classroom too noisy? 4 classroom noise management strategies + a free decibel meter</div>
+      <div class="blog-excerpt" data-i18n="b7.excerpt">Why is the classroom always noisy? 4 no-shouting strategies: make the noise visible, fix one quiet signal, gamify the reward, structure transitions — plus a free decibel meter…</div>
+      <span class="blog-more" data-i18n="blog.more">Read more →</span>
+    </a>
     <a href="/blog/listening-skills/" class="blog-card">
       <div class="blog-date">2026-11-03</div>
       <div class="blog-title" data-i18n="b6.title">How to practice English listening for primary school kids? A leveled path + a 15-minute daily routine</div>

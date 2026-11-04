@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@600;700;800;900&display=swap">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-doc="page.title">教室安静神器 — 免费在线课堂噪音检测与安静森林 | EduPlay</title>
+<meta name="description" content="教室安静神器（Quiet Garden）：用麦克风实时检测课堂分贝，安静越久森林长得越茂盛。课堂噪音管理可视化工具，数据只在本地、完全免费，无需下载。">
+<meta name="keywords" content="教室安静神器,课堂噪音检测,分贝检测,课堂管理,安静森林,班级纪律工具,免费在线工具,EduPlay">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://eduplay.cc/quiet-garden/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eduplay.cc/quiet-garden/">
+<meta property="og:title" content="教室安静神器 — 免费在线课堂噪音检测与安静森林">
+<meta property="og:description" content="麦克风实时检测课堂分贝，安静越久森林越茂盛。课堂噪音管理可视化工具，完全免费、数据只在本地。">
+<meta property="og:image" content="https://eduplay.cc/og-cover.jpg">
+<meta property="og:site_name" content="EduPlay">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "教室安静神器 Quiet Garden",
+  "url": "https://eduplay.cc/quiet-garden/",
+  "description": "用麦克风实时检测课堂分贝，安静越久森林越茂盛。课堂噪音管理可视化工具，数据只在本地、完全免费。",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "zh-CN",
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"CNY"}
+}
+</script>
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/css/quiet-garden.css">
+<script>window.__DICT = {
+  zh: {
+    'page.title': '教室安静神器 — 免费在线课堂噪音检测与安静森林 | EduPlay',
+    'qg.tag': '🌳 教室工具',
+    'qg.title': '教室安静神器',
+    'qg.sub': '麦克风实时检测课堂分贝，安静越久森林越茂盛。所有数据只在本机分析，绝不上传。',
+    'sec.status': '📊 实时音量',
+    'sec.settings': '⚙️ 设置',
+    'status.requesting': '请求麦克风权限…',
+    'status.detecting': '正在检测音量…',
+    'status.quiet': '教室很安静，继续保持！',
+    'status.noisy': '教室有点吵，请安静下来！',
+    'status.waiting': '等待检测音量…',
+    'status.error': '无法访问麦克风：',
+    'status.demo': '🎭 演示模式：正在模拟音量',
+    'decibel.fmt': '{n} 分贝',
+    'timer.fmt': '安静时长: {s}秒',
+    'progress.label': '下一棵树苗进度',
+    'forest.empty': '🌱 安静一会儿，第一棵树苗就会长出来',
+    'btn.apply': '✅ 应用设置',
+    'btn.reset': '🗑️ 重置森林',
+    'btn.demo': '🎭 演示模式（无麦克风）',
+    'btn.demoOff': '⏹ 退出演示',
+    'saved.alert': '设置已保存！',
+    'reset.confirm': '确定要重置整个森林吗？所有树苗和大树都将被清除。',
+    'set.quietThreshold': '安静阈值 (分贝)',
+    'set.saplingTime': '树苗成长时间 (秒)',
+    'set.treesPerBigTree': '大树需要的树苗数量',
+    'set.theme': '主题颜色',
+    'theme.green': '绿色森林',
+    'theme.blue': '蓝色海洋',
+    'theme.pink': '粉色花园',
+    'privacy.note': '🔒 麦克风声音只在浏览器本地分析，不会上传或保存'
+  },
+  en: {
+    'page.title': 'Quiet Garden — Free Online Classroom Noise Meter & Quiet Forest | EduPlay',
+    'qg.tag': '🌳 Classroom Tool',
+    'qg.title': 'Quiet Garden',
+    'qg.sub': 'Detect classroom noise with your microphone — the quieter it stays, the fuller the forest grows. All data is analyzed on your device only.',
+    'sec.status': '📊 Live Volume',
+    'sec.settings': '⚙️ Settings',
+    'status.requesting': 'Requesting microphone access…',
+    'status.detecting': 'Detecting volume…',
+    'status.quiet': 'Nice and quiet — keep it up!',
+    'status.noisy': 'A bit noisy — let\'s get quiet!',
+    'status.waiting': 'Waiting for sound…',
+    'status.error': 'Microphone unavailable: ',
+    'status.demo': '🎭 Demo mode: simulated volume',
+    'decibel.fmt': '{n} dB',
+    'timer.fmt': 'Quiet time: {s}s',
+    'progress.label': 'Next sapling progress',
+    'forest.empty': '🌱 Stay quiet for a moment and the first sapling will grow',
+    'btn.apply': '✅ Apply settings',
+    'btn.reset': '🗑️ Reset forest',
+    'btn.demo': '🎭 Demo mode (no mic)',
+    'btn.demoOff': '⏹ Stop demo',
+    'saved.alert': 'Settings saved!',
+    'reset.confirm': 'Reset the whole forest? All saplings and big trees will be cleared.',
+    'set.quietThreshold': 'Quiet threshold (dB)',
+    'set.saplingTime': 'Sapling growth time (s)',
+    'set.treesPerBigTree': 'Saplings per big tree',
+    'set.theme': 'Theme',
+    'theme.green': 'Green forest',
+    'theme.blue': 'Blue ocean',
+    'theme.pink': 'Pink garden',
+    'privacy.note': '🔒 Mic audio is analyzed locally in your browser only — nothing is uploaded or saved'
+  }
+};</script>
+<script src="/js/i18n.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Edu<span>Play</span></a>
+    <ul class="nav-links">
+      <li><a href="/" data-i18n="nav.games">Game Hub</a></li>
+      <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="qg-wrap">
+
+  <div class="qg-head">
+    <div class="qg-tag" data-i18n="qg.tag">🌳 Classroom Tool</div>
+    <h1 class="qg-title" data-i18n="qg.title">Quiet Garden</h1>
+    <p class="qg-sub" data-i18n="qg.sub">Detect classroom noise with your microphone — the quieter it stays, the fuller the forest grows. All data is analyzed on your device only.</p>
+  </div>
+
+  <div class="panel">
+    <h2 style="font-family:'Fredoka',cursive;font-size:18px;color:var(--teal);margin:0 0 14px" data-i18n="sec.status">📊 Live Volume</h2>
+
+    <div class="meter">
+      <div class="level" id="level"></div>
+    </div>
+    <div class="decibel" id="decibel">-- dB</div>
+    <div class="status" id="status" data-i18n="status.waiting">Waiting for sound…</div>
+
+    <div class="timer" id="timer">Quiet time: 0s</div>
+    <div class="progress-row">
+      <span data-i18n="progress.label">Next sapling progress</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+      </div>
+    </div>
+
+    <div class="forest" id="forest">
+      <div class="forest-empty" data-i18n="forest.empty">🌱 Stay quiet for a moment and the first sapling will grow</div>
+    </div>
+
+    <div class="demo-row">
+      <button class="demo-btn" id="demoBtn" data-i18n="btn.demo">🎭 Demo mode (no mic)</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2 style="font-family:'Fredoka',cursive;font-size:18px;color:var(--teal);margin:0 0 14px" data-i18n="sec.settings">⚙️ Settings</h2>
+
+    <div class="settings">
+      <div class="setting-item">
+        <label for="quietThreshold" data-i18n="set.quietThreshold">Quiet threshold (dB)</label>
+        <input type="number" id="quietThreshold" value="50" min="10" max="100">
+      </div>
+      <div class="setting-item">
+        <label for="saplingTime" data-i18n="set.saplingTime">Sapling growth time (s)</label>
+        <input type="number" id="saplingTime" value="60" min="10" max="300">
+      </div>
+      <div class="setting-item">
+        <label for="treesPerBigTree" data-i18n="set.treesPerBigTree">Saplings per big tree</label>
+        <input type="number" id="treesPerBigTree" value="10" min="1" max="20">
+      </div>
+      <div class="setting-item">
+        <label for="theme" data-i18n="set.theme">Theme</label>
+        <select id="theme">
+          <option value="green" data-i18n="theme.green">Green forest</option>
+          <option value="blue" data-i18n="theme.blue">Blue ocean</option>
+          <option value="pink" data-i18n="theme.pink">Pink garden</option>
+        </select>
+      </div>
+      <button class="qg-btn" id="applySettings" data-i18n="btn.apply">✅ Apply settings</button>
+      <button class="qg-btn ghost" id="reset" data-i18n="btn.reset">🗑️ Reset forest</button>
+    </div>
+  </div>
+
+  <p class="privacy-note" data-i18n="privacy.note">🔒 Mic audio is analyzed locally in your browser only — nothing is uploaded or saved</p>
+
+</div>
+
+<script>
+// ── 状态变量 ──
+let isQuiet = false;
+let quietStartTime = 0;
+let quietDuration = 0;
+let saplings = 0;
+let bigTrees = 0;
+let demoMode = false;
+let demoInterval = null;
+let mediaStream = null;
+
+// ── 配置 ──
+let config = {
+  quietThreshold: 50,
+  saplingTime: 60,
+  treesPerBigTree: 10,
+  theme: 'green'
+};
+
+// ── DOM ──
+const decibelElement = document.getElementById('decibel');
+const levelElement = document.getElementById('level');
+const statusElement = document.getElementById('status');
+const timerElement = document.getElementById('timer');
+const progressElement = document.getElementById('progress');
+const forestElement = document.getElementById('forest');
+const quietThresholdInput = document.getElementById('quietThreshold');
+const saplingTimeInput = document.getElementById('saplingTime');
+const treesPerBigTreeInput = document.getElementById('treesPerBigTree');
+const themeInput = document.getElementById('theme');
+const applySettingsButton = document.getElementById('applySettings');
+const resetButton = document.getElementById('reset');
+const demoButton = document.getElementById('demoBtn');
+
+// ── 初始化 ──
+function init() {
+  loadSettings();
+  updateUI();
+  setupEventListeners();
+  // 初始渲染动态文本（跟随当前语言）
+  timerElement.textContent = EDU.t('timer.fmt', { s: 0 });
+  decibelElement.textContent = '--';
+  startMicrophone();
+}
+
+// ── 加载设置 ──
+function loadSettings() {
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem('eduplay.quietGarden') || 'null'); } catch (e) { saved = null; }
+  if (saved) Object.assign(config, saved);
+
+  quietThresholdInput.value = config.quietThreshold;
+  saplingTimeInput.value = config.saplingTime;
+  treesPerBigTreeInput.value = config.treesPerBigTree;
+  themeInput.value = config.theme;
+  applyTheme();
+}
+
+// ── 保存设置 ──
+function saveSettings() {
+  config.quietThreshold = Math.max(10, Math.min(100, parseInt(quietThresholdInput.value) || 50));
+  config.saplingTime = Math.max(10, Math.min(300, parseInt(saplingTimeInput.value) || 60));
+  config.treesPerBigTree = Math.max(1, Math.min(20, parseInt(treesPerBigTreeInput.value) || 10));
+  config.theme = themeInput.value || 'green';
+  try { localStorage.setItem('eduplay.quietGarden', JSON.stringify(config)); } catch (e) { /* ignore */ }
+  applyTheme();
+}
+
+// ── 应用主题 ──
+function applyTheme() {
+  document.body.className = '';
+  document.body.classList.add(config.theme + '-theme');
+}
+
+// ── 事件 ──
+function setupEventListeners() {
+  applySettingsButton.addEventListener('click', function () {
+    saveSettings();
+    alert(EDU.t('saved.alert'));
+  });
+  resetButton.addEventListener('click', function () {
+    if (confirm(EDU.t('reset.confirm'))) resetForest();
+  });
+  demoButton.addEventListener('click', toggleDemo);
+}
+
+// ── 演示模式 ──
+function toggleDemo() {
+  if (!demoMode) {
+    demoMode = true;
+    stopMicrophone();
+    statusElement.textContent = EDU.t('status.demo');
+    if (demoInterval) clearInterval(demoInterval);
+    demoInterval = setInterval(function () {
+      const simulated = Math.round(30 + Math.random() * 55);
+      checkVolumeLevel(simulated);
+    }, 700);
+    demoButton.textContent = EDU.t('btn.demoOff');
+  } else {
+    demoMode = false;
+    if (demoInterval) { clearInterval(demoInterval); demoInterval = null; }
+    demoButton.textContent = EDU.t('btn.demo');
+    startMicrophone();
+  }
+}
+
+// ── 重置森林 ──
+function resetForest() {
+  isQuiet = false;
+  quietStartTime = 0;
+  quietDuration = 0;
+  saplings = 0;
+  bigTrees = 0;
+  forestElement.innerHTML = '<div class="forest-empty" data-i18n="forest.empty">' + EDU.t('forest.empty') + '</div>';
+  updateUI();
+}
+
+// ── 开始麦克风 ──
+function startMicrophone() {
+  if (demoMode) return;
+  statusElement.textContent = EDU.t('status.requesting');
+
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    handleMicrophoneError({ message: 'not supported' });
+    return;
+  }
+
+  navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+    .then(function (stream) {
+      mediaStream = stream;
+      statusElement.textContent = EDU.t('status.detecting');
+
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const analyser = audioContext.createAnalyser();
+      const microphone = audioContext.createMediaStreamSource(stream);
+      let javascriptNode;
+      try {
+        javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
+      } catch (e) {
+        javascriptNode = null;
+      }
+
+      analyser.smoothingTimeConstant = 0.8;
+      analyser.fftSize = 1024;
+
+      microphone.connect(analyser);
+      if (javascriptNode) {
+        analyser.connect(javascriptNode);
+        javascriptNode.connect(audioContext.destination);
+        javascriptNode.onaudioprocess = function () {
+          const array = new Uint8Array(analyser.frequencyBinCount);
+          analyser.getByteFrequencyData(array);
+          let values = 0;
+          for (let i = 0; i < array.length; i++) values += array[i];
+          const average = values / array.length;
+          const decibels = Math.round(average * 0.42);
+          checkVolumeLevel(decibels);
+        };
+      } else {
+        // fallback: sample with rAF
+        function sample() {
+          const array = new Uint8Array(analyser.frequencyBinCount);
+          analyser.getByteFrequencyData(array);
+          let values = 0;
+          for (let i = 0; i < array.length; i++) values += array[i];
+          const decibels = Math.round((values / array.length) * 0.42);
+          checkVolumeLevel(decibels);
+          if (!demoMode) requestAnimationFrame(sample);
+        }
+        sample();
+      }
+    })
+    .catch(handleMicrophoneError);
+}
+
+// ── 停止麦克风 ──
+function stopMicrophone() {
+  if (mediaStream) {
+    mediaStream.getTracks().forEach(function (t) { t.stop(); });
+    mediaStream = null;
+  }
+}
+
+// ── 麦克风错误 ──
+function handleMicrophoneError(error) {
+  console.error('Mic error:', error);
+  statusElement.textContent = EDU.t('status.error') + (error && error.message ? error.message : '');
+  decibelElement.textContent = '--';
+  levelElement.style.width = '0%';
+}
+
+// ── 检查音量 ──
+function checkVolumeLevel(decibels) {
+  decibelElement.textContent = EDU.t('decibel.fmt', { n: decibels });
+  levelElement.style.width = Math.min(100, decibels) + '%';
+
+  decibelElement.classList.remove('quiet', 'noisy');
+  if (decibels < config.quietThreshold) {
+    decibelElement.classList.add('quiet');
+    statusElement.textContent = EDU.t('status.quiet');
+  } else {
+    decibelElement.classList.add('noisy');
+    statusElement.textContent = EDU.t('status.noisy');
+  }
+
+  const nowQuiet = decibels < config.quietThreshold;
+
+  if (nowQuiet && !isQuiet) {
+    quietStartTime = Date.now();
+    isQuiet = true;
+  } else if (!nowQuiet && isQuiet) {
+    isQuiet = false;
+    quietDuration = 0;
+  }
+
+  if (isQuiet) {
+    quietDuration = (Date.now() - quietStartTime) / 1000;
+    updateTimer();
+    checkForNewSapling();
+  } else {
+    timerElement.textContent = EDU.t('timer.fmt', { s: 0 });
+    progressElement.style.width = '0%';
+  }
+}
+
+// ── 计时器 ──
+function updateTimer() {
+  timerElement.textContent = EDU.t('timer.fmt', { s: Math.round(quietDuration) });
+  const progress = Math.min(100, (quietDuration / config.saplingTime) * 100);
+  progressElement.style.width = progress + '%';
+}
+
+// ── 树苗 ──
+function checkForNewSapling() {
+  if (quietDuration >= config.saplingTime) {
+    addSapling();
+    quietStartTime = Date.now();
+    quietDuration = 0;
+  }
+}
+
+function addSapling() {
+  saplings++;
+  if (saplings >= config.treesPerBigTree) {
+    saplings = 0;
+    addBigTree();
+  } else {
+    const sapling = document.createElement('div');
+    sapling.className = 'tree sapling';
+    forestElement.appendChild(sapling);
+    sapling.classList.add('celebrate');
+    setTimeout(function () { sapling.classList.remove('celebrate'); }, 1600);
+  }
+  updateUI();
+}
+
+function addBigTree() {
+  bigTrees++;
+  const toRemove = Math.min(config.treesPerBigTree, forestElement.children.length);
+  for (let i = 0; i < toRemove; i++) {
+    if (forestElement.lastChild) forestElement.removeChild(forestElement.lastChild);
+  }
+  const bigTree = document.createElement('div');
+  bigTree.className = 'tree big-tree';
+  forestElement.appendChild(bigTree);
+  bigTree.classList.add('celebrate');
+  setTimeout(function () { bigTree.classList.remove('celebrate'); }, 1600);
+  updateUI();
+}
+
+// ── UI ──
+function updateUI() {
+  const empty = forestElement.querySelector('.forest-empty');
+  if (forestElement.children.length === 0 && !empty) {
+    const div = document.createElement('div');
+    div.className = 'forest-empty';
+    div.setAttribute('data-i18n', 'forest.empty');
+    div.textContent = EDU.t('forest.empty');
+    forestElement.appendChild(div);
+  }
+}
+
+// ── 启动 ──
+init();
+</script>
+
+<footer>
+  <p>© 2026 EduPlay · <a href="/" data-i18n="nav.games">Game Hub</a> · <a href="/blog/" data-i18n="nav.blog">Blog</a> · <a href="/sitemap.xml" data-i18n="nav.sitemap">Sitemap</a></p>
+  <p style="margin-top:6px" data-i18n="footer.tagline">Free educational games that make learning fun 🎮</p>
+</footer>
+
+</body>
+</html>
