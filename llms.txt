@@ -1,0 +1,31 @@
+# EduPlay
+
+> Free online English learning games for elementary students (grades 3-7), based on PEP textbook vocabulary. All games run in the browser.
+
+## Games
+
+- [Word Match](https://eduplay.cc/word-match/): Vocabulary matching game.
+- [Memory Flip](https://eduplay.cc/memory-flip/): Memory card game.
+- [Math Blitz](https://eduplay.cc/math-blitz/): Quick math practice game.
+- [Word Family](https://eduplay.cc/word-family/): Word family learning game.
+- [Word Pop](https://eduplay.cc/word-pop/): Word popping game.
+- [Quiet Garden](https://eduplay.cc/quiet-garden/): A calm garden-themed activity.
+
+## Blog
+
+- [Blog](https://eduplay.cc/blog/): English learning tips and classroom ideas.
+- [Top Recess Games](https://eduplay.cc/blog/top-recess-games/)
+- [Word Learning Tips](https://eduplay.cc/blog/word-learning-tips/)
+- [Grade 3 Vocabulary](https://eduplay.cc/blog/grade3-vocab/)
+- [Word Family Learning](https://eduplay.cc/blog/word-family-learning/)
+- [Math Practice](https://eduplay.cc/blog/math-practice/)
+- [Times Table](https://eduplay.cc/blog/times-table/)
+- [Phonics Basics](https://eduplay.cc/blog/phonics-basics/)
+- [Listening Skills](https://eduplay.cc/blog/listening-skills/)
+- [Classroom Quiet Tips](https://eduplay.cc/blog/classroom-quiet-tips/)
+
+## Other
+
+- [About](https://eduplay.cc/about/)
+- [Privacy Policy](https://eduplay.cc/privacy/)
+- [Terms](https://eduplay.cc/terms/)
